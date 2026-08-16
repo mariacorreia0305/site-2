@@ -12,76 +12,72 @@
 
     <title>Portal de Apoio ao Estudante</title>
 
-
     <!-- FONT AWESOME -->
-
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-
     <!-- GOOGLE FONTS -->
-
-    <link rel="preconnect"
-        href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect"
         href="https://fonts.gstatic.com"
         crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
 
 <style>
 
-/* ==========================================================
-   CONFIGURAÇÕES GERAIS
-========================================================== */
+/* =========================================================
+   CONFIGURAÇÕES
+========================================================= */
 
 :root {
 
-    --azul: #5875D9;
-    --azul-escuro: #4059B5;
+    --azul: #6678E8;
+    --azul-escuro: #4C5FC8;
+    --azul-claro: #E9EDFF;
 
-    --lilas: #8C78D7;
+    --lilas: #9B82E8;
+    --lilas-claro: #F1ECFF;
 
-    --verde: #63B894;
+    --verde: #69C49A;
+    --verde-claro: #E8F8F0;
 
-    --azul-claro: #EEF2FF;
+    --rosa: #F39AB6;
+    --rosa-claro: #FFF0F5;
 
-    --fundo: #F7F9FC;
+    --amarelo: #FFD978;
+    --amarelo-claro: #FFF8DF;
 
+    --fundo: #F8F9FE;
     --branco: #FFFFFF;
 
-    --texto: #27344D;
+    --texto: #303A57;
+    --texto-secundario: #68728A;
 
-    --texto-claro: #68758A;
-
-    --borda: #E4E9F2;
+    --borda: #E5E8F2;
 
     --sombra:
-        0 15px 40px rgba(62, 80, 125, 0.10);
+        0 18px 45px rgba(75, 88, 150, 0.11);
 
 }
 
+
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
-
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
-
 }
-
 
 html {
-
     scroll-behavior: smooth;
-
 }
-
 
 body {
 
@@ -91,51 +87,40 @@ body {
 
     color: var(--texto);
 
-    line-height: 1.7;
+    line-height: 1.6;
+
+    overflow-x: hidden;
 
 }
 
-
-body,
-button,
 a {
-
-    -webkit-tap-highlight-color: transparent;
-
-}
-
-
-a {
-
     text-decoration: none;
-
     color: inherit;
-
 }
-
 
 button,
 input,
 textarea,
 select {
-
     font-family: inherit;
-
 }
 
+img {
+    max-width: 100%;
+}
 
 .container {
 
-    width: min(1120px, 92%);
+    width: min(1160px, 90%);
 
-    margin: 0 auto;
+    margin: auto;
 
 }
 
 
-/* ==========================================================
+/* =========================================================
    HEADER
-========================================================== */
+========================================================= */
 
 .header {
 
@@ -145,18 +130,18 @@ select {
 
     z-index: 1000;
 
-    background: rgba(255,255,255,0.94);
+    background: rgba(255,255,255,.90);
 
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(18px);
 
-    border-bottom: 1px solid rgba(228,233,242,0.9);
+    border-bottom: 1px solid rgba(230,233,244,.8);
 
 }
 
 
 .nav-container {
 
-    min-height: 76px;
+    min-height: 78px;
 
     display: flex;
 
@@ -175,30 +160,38 @@ select {
 
     gap: 10px;
 
-    color: var(--azul-escuro);
-
-    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
 
     font-weight: 700;
+
+    color: var(--azul-escuro);
 
 }
 
 
 .logo i {
 
-    width: 42px;
+    width: 43px;
 
-    height: 42px;
-
-    border-radius: 13px;
-
-    background: var(--azul-claro);
-
-    color: var(--azul);
+    height: 43px;
 
     display: grid;
 
     place-items: center;
+
+    border-radius: 14px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--azul),
+            var(--lilas)
+        );
+
+    box-shadow:
+        0 8px 18px rgba(102,120,232,.25);
 
 }
 
@@ -222,27 +215,38 @@ select {
 
     gap: 6px;
 
-    padding: 9px 13px;
+    padding: 10px 14px;
 
-    border-radius: 12px;
+    border-radius: 13px;
 
-    color: #647087;
+    color: var(--texto-secundario);
 
-    font-size: 0.84rem;
+    font-size: .82rem;
 
     font-weight: 500;
 
-    transition: 0.25s;
+    transition: .25s;
 
 }
 
 
-.nav a:hover,
-.nav a.active {
+.nav a:hover {
 
     background: var(--azul-claro);
 
     color: var(--azul-escuro);
+
+}
+
+
+.nav a.active {
+
+    color: white;
+
+    background: var(--azul);
+
+    box-shadow:
+        0 7px 17px rgba(102,120,232,.22);
 
 }
 
@@ -253,11 +257,11 @@ select {
 
     border: none;
 
-    width: 43px;
+    width: 44px;
 
-    height: 43px;
+    height: 44px;
 
-    border-radius: 13px;
+    border-radius: 14px;
 
     background: var(--azul-claro);
 
@@ -270,46 +274,137 @@ select {
 }
 
 
-/* ==========================================================
+/* =========================================================
+   PÁGINAS
+========================================================= */
+
+.main-home.hidden {
+    display: none;
+}
+
+.quiz-page,
+.escuta-page,
+.referencias-page {
+
+    display: none;
+
+    min-height: 80vh;
+
+    padding: 75px 0;
+
+}
+
+.quiz-page.active,
+.escuta-page.active,
+.referencias-page.active {
+
+    display: block;
+
+}
+
+
+/* =========================================================
    HERO
-========================================================== */
+========================================================= */
 
 .hero {
 
-    padding: 85px 0 100px;
+    position: relative;
 
-    background:
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(140,120,215,0.13),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 10% 80%,
-            rgba(99,184,148,0.12),
-            transparent 28%
-        ),
-        linear-gradient(
-            135deg,
-            #F3F6FF,
-            #FAF8FF 55%,
-            #F1FAF6
-        );
+    min-height: 650px;
+
+    padding: 85px 0;
 
     overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 8% 20%,
+            rgba(155,130,232,.18),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(105,196,154,.20),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            135deg,
+            #F2F4FF 0%,
+            #FAF7FF 48%,
+            #F0FAF6 100%
+        );
+
+}
+
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    border-radius: 50%;
+
+    border: 28px solid rgba(255,255,255,.65);
+
+    top: -65px;
+
+    left: -65px;
+
+}
+
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+
+    height: 120px;
+
+    border-radius: 32px;
+
+    background: rgba(255,255,255,.45);
+
+    transform: rotate(25deg);
+
+    right: 7%;
+
+    bottom: -45px;
 
 }
 
 
 .hero-content {
 
+    position: relative;
+
+    z-index: 2;
+
     display: grid;
 
-    grid-template-columns: 1fr 0.95fr;
+    grid-template-columns: 1fr 1fr;
 
     align-items: center;
 
-    gap: 70px;
+    gap: 55px;
+
+}
+
+
+.hero-text {
+
+    animation: aparecer .8s ease both;
 
 }
 
@@ -322,50 +417,64 @@ select {
 
     gap: 8px;
 
-    padding: 7px 14px;
+    padding: 9px 15px;
 
-    border-radius: 30px;
+    border-radius: 50px;
 
-    background: #EAF0FF;
+    background: white;
 
     color: var(--azul-escuro);
 
-    font-size: 0.78rem;
+    font-size: .76rem;
 
     font-weight: 600;
 
+    box-shadow:
+        0 8px 25px rgba(70,80,140,.08);
+
+}
+
+
+.hero-tag i {
+    color: var(--verde);
 }
 
 
 .hero h1 {
 
-    margin: 20px 0 17px;
+    font-family: "Fredoka", sans-serif;
 
-    font-size: clamp(2.3rem, 5vw, 4rem);
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
 
-    line-height: 1.12;
+    line-height: 1.03;
 
-    letter-spacing: -1.8px;
+    letter-spacing: -1.5px;
+
+    margin: 23px 0 20px;
+
+    color: #293451;
 
 }
 
 
 .hero h1 span {
 
-    color: var(--azul);
-
     display: block;
+
+    color: var(--azul);
 
 }
 
 
 .hero p {
 
-    max-width: 630px;
+    max-width: 590px;
 
-    color: var(--texto-claro);
+    color: var(--texto-secundario);
 
-    font-size: 0.96rem;
+    font-size: .94rem;
+
+    line-height: 1.8;
 
 }
 
@@ -374,63 +483,69 @@ select {
 
     display: flex;
 
-    flex-wrap: wrap;
-
     gap: 12px;
 
-    margin-top: 28px;
+    flex-wrap: wrap;
+
+    margin-top: 29px;
 
 }
 
 
-/* ==========================================================
+/* =========================================================
    BOTÕES
-========================================================== */
+========================================================= */
 
 .btn {
 
-    border: none;
-
-    border-radius: 14px;
-
-    padding: 12px 18px;
-
     display: inline-flex;
-
-    justify-content: center;
 
     align-items: center;
 
-    gap: 9px;
+    justify-content: center;
 
-    font-size: 0.84rem;
+    gap: 8px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    padding: 13px 20px;
+
+    font-size: .82rem;
 
     font-weight: 600;
 
     cursor: pointer;
 
-    transition: 0.25s;
+    transition: .25s ease;
 
 }
 
 
 .btn-primary {
 
-    background: var(--azul);
-
     color: white;
 
+    background:
+        linear-gradient(
+            135deg,
+            var(--azul),
+            var(--lilas)
+        );
+
     box-shadow:
-        0 10px 25px rgba(88,117,217,0.23);
+        0 10px 25px rgba(102,120,232,.27);
 
 }
 
 
 .btn-primary:hover {
 
-    background: var(--azul-escuro);
+    transform: translateY(-3px);
 
-    transform: translateY(-2px);
+    box-shadow:
+        0 14px 30px rgba(102,120,232,.34);
 
 }
 
@@ -439,16 +554,16 @@ select {
 
     background: white;
 
-    border: 1px solid var(--borda);
-
     color: var(--texto);
+
+    border: 1px solid var(--borda);
 
 }
 
 
 .btn-secondary:hover {
 
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 
     box-shadow: var(--sombra);
 
@@ -461,36 +576,113 @@ select {
 
     color: var(--azul-escuro);
 
-    margin-top: 20px;
+    margin-top: 21px;
 
 }
 
 
-/* ==========================================================
-   IMAGEM DO HERO
-========================================================== */
+.btn-light:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+/* =========================================================
+   IMAGEM HERO
+========================================================= */
 
 .hero-image {
 
     position: relative;
+
+    min-height: 420px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.hero-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 390px;
+
+    height: 390px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #DDE4FF,
+            #EDE6FF
+        );
+
+    box-shadow:
+        inset 0 0 0 16px rgba(255,255,255,.45);
+
+}
+
+
+.hero-image::after {
+
+    content: "♡";
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 30px;
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 20px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: white;
+
+    color: var(--rosa);
+
+    font-size: 2rem;
+
+    transform: rotate(10deg);
+
+    box-shadow: var(--sombra);
 
 }
 
 
 .hero-image img {
 
-    width: 100%;
+    position: relative;
 
-    max-height: 420px;
+    z-index: 2;
+
+    width: min(500px, 100%);
+
+    max-height: 430px;
 
     object-fit: contain;
 
-    display: block;
-
     filter:
         drop-shadow(
-            0 20px 30px rgba(62,80,125,0.12)
+            0 25px 25px rgba(65,75,130,.16)
         );
+
+    animation: flutuar 4s ease-in-out infinite;
 
 }
 
@@ -499,42 +691,47 @@ select {
 
     position: absolute;
 
-    bottom: 15px;
+    z-index: 5;
 
     left: 0;
 
-    background: white;
-
-    padding: 12px 16px;
-
-    border-radius: 17px;
-
-    box-shadow: var(--sombra);
+    bottom: 40px;
 
     display: flex;
 
     align-items: center;
 
-    gap: 10px;
+    gap: 11px;
+
+    padding: 12px 17px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 35px rgba(62,75,130,.15);
+
+    animation: flutuar 4s ease-in-out infinite;
 
 }
 
 
 .floating-card > i {
 
-    width: 39px;
+    width: 42px;
 
-    height: 39px;
-
-    border-radius: 12px;
+    height: 42px;
 
     display: grid;
 
     place-items: center;
 
-    background: #E7F7F0;
+    border-radius: 13px;
 
-    color: var(--verde);
+    background: var(--rosa-claro);
+
+    color: var(--rosa);
 
 }
 
@@ -543,40 +740,36 @@ select {
 
     display: block;
 
-    font-size: 0.8rem;
+    font-size: .8rem;
 
 }
 
 
 .floating-card small {
 
-    display: block;
+    color: var(--texto-secundario);
 
-    color: var(--texto-claro);
-
-    font-size: 0.67rem;
+    font-size: .68rem;
 
 }
 
 
-/* ==========================================================
-   SEÇÕES
-========================================================== */
+/* =========================================================
+   TÍTULOS
+========================================================= */
 
 section {
-
-    padding: 85px 0;
-
+    padding: 90px 0;
 }
 
 
 .section-title {
 
-    max-width: 700px;
-
     text-align: center;
 
-    margin: 0 auto 43px;
+    max-width: 720px;
+
+    margin: 0 auto 45px;
 
 }
 
@@ -585,15 +778,15 @@ section {
 
     display: inline-block;
 
-    padding: 6px 13px;
+    padding: 7px 15px;
 
-    border-radius: 30px;
+    border-radius: 50px;
 
-    background: var(--azul-claro);
+    background: var(--lilas-claro);
 
-    color: var(--azul-escuro);
+    color: #765BC5;
 
-    font-size: 0.77rem;
+    font-size: .74rem;
 
     font-weight: 600;
 
@@ -602,27 +795,34 @@ section {
 
 .section-title h2 {
 
+    font-family: "Fredoka", sans-serif;
+
+    font-size: clamp(1.9rem, 3.5vw, 2.7rem);
+
+    line-height: 1.2;
+
     margin: 13px 0 10px;
-
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-
-    line-height: 1.25;
 
 }
 
 
 .section-title p {
 
-    color: var(--texto-claro);
+    color: var(--texto-secundario);
 
-    font-size: 0.88rem;
+    font-size: .86rem;
 
 }
 
 
-/* ==========================================================
+/* =========================================================
    CARDS
-========================================================== */
+========================================================= */
+
+.about {
+    background: white;
+}
+
 
 .cards {
 
@@ -630,109 +830,164 @@ section {
 
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 22px;
+    gap: 23px;
 
 }
 
 
 .info-card {
 
+    position: relative;
+
+    overflow: hidden;
+
     background: white;
 
     border: 1px solid var(--borda);
 
-    border-radius: 22px;
+    border-radius: 25px;
 
-    padding: 28px;
+    padding: 30px;
+
+    min-height: 300px;
 
     box-shadow:
-        0 7px 22px rgba(45,65,110,0.045);
+        0 8px 25px rgba(61,75,130,.055);
 
-    transition: 0.3s;
+    transition: .3s ease;
 
+}
+
+
+.info-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 105px;
+
+    height: 105px;
+
+    border-radius: 50%;
+
+    right: -38px;
+
+    top: -38px;
+
+    opacity: .45;
+
+}
+
+
+.info-card:nth-child(1)::before {
+    background: var(--azul-claro);
+}
+
+
+.info-card:nth-child(2)::before {
+    background: var(--lilas-claro);
+}
+
+
+.info-card:nth-child(3)::before {
+    background: var(--verde-claro);
 }
 
 
 .info-card:hover {
 
-    transform: translateY(-7px);
+    transform: translateY(-9px);
 
-    box-shadow: var(--sombra);
+    box-shadow:
+        0 20px 45px rgba(61,75,130,.12);
 
 }
 
 
 .card-icon {
 
-    width: 53px;
+    position: relative;
 
-    height: 53px;
+    width: 62px;
 
-    border-radius: 16px;
+    height: 62px;
 
     display: grid;
 
     place-items: center;
 
-    margin-bottom: 19px;
+    border-radius: 19px;
 
-    font-size: 1.15rem;
+    font-size: 1.35rem;
+
+    margin-bottom: 21px;
 
 }
 
 
 .card-icon.blue {
 
-    background: #EAF0FF;
-
     color: var(--azul);
+
+    background: var(--azul-claro);
 
 }
 
 
 .card-icon.purple {
 
-    background: #F0EBFF;
-
     color: var(--lilas);
+
+    background: var(--lilas-claro);
 
 }
 
 
 .card-icon.green {
 
-    background: #E7F7F0;
-
     color: var(--verde);
+
+    background: var(--verde-claro);
 
 }
 
 
 .info-card h3 {
 
-    font-size: 1.05rem;
+    font-family: "Fredoka", sans-serif;
 
-    margin-bottom: 8px;
+    font-size: 1.25rem;
+
+    margin-bottom: 9px;
 
 }
 
 
 .info-card p {
 
-    color: var(--texto-claro);
+    color: var(--texto-secundario);
 
-    font-size: 0.84rem;
+    font-size: .81rem;
 
-    margin-bottom: 17px;
+    line-height: 1.7;
+
+    margin-bottom: 20px;
 
 }
 
 
 .info-card a {
 
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
     color: var(--azul-escuro);
 
-    font-size: 0.8rem;
+    font-size: .78rem;
 
     font-weight: 600;
 
@@ -740,46 +995,56 @@ section {
 
 
 .info-card a i {
-
-    margin-left: 4px;
-
-    transition: 0.2s;
-
+    transition: .2s;
 }
 
 
 .info-card a:hover i {
+    transform: translateX(5px);
+}
 
-    transform: translateX(4px);
+
+/* =========================================================
+   ACOLHIMENTO
+========================================================= */
+
+.welcome {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #F8F9FE;
 
 }
 
 
-/* ==========================================================
-   MENSAGEM DE ACOLHIMENTO
-========================================================== */
+.welcome::before {
 
-.welcome {
+    content: "";
 
-    background: white;
+    position: absolute;
+
+    width: 230px;
+
+    height: 230px;
+
+    border-radius: 50%;
+
+    background: rgba(155,130,232,.09);
+
+    right: -80px;
+
+    top: -80px;
 
 }
 
 
 .welcome-box {
 
-    border-radius: 28px;
+    position: relative;
 
-    padding: 42px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #536FC8,
-            #8072C9
-        );
-
-    color: white;
+    overflow: hidden;
 
     display: flex;
 
@@ -787,70 +1052,116 @@ section {
 
     gap: 25px;
 
+    padding: 45px;
+
+    border-radius: 30px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            120deg,
+            #6678E8,
+            #8977D8 60%,
+            #9A82E5
+        );
+
     box-shadow:
-        0 20px 45px rgba(74,87,155,0.18);
+        0 20px 50px rgba(83,94,170,.22);
+
+}
+
+
+.welcome-box::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 210px;
+
+    height: 210px;
+
+    border: 30px solid rgba(255,255,255,.08);
+
+    border-radius: 50%;
+
+    right: -60px;
+
+    bottom: -90px;
 
 }
 
 
 .welcome-icon {
 
-    width: 58px;
-
-    height: 58px;
-
     flex-shrink: 0;
 
-    border-radius: 18px;
+    width: 65px;
 
-    background: rgba(255,255,255,0.15);
+    height: 65px;
 
     display: grid;
 
     place-items: center;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.17);
+
+    font-size: 1.5rem;
+
+}
+
+
+.welcome-content {
+
+    position: relative;
+
+    z-index: 2;
 
 }
 
 
 .welcome-content > span {
 
-    font-size: 0.78rem;
+    font-size: .75rem;
 
-    opacity: 0.85;
+    opacity: .85;
 
 }
 
 
 .welcome-content h2 {
 
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-family: "Fredoka", sans-serif;
 
-    line-height: 1.3;
+    font-size: 2rem;
 
-    margin: 6px 0 10px;
+    line-height: 1.25;
+
+    margin: 5px 0 10px;
 
 }
 
 
 .welcome-content p {
 
-    opacity: 0.9;
+    max-width: 800px;
 
-    max-width: 780px;
+    font-size: .84rem;
 
-    font-size: 0.88rem;
+    opacity: .91;
 
 }
 
 
-/* ==========================================================
-   COMO PODEMOS AJUDAR
-========================================================== */
+/* =========================================================
+   AJUDA
+========================================================= */
 
 .help {
-
-    background: #F7F9FC;
-
+    background: white;
 }
 
 
@@ -858,35 +1169,41 @@ section {
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
 
-    gap: 18px;
+    gap: 20px;
 
 }
 
 
 .help-item {
 
-    background: white;
+    position: relative;
 
-    border: 1px solid var(--borda);
-
-    border-radius: 20px;
-
-    padding: 23px;
+    overflow: hidden;
 
     display: flex;
 
-    gap: 18px;
+    gap: 20px;
 
-    transition: 0.25s;
+    padding: 26px;
+
+    border-radius: 22px;
+
+    background: #FBFCFF;
+
+    border: 1px solid var(--borda);
+
+    transition: .3s;
 
 }
 
 
 .help-item:hover {
 
-    transform: translateY(-4px);
+    transform: translateY(-5px);
+
+    background: white;
 
     box-shadow: var(--sombra);
 
@@ -895,11 +1212,11 @@ section {
 
 .help-item .number {
 
-    color: #C3CCDB;
+    font-family: "Fredoka", sans-serif;
 
-    font-weight: 700;
+    font-size: 1.2rem;
 
-    font-size: 0.88rem;
+    color: #C5CAE0;
 
 }
 
@@ -908,50 +1225,71 @@ section {
 
     color: var(--azul);
 
+    font-size: 1.15rem;
+
+}
+
+
+.help-item:nth-child(2) i {
+    color: var(--lilas);
+}
+
+
+.help-item:nth-child(3) i {
+    color: var(--rosa);
+}
+
+
+.help-item:nth-child(4) i {
+    color: var(--verde);
 }
 
 
 .help-item h3 {
 
-    font-size: 0.98rem;
+    font-family: "Fredoka", sans-serif;
 
-    margin: 4px 0;
+    font-size: 1.08rem;
+
+    margin: 5px 0;
 
 }
 
 
 .help-item p {
 
-    color: var(--texto-claro);
+    color: var(--texto-secundario);
 
-    font-size: 0.81rem;
+    font-size: .78rem;
 
 }
 
 
-/* ==========================================================
-   BANNER QUIZ
-========================================================== */
+/* =========================================================
+   QUIZ BANNER
+========================================================= */
 
 .quiz-banner {
 
-    padding: 60px 0;
+    position: relative;
+
+    background:
+        linear-gradient(
+            180deg,
+            white,
+            #F6F3FF
+        );
+
+    padding: 75px 0 95px;
 
 }
 
 
 .quiz-content {
 
-    background:
-        linear-gradient(
-            135deg,
-            #EAF0FF,
-            #F2EDFF
-        );
+    position: relative;
 
-    border-radius: 28px;
-
-    padding: 35px 40px;
+    overflow: hidden;
 
     display: flex;
 
@@ -959,9 +1297,53 @@ section {
 
     justify-content: space-between;
 
-    gap: 30px;
+    gap: 35px;
 
-    border: 1px solid #DFE5F5;
+    padding: 45px 50px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            125deg,
+            #E8EDFF,
+            #F2EBFF
+        );
+
+    border: 1px solid #DEE4FA;
+
+    box-shadow:
+        0 15px 40px rgba(88,90,155,.09);
+
+}
+
+
+.quiz-content::before {
+
+    content: "?";
+
+    position: absolute;
+
+    right: 45px;
+
+    top: -55px;
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 13rem;
+
+    font-weight: 700;
+
+    color: rgba(102,120,232,.07);
+
+}
+
+
+.quiz-content > div {
+
+    position: relative;
+
+    z-index: 2;
 
 }
 
@@ -974,9 +1356,15 @@ section {
 
     gap: 7px;
 
+    padding: 7px 13px;
+
+    border-radius: 50px;
+
+    background: white;
+
     color: var(--azul-escuro);
 
-    font-size: 0.78rem;
+    font-size: .74rem;
 
     font-weight: 600;
 
@@ -985,107 +1373,127 @@ section {
 
 .quiz-content h2 {
 
-    font-size: 1.65rem;
+    font-family: "Fredoka", sans-serif;
 
-    margin: 7px 0;
+    font-size: 2rem;
+
+    margin: 10px 0 7px;
 
 }
 
 
 .quiz-content p {
 
-    color: var(--texto-claro);
+    max-width: 600px;
 
-    font-size: 0.85rem;
+    color: var(--texto-secundario);
 
-    max-width: 650px;
-
-}
-
-
-/* ==========================================================
-   PÁGINA DO QUIZ
-========================================================== */
-
-.quiz-page {
-
-    display: none;
-
-    min-height: 80vh;
-
-    padding: 70px 0;
+    font-size: .82rem;
 
 }
 
 
-.quiz-page.active {
+/* =========================================================
+   PÁGINAS INTERNAS
+========================================================= */
 
-    display: block;
+.page-intro {
 
-}
+    max-width: 800px;
 
-
-.quiz-header {
-
-    text-align: center;
-
-    max-width: 700px;
-
-    margin: 0 auto 35px;
+    margin: 0 auto 40px;
 
 }
 
 
-.quiz-header span {
+.page-intro > span {
 
     display: inline-block;
+
+    padding: 7px 15px;
+
+    border-radius: 50px;
 
     background: var(--azul-claro);
 
     color: var(--azul-escuro);
 
-    padding: 6px 14px;
-
-    border-radius: 30px;
-
-    font-size: 0.78rem;
+    font-size: .75rem;
 
     font-weight: 600;
 
 }
 
 
-.quiz-header h1 {
+.page-intro h1 {
 
-    margin: 14px 0 8px;
+    font-family: "Fredoka", sans-serif;
 
-    font-size: 2.3rem;
+    font-size: clamp(2rem,4vw,3rem);
 
-}
+    line-height: 1.15;
 
-
-.quiz-header p {
-
-    color: var(--texto-claro);
+    margin: 14px 0 9px;
 
 }
 
 
-.quiz-box {
+.page-intro p {
 
-    max-width: 780px;
+    color: var(--texto-secundario);
+
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+.quiz-container {
+
+    max-width: 850px;
 
     margin: auto;
 
-    padding: 32px;
+}
 
-    background: white;
 
-    border: 1px solid var(--borda);
+.quiz-header {
 
-    border-radius: 25px;
+    margin-bottom: 25px;
 
-    box-shadow: var(--sombra);
+}
+
+
+.quiz-progress {
+
+    height: 10px;
+
+    background: #E8EBF4;
+
+    border-radius: 50px;
+
+    overflow: hidden;
+
+}
+
+
+#progressBar {
+
+    height: 100%;
+
+    width: 20%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--azul),
+            var(--lilas)
+        );
+
+    border-radius: 50px;
+
+    transition: .4s;
 
 }
 
@@ -1094,43 +1502,35 @@ section {
 
     display: flex;
 
-    align-items: center;
+    justify-content: space-between;
 
-    gap: 15px;
+    margin-top: 10px;
 
-    margin-bottom: 25px;
+    color: var(--texto-secundario);
 
-    font-size: 0.78rem;
-
-    color: var(--texto-claro);
+    font-size: .75rem;
 
 }
 
 
-.progress {
+.quiz-content {
 
-    flex: 1;
-
-    height: 8px;
-
-    background: #EDEFF5;
-
-    border-radius: 20px;
-
-    overflow: hidden;
+    position: relative;
 
 }
 
 
-.progress-bar {
+.quiz-card {
 
-    height: 100%;
+    background: white;
 
-    width: 0;
+    border: 1px solid var(--borda);
 
-    background: var(--azul);
+    border-radius: 28px;
 
-    transition: 0.3s;
+    padding: 35px;
+
+    box-shadow: var(--sombra);
 
 }
 
@@ -1139,20 +1539,20 @@ section {
 
     color: var(--azul);
 
-    font-size: 0.76rem;
+    font-size: .75rem;
 
     font-weight: 700;
 
 }
 
 
-.question {
+.quiz-card h2 {
 
-    font-size: 1.3rem;
+    font-family: "Fredoka", sans-serif;
 
-    line-height: 1.45;
+    font-size: 1.55rem;
 
-    margin: 8px 0 22px;
+    margin: 10px 0 25px;
 
 }
 
@@ -1161,7 +1561,7 @@ section {
 
     display: grid;
 
-    gap: 11px;
+    gap: 12px;
 
 }
 
@@ -1174,7 +1574,7 @@ section {
 
     background: #FAFBFD;
 
-    border-radius: 14px;
+    border-radius: 15px;
 
     padding: 14px 16px;
 
@@ -1184,9 +1584,9 @@ section {
 
     cursor: pointer;
 
-    transition: 0.2s;
+    transition: .2s;
 
-    font-size: 0.85rem;
+    font-size: .85rem;
 
 }
 
@@ -1197,23 +1597,25 @@ section {
 
     background: #F3F6FF;
 
+    transform: translateX(3px);
+
 }
 
 
 .answer.correct {
 
-    background: #E9F8F1;
+    background: var(--verde-claro);
 
-    border-color: #6ABD99;
+    border-color: var(--verde);
 
 }
 
 
 .answer.wrong {
 
-    background: #FFF0F2;
+    background: var(--rosa-claro);
 
-    border-color: #DE8D99;
+    border-color: var(--rosa);
 
 }
 
@@ -1226,14 +1628,14 @@ section {
 
     border-radius: 13px;
 
-    font-size: 0.82rem;
+    font-size: .82rem;
 
 }
 
 
 .feedback.correct {
 
-    background: #E9F8F1;
+    background: var(--verde-claro);
 
     color: #367D64;
 
@@ -1242,7 +1644,7 @@ section {
 
 .feedback.wrong {
 
-    background: #FFF0F2;
+    background: var(--rosa-claro);
 
     color: #A44857;
 
@@ -1250,13 +1652,9 @@ section {
 
 
 .next-btn {
-
     margin-top: 18px;
-
 }
 
-
-/* RESULTADO */
 
 .quiz-result {
 
@@ -1265,11 +1663,11 @@ section {
 }
 
 
-.quiz-result i {
+.quiz-result > i {
 
-    width: 70px;
+    width: 75px;
 
-    height: 70px;
+    height: 75px;
 
     margin: 0 auto 15px;
 
@@ -1279,9 +1677,9 @@ section {
 
     place-items: center;
 
-    background: var(--azul-claro);
+    background: var(--amarelo-claro);
 
-    color: var(--azul);
+    color: #D7AA35;
 
     font-size: 1.7rem;
 
@@ -1290,14 +1688,16 @@ section {
 
 .quiz-result h2 {
 
-    font-size: 1.8rem;
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 2rem;
 
 }
 
 
 .quiz-result p {
 
-    color: var(--texto-claro);
+    color: var(--texto-secundario);
 
     margin: 7px auto 22px;
 
@@ -1306,77 +1706,15 @@ section {
 }
 
 
-/* ==========================================================
-   PORTAL DE ESCUTA
-========================================================== */
-
-.escuta-page {
-
-    display: none;
-
-    min-height: 80vh;
-
-    padding: 70px 0;
-
-}
-
-
-.escuta-page.active {
-
-    display: block;
-
-}
-
-
-.page-intro {
-
-    max-width: 800px;
-
-    margin-bottom: 40px;
-
-}
-
-
-.page-intro span {
-
-    display: inline-block;
-
-    padding: 6px 13px;
-
-    border-radius: 30px;
-
-    background: var(--azul-claro);
-
-    color: var(--azul-escuro);
-
-    font-size: 0.77rem;
-
-    font-weight: 600;
-
-}
-
-
-.page-intro h1 {
-
-    margin: 14px 0 9px;
-
-    font-size: 2.3rem;
-
-}
-
-
-.page-intro p {
-
-    color: var(--texto-claro);
-
-}
-
+/* =========================================================
+   ESCUTA
+========================================================= */
 
 .escuta-grid {
 
     display: grid;
 
-    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-columns: .8fr 1.2fr;
 
     gap: 25px;
 
@@ -1390,28 +1728,44 @@ section {
 
     border: 1px solid var(--borda);
 
-    border-radius: 24px;
+    border-radius: 25px;
 
-    padding: 30px;
+    padding: 32px;
 
     box-shadow:
-        0 7px 22px rgba(45,65,110,0.05);
+        0 8px 25px rgba(61,75,130,.05);
 
 }
 
 
 .escuta-info > i {
 
-    font-size: 2rem;
+    width: 62px;
 
-    color: var(--azul);
+    height: 62px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 19px;
+
+    background: var(--rosa-claro);
+
+    color: var(--rosa);
+
+    font-size: 1.35rem;
 
 }
 
 
 .escuta-info h2 {
 
-    margin: 10px 0;
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 1.5rem;
+
+    margin: 13px 0 8px;
 
 }
 
@@ -1419,19 +1773,24 @@ section {
 .escuta-info p,
 .escuta-info li {
 
-    color: var(--texto-claro);
+    color: var(--texto-secundario);
 
-    font-size: 0.85rem;
+    font-size: .8rem;
 
 }
 
 
 .escuta-info ul {
 
-    margin-top: 15px;
+    margin-top: 17px;
 
     padding-left: 20px;
 
+}
+
+
+.escuta-info li {
+    margin-bottom: 7px;
 }
 
 
@@ -1448,7 +1807,7 @@ section {
 
 .escuta-form label {
 
-    font-size: 0.82rem;
+    font-size: .8rem;
 
     font-weight: 600;
 
@@ -1460,19 +1819,23 @@ section {
 .escuta-form select,
 .escuta-form textarea {
 
-    border: 1px solid #DDE3EE;
+    width: 100%;
 
-    border-radius: 13px;
+    border: 1px solid #DDE2EF;
 
-    padding: 12px;
+    border-radius: 14px;
+
+    padding: 12px 14px;
 
     outline: none;
 
     color: var(--texto);
 
-    resize: vertical;
+    background: #FBFCFF;
 
-    font-size: 0.84rem;
+    font-size: .82rem;
+
+    transition: .2s;
 
 }
 
@@ -1480,10 +1843,12 @@ section {
 .escuta-form select:focus,
 .escuta-form textarea:focus {
 
-    border-color: #9EAFE1;
+    border-color: var(--azul);
 
     box-shadow:
-        0 0 0 3px #EDF2FF;
+        0 0 0 4px var(--azul-claro);
+
+    background: white;
 
 }
 
@@ -1492,48 +1857,30 @@ section {
 
     display: none;
 
-    background: #E9F8F1;
-
-    color: #367D64;
+    padding: 15px;
 
     border-radius: 14px;
 
-    padding: 15px;
+    background: var(--verde-claro);
 
-    font-size: 0.83rem;
+    color: #367B60;
+
+    font-size: .8rem;
 
 }
 
 
-/* ==========================================================
+/* =========================================================
    REFERÊNCIAS
-========================================================== */
-
-.referencias-page {
-
-    display: none;
-
-    min-height: 80vh;
-
-    padding: 70px 0;
-
-}
-
-
-.referencias-page.active {
-
-    display: block;
-
-}
-
+========================================================= */
 
 .reference-grid {
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
 
-    gap: 20px;
+    gap: 22px;
 
 }
 
@@ -1544,82 +1891,145 @@ section {
 
     border: 1px solid var(--borda);
 
-    border-radius: 22px;
+    border-radius: 24px;
 
-    padding: 28px;
+    padding: 30px;
 
     box-shadow:
-        0 7px 22px rgba(45,65,110,0.05);
+        0 8px 25px rgba(61,75,130,.05);
+
+    transition: .3s;
 
 }
 
 
-.reference-card i {
+.reference-card:hover {
 
-    font-size: 1.7rem;
+    transform: translateY(-6px);
+
+    box-shadow: var(--sombra);
+
+}
+
+
+.reference-card > i {
+
+    width: 58px;
+
+    height: 58px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 17px;
 
     color: var(--azul);
 
-    margin-bottom: 13px;
+    background: var(--azul-claro);
+
+    font-size: 1.3rem;
+
+    margin-bottom: 18px;
+
+}
+
+
+.reference-card:nth-child(2) > i {
+
+    color: var(--verde);
+
+    background: var(--verde-claro);
+
+}
+
+
+.reference-card:nth-child(3) > i {
+
+    color: var(--lilas);
+
+    background: var(--lilas-claro);
 
 }
 
 
 .reference-card h2 {
 
-    font-size: 1.05rem;
+    font-family: "Fredoka", sans-serif;
 
-    margin-bottom: 7px;
+    font-size: 1.2rem;
+
+    margin-bottom: 8px;
 
 }
 
 
 .reference-card p {
 
-    color: var(--texto-claro);
+    color: var(--texto-secundario);
 
-    font-size: 0.83rem;
+    font-size: .8rem;
 
 }
 
 
 .local-note {
 
-    margin-top: 22px;
+    margin-top: 25px;
 
-    background: #EEF2FF;
-
-    border-radius: 20px;
-
-    padding: 24px;
+    padding: 25px;
 
     display: flex;
 
     gap: 15px;
 
+    border-radius: 22px;
+
+    background: var(--amarelo-claro);
+
+    border: 1px solid #F6E6B1;
+
 }
 
 
-.local-note i {
+.local-note > i {
 
-    color: var(--azul);
+    color: #D6A83B;
 
     font-size: 1.3rem;
 
 }
 
 
-/* ==========================================================
+.local-note h2 {
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 1.1rem;
+
+}
+
+
+.local-note p {
+
+    color: #766D55;
+
+    font-size: .8rem;
+
+}
+
+
+/* =========================================================
    FOOTER
-========================================================== */
+========================================================= */
 
 .footer {
 
-    background: #202B40;
+    background: #252E49;
 
-    color: #C9D2E1;
+    color: white;
 
-    padding-top: 55px;
+    padding-top: 60px;
 
 }
 
@@ -1628,11 +2038,11 @@ section {
 
     display: grid;
 
-    grid-template-columns: 1.4fr 1fr 1.4fr;
+    grid-template-columns: 1.3fr 1fr 1.4fr;
 
-    gap: 45px;
+    gap: 50px;
 
-    padding-bottom: 40px;
+    padding-bottom: 45px;
 
 }
 
@@ -1644,40 +2054,29 @@ section {
 }
 
 
-.footer .logo i {
-
-    background: #33415B;
-
-    color: white;
-
-}
-
-
 .footer p {
 
-    color: #9DA9BC;
+    color: #AEB7CB;
 
-    font-size: 0.8rem;
+    font-size: .78rem;
 
 }
 
 
 .footer-brand p {
 
-    margin-top: 15px;
+    max-width: 350px;
 
-    max-width: 340px;
+    margin-top: 15px;
 
 }
 
 
 .footer h3 {
 
-    color: white;
+    font-family: "Fredoka", sans-serif;
 
-    font-size: 0.88rem;
-
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 
 }
 
@@ -1688,18 +2087,18 @@ section {
 
     flex-direction: column;
 
-    gap: 5px;
+    gap: 7px;
 
 }
 
 
 .footer-links a {
 
-    color: #AEB8C9;
+    color: #AEB7CB;
 
-    font-size: 0.8rem;
+    font-size: .78rem;
 
-    transition: 0.2s;
+    transition: .2s;
 
 }
 
@@ -1708,53 +2107,65 @@ section {
 
     color: white;
 
+    transform: translateX(4px);
+
 }
 
 
 .footer-bottom {
 
-    border-top: 1px solid #354158;
-
-    padding: 17px;
+    padding: 18px;
 
     text-align: center;
+
+    border-top: 1px solid rgba(255,255,255,.08);
 
 }
 
 
-/* ==========================================================
+/* =========================================================
    VOLTAR AO TOPO
-========================================================== */
+========================================================= */
 
 .back-to-top {
 
     position: fixed;
 
+    z-index: 999;
+
     right: 22px;
 
     bottom: 22px;
 
-    width: 44px;
+    width: 48px;
 
-    height: 44px;
+    height: 48px;
 
     border: none;
 
-    border-radius: 14px;
+    border-radius: 16px;
 
-    background: var(--azul);
+    background:
+        linear-gradient(
+            135deg,
+            var(--azul),
+            var(--lilas)
+        );
 
     color: white;
 
     cursor: pointer;
 
+    box-shadow:
+        0 10px 25px rgba(80,90,160,.25);
+
     opacity: 0;
 
-    pointer-events: none;
+    visibility: hidden;
 
-    transition: 0.25s;
+    transform: translateY(15px);
 
-    box-shadow: var(--sombra);
+    transition: .3s;
 
 }
 
@@ -1763,32 +2174,53 @@ section {
 
     opacity: 1;
 
-    pointer-events: auto;
+    visibility: visible;
+
+    transform: translateY(0);
 
 }
 
 
-/* ==========================================================
-   ESCONDER PÁGINA PRINCIPAL
-========================================================== */
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
 
-.main-home.hidden {
+@keyframes flutuar {
 
-    display: none;
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 
 }
 
 
-/* ==========================================================
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
    RESPONSIVIDADE
-========================================================== */
+========================================================= */
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
 
     .menu-btn {
-
         display: block;
-
     }
 
 
@@ -1798,95 +2230,83 @@ section {
 
         position: absolute;
 
-        top: 76px;
+        left: 5%;
 
-        left: 4%;
+        right: 5%;
 
-        right: 4%;
+        top: 78px;
 
-        background: white;
-
-        border: 1px solid var(--borda);
-
-        border-radius: 18px;
-
-        padding: 9px;
-
-        box-shadow: var(--sombra);
+        padding: 10px;
 
         flex-direction: column;
 
         align-items: stretch;
 
+        background: white;
+
+        border-radius: 20px;
+
+        box-shadow: var(--sombra);
+
+        border: 1px solid var(--borda);
+
     }
 
 
     .nav.open {
-
         display: flex;
-
     }
 
 
     .nav a {
-
         width: 100%;
-
     }
 
 
     .hero-content {
-
         grid-template-columns: 1fr;
+        text-align: center;
+    }
 
-        gap: 35px;
 
+    .hero-text p {
+        margin: auto;
+    }
+
+
+    .hero-buttons {
+        justify-content: center;
     }
 
 
     .hero-image {
-
-        max-width: 600px;
-
-        margin: auto;
-
+        min-height: 350px;
     }
 
 
     .cards {
-
         grid-template-columns: 1fr;
-
     }
 
 
     .reference-grid {
-
         grid-template-columns: 1fr;
-
     }
 
 
     .escuta-grid {
-
         grid-template-columns: 1fr;
-
-    }
-
-
-    .footer-content {
-
-        grid-template-columns: 1fr 1fr;
-
     }
 
 
     .quiz-content {
-
         flex-direction: column;
-
         align-items: flex-start;
+    }
 
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
     }
 
 }
@@ -1894,47 +2314,35 @@ section {
 
 @media (max-width: 600px) {
 
+    .container {
+        width: 90%;
+    }
+
+
     section {
-
         padding: 65px 0;
-
     }
 
 
     .hero {
-
-        padding: 60px 0 75px;
-
+        padding: 60px 0 70px;
     }
 
 
     .hero h1 {
-
-        font-size: 2.35rem;
-
-        letter-spacing: -1px;
-
+        font-size: 2.7rem;
     }
 
 
-    .hero-buttons {
-
-        flex-direction: column;
-
-    }
-
-
-    .hero-buttons .btn {
-
-        width: 100%;
-
+    .hero-image::before {
+        width: 290px;
+        height: 290px;
     }
 
 
     .floating-card {
-
-        left: 0;
-
+        left: 5px;
+        bottom: 15px;
     }
 
 
@@ -1947,54 +2355,29 @@ section {
     }
 
 
+    .welcome-content h2 {
+        font-size: 1.65rem;
+    }
+
+
     .help-grid {
-
         grid-template-columns: 1fr;
-
     }
 
 
     .quiz-content {
-
-        padding: 28px;
-
+        padding: 30px;
     }
 
 
-    .quiz-box {
-
-        padding: 20px;
-
-    }
-
-
-    .quiz-info {
-
-        flex-wrap: wrap;
-
-    }
-
-
-    .progress {
-
-        flex-basis: 100%;
-
-        order: 3;
-
+    .quiz-content h2 {
+        font-size: 1.65rem;
     }
 
 
     .footer-content {
-
         grid-template-columns: 1fr;
-
-    }
-
-
-    .page-intro h1 {
-
-        font-size: 2rem;
-
+        gap: 30px;
     }
 
 }
@@ -2007,9 +2390,9 @@ section {
 <body>
 
 
-<!-- ==========================================================
-     HEADER
-========================================================== -->
+<!-- =========================================================
+     CABEÇALHO
+========================================================= -->
 
 <header class="header">
 
@@ -2033,8 +2416,8 @@ section {
 
 
             <a href="#inicio"
-               class="active"
                id="navInicio"
+               class="active"
                onclick="showHome()">
 
                 <i class="fa-solid fa-house"></i>
@@ -2094,9 +2477,9 @@ section {
 
 
 
-<!-- ==========================================================
-     PÁGINA PRINCIPAL
-========================================================== -->
+<!-- =========================================================
+     INÍCIO
+========================================================= -->
 
 <div id="home"
      class="main-home">
@@ -2105,7 +2488,9 @@ section {
 <main>
 
 
-<!-- HERO -->
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <section class="hero">
 
@@ -2177,11 +2562,6 @@ section {
         <div class="hero-image">
 
 
-            <!--
-                MANTIDA A IMAGEM DO SEU CÓDIGO ORIGINAL.
-                Deixe estudantes.png dentro da pasta img.
-            -->
-
             <img src="img/estudantes.png"
                  alt="Estudantes conversando e apoiando uns aos outros">
 
@@ -2216,9 +2596,9 @@ section {
 
 
 
-<!-- ==========================================================
-     SOBRE O PROJETO
-========================================================== -->
+<!-- =========================================================
+     SOBRE
+========================================================= -->
 
 <section class="about"
          id="sobre">
@@ -2374,9 +2754,9 @@ section {
 
 
 
-<!-- ==========================================================
-     MENSAGEM DE ACOLHIMENTO
-========================================================== -->
+<!-- =========================================================
+     ACOLHIMENTO
+========================================================= -->
 
 <section class="welcome">
 
@@ -2440,9 +2820,9 @@ section {
 
 
 
-<!-- ==========================================================
+<!-- =========================================================
      COMO PODEMOS AJUDAR
-========================================================== -->
+========================================================= -->
 
 <section class="help">
 
@@ -2480,7 +2860,6 @@ section {
 
             <div class="help-item">
 
-
                 <span class="number">
                     01
                 </span>
@@ -2503,13 +2882,11 @@ section {
 
                 </div>
 
-
             </div>
 
 
 
             <div class="help-item">
-
 
                 <span class="number">
                     02
@@ -2533,13 +2910,11 @@ section {
 
                 </div>
 
-
             </div>
 
 
 
             <div class="help-item">
-
 
                 <span class="number">
                     03
@@ -2563,13 +2938,11 @@ section {
 
                 </div>
 
-
             </div>
 
 
 
             <div class="help-item">
-
 
                 <span class="number">
                     04
@@ -2593,7 +2966,6 @@ section {
 
                 </div>
 
-
             </div>
 
 
@@ -2605,9 +2977,9 @@ section {
 
 
 
-<!-- ==========================================================
-     CHAMADA PARA O QUIZ
-========================================================== -->
+<!-- =========================================================
+     CHAMADA QUIZ
+========================================================= -->
 
 <section class="quiz-banner">
 
@@ -2643,9 +3015,8 @@ section {
         </div>
 
 
-        <button
-            class="btn btn-primary"
-            onclick="showPage('quiz')">
+        <button class="btn btn-primary"
+                onclick="showPage('quiz')">
 
             Fazer o Quiz
 
@@ -2665,92 +3036,9 @@ section {
 
 
 
-<!-- ==========================================================
-     PÁGINA DO QUIZ
-========================================================== -->
-
-<section id="quizPage"
-         class="quiz-page">
-
-
-    <div class="container">
-
-
-        <div class="quiz-header">
-
-
-            <span>
-
-                <i class="fa-solid fa-circle-question"></i>
-
-                Quiz educativo
-
-            </span>
-
-
-            <h1>
-                Você sabe como agir na internet?
-            </h1>
-
-
-            <p>
-
-                Responda às cinco perguntas e veja quanto você
-                aprendeu sobre cyberbullying e segurança digital.
-
-            </p>
-
-
-        </div>
-
-
-
-        <div class="quiz-box">
-
-
-            <div class="quiz-info">
-
-
-                <span id="quizCounter">
-                    Pergunta 1 de 5
-                </span>
-
-
-                <div class="progress">
-
-                    <div class="progress-bar"
-                         id="progressBar">
-                    </div>
-
-                </div>
-
-
-                <span id="quizScore">
-                    0 pontos
-                </span>
-
-
-            </div>
-
-
-            <div id="quizContent">
-
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ==========================================================
+<!-- =========================================================
      PORTAL DE ESCUTA
-========================================================== -->
+========================================================= -->
 
 <section id="escutaPage"
          class="escuta-page">
@@ -2764,23 +3052,23 @@ section {
 
             <span>
 
-                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-comments"></i>
 
-                Um espaço acolhedor
+                Espaço de acolhimento
 
             </span>
 
 
             <h1>
-                Quer colocar o que está sentindo para fora?
+                Quer conversar?
             </h1>
 
 
             <p>
 
-                Este espaço é uma simulação educativa.
-                Você pode escrever e receber uma mensagem de
-                acolhimento. Nenhuma informação é enviada ou armazenada.
+                Este espaço foi pensado para que você possa refletir
+                sobre o que está acontecendo e encontrar caminhos
+                para procurar ajuda.
 
             </p>
 
@@ -2795,7 +3083,7 @@ section {
             <div class="escuta-info">
 
 
-                <i class="fa-solid fa-shield-heart"></i>
+                <i class="fa-solid fa-heart"></i>
 
 
                 <h2>
@@ -2805,8 +3093,9 @@ section {
 
                 <p>
 
-                    Se estiver passando por uma situação de
-                    cyberbullying, não precisa enfrentar isso sozinho.
+                    Às vezes, falar sobre o que estamos sentindo
+                    pode ser difícil. Você não precisa enfrentar
+                    uma situação sozinho.
 
                 </p>
 
@@ -2814,20 +3103,19 @@ section {
                 <ul>
 
                     <li>
-                        Guarde provas das mensagens ou publicações,
-                        quando for seguro fazer isso.
+                        Procure um adulto de confiança.
                     </li>
 
                     <li>
-                        Evite responder às agressões no impulso.
+                        Converse com alguém da escola.
                     </li>
 
                     <li>
-                        Converse com um adulto de confiança.
+                        Guarde provas de situações de cyberbullying.
                     </li>
 
                     <li>
-                        Procure alguém da escola que possa ajudar.
+                        Utilize as ferramentas de denúncia das plataformas.
                     </li>
 
                 </ul>
@@ -2837,81 +3125,66 @@ section {
 
 
 
-            <form class="escuta-form"
-                  id="escutaForm">
+            <form id="escutaForm"
+                  class="escuta-form">
 
 
                 <label for="sentimento">
-
                     Como você está se sentindo?
-
                 </label>
 
 
                 <select id="sentimento"
                         required>
 
-
                     <option value="">
                         Escolha uma opção
                     </option>
 
-
-                    <option value="triste">
+                    <option>
                         Triste
                     </option>
 
-
-                    <option value="preocupado(a)">
-                        Preocupado(a)
-                    </option>
-
-
-                    <option value="com raiva">
-                        Com raiva
-                    </option>
-
-
-                    <option value="confuso(a)">
-                        Confuso(a)
-                    </option>
-
-
-                    <option value="com medo">
+                    <option>
                         Com medo
                     </option>
 
-
-                    <option value="sem saber o que fazer">
-                        Sem saber o que fazer
+                    <option>
+                        Confuso(a)
                     </option>
 
+                    <option>
+                        Irritado(a)
+                    </option>
+
+                    <option>
+                        Preocupado(a)
+                    </option>
+
+                    <option>
+                        Não sei explicar
+                    </option>
 
                 </select>
 
 
-                <label for="desabafo">
 
-                    Escreva aqui
-
+                <label for="situacao">
+                    Conte, se quiser, o que aconteceu.
                 </label>
 
 
-                <textarea
-                    id="desabafo"
-                    rows="7"
-                    placeholder="Escreva o que você gostaria de colocar para fora..."
-                    required>
-                </textarea>
+                <textarea id="situacao"
+                          rows="7"
+                          placeholder="Este espaço é apenas uma simulação. Não coloque informações pessoais."></textarea>
 
 
-                <button
-                    type="submit"
-                    class="btn btn-primary">
+                <button class="btn btn-primary"
+                        type="submit">
 
-                    Receber uma mensagem de acolhimento
+                    Enviar desabafo
 
-                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-paper-plane"></i>
 
                 </button>
 
@@ -2933,9 +3206,88 @@ section {
 
 
 
-<!-- ==========================================================
+<!-- =========================================================
+     QUIZ
+========================================================= -->
+
+<section id="quizPage"
+         class="quiz-page">
+
+
+    <div class="container quiz-container">
+
+
+        <div class="page-intro">
+
+
+            <span>
+
+                <i class="fa-solid fa-gamepad"></i>
+
+                Teste seus conhecimentos
+
+            </span>
+
+
+            <h1>
+                Quiz de Segurança Digital
+            </h1>
+
+
+            <p>
+
+                Responda às perguntas e veja quanto você sabe
+                sobre cyberbullying e segurança na internet.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="quiz-header">
+
+
+            <div class="quiz-progress">
+
+                <div id="progressBar"></div>
+
+            </div>
+
+
+            <div class="quiz-info">
+
+                <span id="questionCounter">
+                    Pergunta 1 de 5
+                </span>
+
+                <span id="quizScore">
+                    0 pontos
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div id="quizContent"
+             class="quiz-content">
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
      REFERÊNCIAS
-========================================================== -->
+========================================================= -->
 
 <section id="referenciasPage"
          class="referencias-page">
@@ -2964,8 +3316,7 @@ section {
             <p>
 
                 Esta página pode ser personalizada com os contatos
-                e serviços disponíveis para os estudantes da sua
-                região.
+                e serviços disponíveis para os estudantes da sua região.
 
             </p>
 
@@ -3088,9 +3439,9 @@ section {
 
 
 
-<!-- ==========================================================
+<!-- =========================================================
      FOOTER
-========================================================== -->
+========================================================= -->
 
 <footer class="footer">
 
@@ -3204,7 +3555,9 @@ section {
 
 
 
-<!-- BOTÃO VOLTAR AO TOPO -->
+<!-- =========================================================
+     BOTÃO TOPO
+========================================================= -->
 
 <button id="backToTop"
         class="back-to-top"
@@ -3218,9 +3571,9 @@ section {
 
 <script>
 
-/* ==========================================================
-   MENU MOBILE
-========================================================== */
+/* =========================================================
+   MENU
+========================================================= */
 
 const menuBtn =
     document.getElementById("menuBtn");
@@ -3243,10 +3596,9 @@ menuBtn.addEventListener("click", function () {
 });
 
 
-
-/* ==========================================================
-   ELEMENTOS DAS PÁGINAS
-========================================================== */
+/* =========================================================
+   PÁGINAS
+========================================================= */
 
 const home =
     document.getElementById("home");
@@ -3261,10 +3613,9 @@ const referenciasPage =
     document.getElementById("referenciasPage");
 
 
-
-/* ==========================================================
+/* =========================================================
    MENU ATIVO
-========================================================== */
+========================================================= */
 
 function setActive(id) {
 
@@ -3277,20 +3628,21 @@ function setActive(id) {
         });
 
 
-    document
-        .getElementById(id)
-        .classList.add("active");
+    const item =
+        document.getElementById(id);
+
+    if (item) {
+        item.classList.add("active");
+    }
 
 }
 
 
-
-/* ==========================================================
+/* =========================================================
    MOSTRAR PÁGINA
-========================================================== */
+========================================================= */
 
 function showPage(page) {
-
 
     home.classList.add("hidden");
 
@@ -3344,13 +3696,11 @@ function showPage(page) {
 }
 
 
-
-/* ==========================================================
-   VOLTAR PARA INÍCIO
-========================================================== */
+/* =========================================================
+   INÍCIO
+========================================================= */
 
 function showHome() {
-
 
     home.classList.remove("hidden");
 
@@ -3378,10 +3728,9 @@ function showHome() {
 }
 
 
-
-/* ==========================================================
+/* =========================================================
    BOTÃO VOLTAR AO TOPO
-========================================================== */
+========================================================= */
 
 const backToTop =
     document.getElementById("backToTop");
@@ -3415,90 +3764,86 @@ backToTop.addEventListener("click", function () {
 });
 
 
-
-/* ==========================================================
+/* =========================================================
    PORTAL DE ESCUTA
-========================================================== */
+========================================================= */
 
 const escutaForm =
     document.getElementById("escutaForm");
 
 
-escutaForm.addEventListener("submit", function (event) {
+escutaForm.addEventListener(
+    "submit",
+    function (event) {
 
-    event.preventDefault();
-
-
-    const sentimento =
-        document.getElementById("sentimento").value;
+        event.preventDefault();
 
 
-    const response =
-        document.getElementById("escutaResponse");
+        const sentimento =
+            document.getElementById("sentimento").value;
 
 
-    response.style.display = "block";
+        const response =
+            document.getElementById("escutaResponse");
 
 
-    response.innerHTML = `
-
-        <strong>
-            Obrigado por confiar neste espaço. 💙
-        </strong>
-
-        <br><br>
-
-        Sentir-se ${sentimento} diante de uma situação difícil
-        pode ser muito pesado.
-
-        Você não precisa resolver tudo sozinho.
-
-        Se puder, converse com um adulto de confiança,
-        professor, pedagogo ou outro profissional da escola.
-
-    `;
+        response.style.display = "block";
 
 
-    response.scrollIntoView({
+        response.innerHTML = `
 
-        behavior: "smooth",
+            <strong>
+                Obrigado por compartilhar. 💙
+            </strong>
 
-        block: "nearest"
+            <br><br>
 
-    });
+            Você não precisa enfrentar uma situação difícil
+            sozinho(a). Procure um adulto de confiança,
+            professor ou profissional da sua escola.
 
-});
+            <br><br>
+
+            <strong>
+                Lembre-se:
+            </strong>
+
+            este formulário é apenas uma simulação
+            e não armazena suas informações.
+
+        `;
+
+    }
+);
 
 
-
-/* ==========================================================
+/* =========================================================
    QUIZ
-========================================================== */
+========================================================= */
 
 const questions = [
 
-
     {
 
         question:
-            "O que melhor define o cyberbullying?",
+            "O que caracteriza uma situação de cyberbullying?",
 
         answers: [
 
-            "Uma brincadeira feita entre amigos.",
+            "Uma brincadeira entre amigos",
 
-            "A utilização de meios digitais para intimidar, humilhar ou agredir outra pessoa.",
+            "A prática repetida de agressões ou humilhações usando meios digitais",
 
-            "Qualquer discussão que aconteça na internet.",
+            "Compartilhar uma foto com autorização",
 
-            "Uma opinião diferente publicada nas redes sociais."
+            "Conversar em um grupo de amigos"
 
         ],
 
         correct: 1,
 
         explanation:
-            "Cyberbullying envolve agressões, humilhações ou intimidações realizadas por meios digitais."
+            "Cyberbullying envolve agressões, humilhações ou perseguições realizadas por meio de tecnologias e ambientes digitais."
 
     },
 
@@ -3506,24 +3851,24 @@ const questions = [
     {
 
         question:
-            "Você recebe mensagens ofensivas repetidamente. O que é uma atitude adequada?",
+            "O que você deve fazer ao receber uma mensagem ofensiva?",
 
         answers: [
 
-            "Responder com outra ofensa.",
+            "Responder com outra ofensa",
 
-            "Compartilhar as mensagens para que todos vejam.",
+            "Compartilhar com várias pessoas",
 
-            "Guardar evidências e procurar um adulto de confiança.",
+            "Guardar a prova, bloquear e procurar ajuda",
 
-            "Criar uma conta falsa para se vingar."
+            "Apagar tudo imediatamente sem contar a ninguém"
 
         ],
 
         correct: 2,
 
         explanation:
-            "Guardar evidências e procurar ajuda pode facilitar a compreensão e o encaminhamento da situação."
+            "Guardar registros pode ajudar a comprovar o que aconteceu. Bloquear e procurar um adulto de confiança também são atitudes importantes."
 
     },
 
@@ -3531,24 +3876,24 @@ const questions = [
     {
 
         question:
-            "Qual destas atitudes ajuda a proteger sua segurança digital?",
+            "Qual atitude ajuda a proteger suas contas?",
 
         answers: [
 
-            "Compartilhar sua senha com amigos próximos.",
+            "Usar a mesma senha em todos os sites",
 
-            "Usar a mesma senha em todas as contas.",
+            "Compartilhar sua senha com amigos",
 
-            "Manter senhas seguras e não compartilhá-las.",
+            "Usar senhas fortes e diferentes",
 
-            "Publicar informações pessoais para facilitar contatos."
+            "Deixar sua conta aberta em computadores públicos"
 
         ],
 
         correct: 2,
 
         explanation:
-            "Senhas devem ser protegidas e não compartilhadas com outras pessoas."
+            "Senhas fortes e diferentes dificultam que outras pessoas consigam acessar suas contas."
 
     },
 
@@ -3556,52 +3901,51 @@ const questions = [
     {
 
         question:
-            "Se você perceber que um colega está sendo vítima de cyberbullying, o que pode fazer?",
+            "Por que não devemos compartilhar informações pessoais com qualquer pessoa na internet?",
 
         answers: [
 
-            "Participar da situação para não ficar de fora.",
+            "Porque a internet não permite conversar com pessoas",
 
-            "Ignorar completamente.",
+            "Porque essas informações podem ser usadas de maneira inadequada",
 
-            "Apoiar o colega e procurar um adulto de confiança.",
+            "Porque nenhuma rede social é segura",
 
-            "Compartilhar as mensagens para conseguir ajuda."
-
-        ],
-
-        correct: 2,
-
-        explanation:
-            "Apoiar a pessoa e procurar um adulto responsável é uma atitude mais segura."
-
-    },
-
-
-    {
-
-        question:
-            "Antes de publicar uma foto de outra pessoa, qual atitude demonstra respeito?",
-
-        answers: [
-
-            "Publicar sem perguntar.",
-
-            "Perguntar se a pessoa concorda com a publicação.",
-
-            "Enviar primeiro para um grupo de amigos.",
-
-            "Publicar e apagar depois se ela reclamar."
+            "Porque mensagens nunca devem ser respondidas"
 
         ],
 
         correct: 1,
 
         explanation:
-            "Respeitar a privacidade e pedir autorização demonstra respeito pela outra pessoa."
+            "Informações pessoais podem ser utilizadas de maneira inadequada. Por isso, é importante ter cuidado com quem recebe esses dados."
+
+    },
+
+
+    {
+
+        question:
+            "Se um colega estiver sofrendo cyberbullying, qual atitude pode ajudar?",
+
+        answers: [
+
+            "Ignorar completamente",
+
+            "Compartilhar o conteúdo para denunciar",
+
+            "Apoiar a pessoa e incentivar que procure um adulto de confiança",
+
+            "Fazer piada para tentar animá-la"
+
+        ],
+
+        correct: 2,
+
+        explanation:
+            "Demonstrar apoio e incentivar a busca por ajuda pode fazer diferença. Evite compartilhar o conteúdo ofensivo."
 
     }
-
 
 ];
 
@@ -3617,25 +3961,23 @@ const quizContent =
     document.getElementById("quizContent");
 
 
-const quizCounter =
-    document.getElementById("quizCounter");
+const progressBar =
+    document.getElementById("progressBar");
+
+
+const questionCounter =
+    document.getElementById("questionCounter");
 
 
 const quizScore =
     document.getElementById("quizScore");
 
 
-const progressBar =
-    document.getElementById("progressBar");
-
-
-
-/* ==========================================================
+/* =========================================================
    CARREGAR PERGUNTA
-========================================================== */
+========================================================= */
 
 function loadQuestion() {
-
 
     alreadyAnswered = false;
 
@@ -3644,7 +3986,7 @@ function loadQuestion() {
         questions[currentQuestion];
 
 
-    quizCounter.textContent =
+    questionCounter.textContent =
         `Pergunta ${currentQuestion + 1} de ${questions.length}`;
 
 
@@ -3658,45 +4000,46 @@ function loadQuestion() {
 
     quizContent.innerHTML = `
 
-        <div class="question-number">
+        <div class="quiz-card">
 
-            QUESTÃO
-            ${String(currentQuestion + 1).padStart(2, "0")}
+            <span class="question-number">
+
+                PERGUNTA ${currentQuestion + 1}
+
+            </span>
+
+
+            <h2>
+                ${question.question}
+            </h2>
+
+
+            <div class="answers">
+
+                ${question.answers.map(
+                    (answer, index) => `
+
+                        <button
+                            class="answer"
+                            data-index="${index}">
+
+                            ${String.fromCharCode(65 + index)}.
+                            ${answer}
+
+                        </button>
+
+                    `
+                ).join("")}
+
+            </div>
+
+
+            <div id="feedback"
+                 class="feedback"
+                 style="display:none;">
+            </div>
 
         </div>
-
-
-        <h2 class="question">
-
-            ${question.question}
-
-        </h2>
-
-
-        <div class="answers">
-
-            ${question.answers.map(
-                (answer, index) => `
-
-                <button
-                    class="answer"
-                    data-index="${index}">
-
-                    <strong>
-                        ${String.fromCharCode(65 + index)})
-                    </strong>
-
-                    ${answer}
-
-                </button>
-
-            `
-            ).join("")}
-
-        </div>
-
-
-        <div id="feedback"></div>
 
     `;
 
@@ -3721,18 +4064,14 @@ function loadQuestion() {
 }
 
 
-
-/* ==========================================================
-   SELECIONAR RESPOSTA
-========================================================== */
+/* =========================================================
+   RESPOSTA
+========================================================= */
 
 function selectAnswer(index) {
 
-
     if (alreadyAnswered) {
-
         return;
-
     }
 
 
@@ -3819,6 +4158,9 @@ function selectAnswer(index) {
     }
 
 
+    feedback.style.display = "block";
+
+
     quizScore.textContent =
         `${score} ponto${score === 1 ? "" : "s"}`;
 
@@ -3866,27 +4208,25 @@ function selectAnswer(index) {
     );
 
 
-    quizContent.appendChild(next);
+    quizContent
+        .querySelector(".quiz-card")
+        .appendChild(next);
 
 }
 
 
-
-/* ==========================================================
+/* =========================================================
    RESULTADO
-========================================================== */
+========================================================= */
 
 function showResult() {
-
 
     let title;
 
     let message;
 
 
-    if (
-        score === 5
-    ) {
+    if (score === 5) {
 
         title =
             "Parabéns! 🌟";
@@ -3896,9 +4236,7 @@ function showResult() {
 
     }
 
-    else if (
-        score >= 3
-    ) {
+    else if (score >= 3) {
 
         title =
             "Muito bem! 💙";
@@ -3921,8 +4259,7 @@ function showResult() {
 
     quizContent.innerHTML = `
 
-        <div class="quiz-result">
-
+        <div class="quiz-card quiz-result">
 
             <i class="fa-solid fa-trophy"></i>
 
@@ -3962,13 +4299,11 @@ function showResult() {
 
             <button
                 class="btn btn-secondary"
-                onclick="showHome()"
-                style="margin-left:8px;">
+                onclick="showHome()">
 
                 Voltar ao início
 
             </button>
-
 
         </div>
 
@@ -3981,10 +4316,9 @@ function showResult() {
 }
 
 
-
-/* ==========================================================
-   REINICIAR QUIZ
-========================================================== */
+/* =========================================================
+   REINICIAR
+========================================================= */
 
 function restartQuiz() {
 
@@ -3997,10 +4331,9 @@ function restartQuiz() {
 }
 
 
-
-/* ==========================================================
+/* =========================================================
    INICIALIZAÇÃO
-========================================================== */
+========================================================= */
 
 loadQuestion();
 
