@@ -3,71 +3,69 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Elas em Segurança - Portal de Apoio ao Estudante sobre violência contra a mulher, direitos, prevenção e rede de apoio em Guarapuava e no Paraná.">
+        content="Elas em Segurança — portal educativo sobre violência contra a mulher, direitos, prevenção e rede de apoio.">
 
-    <title>Elas em Segurança | Guarapuava - PR</title>
+    <title>Elas em Segurança | Informação que protege</title>
 
-    <!-- CSS EXTERNO -->
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 
 <body>
 
-    <!-- ==============================
-         BARRA DE ACESSIBILIDADE
-    =============================== -->
+    <!-- ACESSIBILIDADE -->
 
-    <div class="accessibility-bar">
+    <div class="accessibility">
 
-        <div class="container accessibility-content">
+        <button onclick="aumentarFonte()" title="Aumentar fonte">
+            A+
+        </button>
 
-            <span>
-                Portal de Apoio ao Estudante
-            </span>
+        <button onclick="aumentarFonteMais()" title="Aumentar bastante a fonte">
+            A++
+        </button>
 
-            <div class="accessibility-controls">
+        <button onclick="fonteNormal()" title="Fonte normal">
+            A
+        </button>
 
-                <button id="decreaseFont" title="Diminuir fonte">
-                    A-
-                </button>
+        <button onclick="alternarContraste()" title="Alto contraste">
+            ◐
+        </button>
 
-                <button id="increaseFont" title="Aumentar fonte">
-                    A+
-                </button>
-
-                <button id="contrastButton" title="Ativar alto contraste">
-                    ◐ Alto contraste
-                </button>
-
-                <button id="darkButton" title="Ativar modo escuro">
-                    ◐ Modo escuro
-                </button>
-
-            </div>
-
-        </div>
+        <button onclick="alternarModoEscuro()" title="Modo escuro">
+            ◑
+        </button>
 
     </div>
 
 
-    <!-- ==============================
-         AVISO SUPERIOR
-    =============================== -->
+    <!-- TOPO -->
 
     <div class="topbar">
 
-        <div class="container topbar-content">
+        <div class="container">
 
             <span>
-                🌷 Informação • proteção • acolhimento
+                <i class="fa-solid fa-location-dot"></i>
+                Guarapuava • Paraná
             </span>
 
             <span>
-                Emergência imediata:
-                <strong>190</strong>
+                Informação • Prevenção • Acolhimento
             </span>
 
         </div>
@@ -75,9 +73,7 @@
     </div>
 
 
-    <!-- ==============================
-         HEADER
-    =============================== -->
+    <!-- MENU -->
 
     <header>
 
@@ -86,58 +82,42 @@
             <a href="#inicio" class="logo">
 
                 <div class="logo-symbol">
-                    ✦
+                    <i class="fa-solid fa-heart"></i>
                 </div>
 
                 <div class="logo-text">
 
-                    <strong>
-                        ELAS EM SEGURANÇA
-                    </strong>
+                    <strong>ELAS EM SEGURANÇA</strong>
 
-                    <small>
-                        Guarapuava • Paraná
-                    </small>
+                    <small>Informação que protege</small>
 
                 </div>
 
             </a>
 
 
-            <button
-                class="menu-btn"
-                id="menuButton"
+            <button class="menu-btn"
+                onclick="abrirMenu()"
                 aria-label="Abrir menu">
 
-                ☰
+                <i class="fa-solid fa-bars"></i>
 
             </button>
 
 
             <nav id="menu">
 
+                <a href="#inicio">Início</a>
                 <a href="#entenda">Entenda</a>
-
                 <a href="#sinais">Sinais</a>
-
                 <a href="#dados">Dados</a>
-
                 <a href="#direitos">Direitos</a>
-
                 <a href="#historias">Histórias</a>
-
+                <a href="#quiz">Quiz</a>
                 <a href="#escuta">Escuta</a>
 
-                <a href="#quiz">Quiz</a>
-
-                <a href="#referencias">Fontes</a>
-
-                <a
-                    href="#ajuda"
-                    class="nav-help">
-
+                <a href="#ajuda" class="nav-help">
                     Preciso de ajuda
-
                 </a>
 
             </nav>
@@ -150,66 +130,40 @@
     <main>
 
 
-        <!-- ==============================
-             HERO
-        =============================== -->
+        <!-- HERO -->
 
         <section class="hero" id="inicio">
 
             <div class="container hero-grid">
 
-
                 <div class="hero-text">
 
                     <span class="eyebrow">
-                        PORTAL DE APOIO AO ESTUDANTE
+                        PORTAL DE INFORMAÇÃO E APOIO
                     </span>
 
                     <h1>
-                        Você merece viver em segurança.
+                        Você merece viver
+                        <span>em segurança.</span>
                     </h1>
 
                     <p>
-
-                        Um espaço criado para informar,
-                        acolher e aproximar estudantes
-                        da informação sobre violência
-                        contra a mulher.
-
-                        Aqui você pode entender os tipos
-                        de violência, conhecer direitos,
-                        reconhecer sinais e descobrir
-                        caminhos de ajuda.
-
+                        Um espaço educativo criado para informar,
+                        conscientizar e orientar estudantes sobre
+                        violência contra a mulher, direitos,
+                        prevenção e caminhos para buscar ajuda.
                     </p>
-
 
                     <div class="hero-buttons">
 
-                        <a
-                            href="#entenda"
-                            class="btn btn-primary">
-
-                            🌷 Quero entender
-
+                        <a href="#entenda" class="btn btn-primary">
+                            <i class="fa-solid fa-book-open"></i>
+                            Quero entender
                         </a>
 
-
-                        <a
-                            href="#escuta"
-                            class="btn btn-secondary">
-
-                            💬 Portal de Escuta
-
-                        </a>
-
-
-                        <a
-                            href="#quiz"
-                            class="btn btn-secondary">
-
-                            📝 Fazer o quiz
-
+                        <a href="#ajuda" class="btn btn-secondary">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                            Preciso de ajuda
                         </a>
 
                     </div>
@@ -217,92 +171,68 @@
                 </div>
 
 
-                <!-- CARROSSEL -->
+                <div class="hero-card">
 
-                <div class="hero-carousel">
+                    <span class="hero-card-label">
+                        UMA MENSAGEM IMPORTANTE
+                    </span>
 
-                    <div class="carousel-slide active">
+                    <p class="hero-quote">
+                        Informação também é uma forma de proteção.
+                    </p>
 
-                        <img
-                            src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1000&q=80"
-                            alt="Duas pessoas conversando e oferecendo apoio">
+                    <div class="hero-point">
 
-                        <div class="carousel-caption">
+                        <span class="hero-point-number">01</span>
 
-                            <strong>
-                                Informação também é proteção.
-                            </strong>
+                        <div>
 
-                            <span>
-                                Conhecer seus direitos é um passo importante.
-                            </span>
+                            <strong>Informação</strong>
 
-                        </div>
-
-                    </div>
-
-
-                    <div class="carousel-slide">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=80"
-                            alt="Grupo de pessoas reunidas">
-
-                        <div class="carousel-caption">
-
-                            <strong>
-                                Você não está sozinha.
-                            </strong>
-
-                            <span>
-                                Procure alguém de confiança quando precisar.
-                            </span>
+                            <p>
+                                Conhecer os sinais da violência
+                                ajuda a reconhecê-los.
+                            </p>
 
                         </div>
 
                     </div>
 
 
-                    <div class="carousel-slide">
+                    <div class="hero-point">
 
-                        <img
-                            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80"
-                            alt="Pessoas trabalhando juntas">
+                        <span class="hero-point-number">02</span>
 
-                        <div class="carousel-caption">
+                        <div>
 
-                            <strong>
-                                Respeito transforma ambientes.
-                            </strong>
+                            <strong>Apoio</strong>
 
-                            <span>
-                                Informação, empatia e acolhimento fazem diferença.
-                            </span>
+                            <p>
+                                Procurar uma pessoa de confiança
+                                pode ser um passo importante.
+                            </p>
 
                         </div>
 
                     </div>
 
 
-                    <button
-                        class="carousel-button prev"
-                        id="prevSlide">
+                    <div class="hero-point">
 
-                        ‹
+                        <span class="hero-point-number">03</span>
 
-                    </button>
+                        <div>
 
+                            <strong>Direitos</strong>
 
-                    <button
-                        class="carousel-button next"
-                        id="nextSlide">
+                            <p>
+                                Existem leis e serviços destinados
+                                à proteção das mulheres.
+                            </p>
 
-                        ›
+                        </div>
 
-                    </button>
-
-
-                    <div class="carousel-dots" id="carouselDots"></div>
+                    </div>
 
                 </div>
 
@@ -311,36 +241,25 @@
         </section>
 
 
-        <!-- ==============================
-             ENTENDA
-        =============================== -->
+        <!-- ENTENDA -->
 
         <section id="entenda">
 
             <div class="container">
 
-
                 <div class="section-title">
 
-                    <span class="eyebrow">
-                        01 • ENTENDA
-                    </span>
+                    <span class="eyebrow">ENTENDA</span>
 
                     <h2>
                         O que é violência contra a mulher?
                     </h2>
 
                     <p>
-
-                        Violência contra a mulher é qualquer
-                        ação ou comportamento baseado no gênero
-                        que cause, ou possa causar, dano físico,
-                        psicológico, sexual, patrimonial ou moral.
-
-                        Ela pode acontecer em casa, em
-                        relacionamentos, na escola, no trabalho,
-                        na rua e também no ambiente digital.
-
+                        Violência contra a mulher não significa
+                        somente agressão física. Ela pode assumir
+                        diferentes formas e acontecer em diferentes
+                        ambientes.
                     </p>
 
                 </div>
@@ -348,33 +267,31 @@
 
                 <div class="intro-box">
 
-
                     <div class="intro-box-text">
 
                         <h3>
-                            Violência não é somente agressão física.
+                            Muito além da agressão física
                         </h3>
 
                         <p>
-
-                            Muitas pessoas imaginam que violência
-                            só existe quando ocorre uma agressão
-                            física. Mas ela também pode aparecer
-                            por meio de controle, humilhação,
-                            ameaças, isolamento, chantagem,
-                            perseguição e outras formas de
-                            retirar a liberdade e a autonomia
-                            da mulher.
-
+                            A Lei Maria da Penha define como violência
+                            doméstica e familiar contra a mulher ações
+                            ou omissões baseadas no gênero que causem
+                            morte, lesão, sofrimento físico, sexual ou
+                            psicológico e dano moral ou patrimonial.
                         </p>
 
-                        <br>
+                        <p>
+                            A violência pode acontecer no ambiente
+                            doméstico, familiar ou em uma relação
+                            íntima de afeto.
+                        </p>
 
                         <p>
-
-                            Por isso, reconhecer os diferentes
-                            tipos de violência é tão importante.
-
+                            Ela também pode envolver controle,
+                            humilhação, ameaças, isolamento,
+                            perseguição, controle financeiro e
+                            violência praticada no ambiente digital.
                         </p>
 
                     </div>
@@ -382,126 +299,132 @@
 
                     <div class="highlight">
 
-                        <strong>
-                            💭 Um relacionamento saudável não
-                            precisa de medo para funcionar.
-                        </strong>
+                        <h3>Importante</h3>
 
-                        <br><br>
+                        <p>
+                            A responsabilidade pela violência é de
+                            quem a pratica. Nenhuma mulher deve ser
+                            culpabilizada pela violência sofrida.
+                        </p>
 
-                        Amor, preocupação ou ciúme não dão
-                        a alguém o direito de controlar,
-                        ameaçar, humilhar ou machucar outra pessoa.
-
-                        <br><br>
-
-                        <strong>
-                            A responsabilidade pela violência
-                            é de quem a pratica.
-                        </strong>
+                        <p>
+                            Informação, prevenção e acesso à rede de
+                            proteção são importantes para enfrentar
+                            esse problema.
+                        </p>
 
                     </div>
 
                 </div>
 
 
-                <!-- TIPOS -->
-
                 <div class="cards-5">
 
-
-                    <article class="card">
-
-                        <div class="card-icon">
-                            ✋
-                        </div>
-
-                        <h3>
-                            Violência física
-                        </h3>
-
-                        <p>
-                            Ações que prejudicam a integridade
-                            ou a saúde física da mulher.
-                        </p>
-
-                    </article>
-
-
-                    <article class="card">
+                    <div class="card">
 
                         <div class="card-icon">
-                            ♡
+                            <i class="fa-solid fa-hand-fist"></i>
                         </div>
 
-                        <h3>
-                            Violência psicológica
-                        </h3>
+                        <h3>Física</h3>
 
                         <p>
-                            Ameaças, humilhações, controle,
-                            isolamento, perseguição e ações
-                            que causam sofrimento emocional.
+                            Condutas que ofendem a integridade ou
+                            a saúde corporal.
                         </p>
 
-                    </article>
+                    </div>
 
 
-                    <article class="card">
+                    <div class="card">
 
                         <div class="card-icon">
-                            ◌
+                            <i class="fa-solid fa-brain"></i>
                         </div>
 
-                        <h3>
-                            Violência sexual
-                        </h3>
+                        <h3>Psicológica</h3>
 
                         <p>
-                            Constranger ou obrigar uma mulher
-                            a participar de uma situação sexual
-                            contra sua vontade.
+                            Ameaças, humilhações, manipulação,
+                            controle, isolamento e perseguição.
                         </p>
 
-                    </article>
+                    </div>
 
 
-                    <article class="card">
+                    <div class="card">
 
                         <div class="card-icon">
-                            ▣
+                            <i class="fa-solid fa-heart-crack"></i>
                         </div>
 
-                        <h3>
-                            Violência patrimonial
-                        </h3>
+                        <h3>Sexual</h3>
 
                         <p>
-                            Controlar, destruir, esconder ou
-                            reter dinheiro, documentos, bens
-                            ou recursos.
+                            Condutas que envolvem coerção ou
+                            ausência de consentimento.
                         </p>
 
-                    </article>
+                    </div>
 
 
-                    <article class="card">
+                    <div class="card">
 
                         <div class="card-icon">
-                            !
+                            <i class="fa-solid fa-wallet"></i>
                         </div>
 
-                        <h3>
-                            Violência moral
-                        </h3>
+                        <h3>Patrimonial</h3>
 
                         <p>
-                            Condutas que atingem a honra,
-                            a imagem ou a reputação da mulher.
+                            Retenção, destruição ou controle de
+                            bens, documentos, dinheiro ou recursos.
                         </p>
 
-                    </article>
+                    </div>
 
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            <i class="fa-solid fa-comment"></i>
+                        </div>
+
+                        <h3>Moral</h3>
+
+                        <p>
+                            Calúnia, difamação ou injúria.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            <i class="fa-solid fa-people-arrows"></i>
+                        </div>
+
+                        <h3>Vicária</h3>
+
+                        <p>
+                            Violência praticada contra pessoas da
+                            rede da mulher com o objetivo de atingi-la.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-note">
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    <span>
+                        A violência vicária foi incluída expressamente
+                        na Lei Maria da Penha pela Lei nº 15.384/2026.
+                    </span>
 
                 </div>
 
@@ -510,35 +433,25 @@
         </section>
 
 
-        <!-- ==============================
-             SINAIS
-        =============================== -->
+        <!-- SINAIS -->
 
-        <section
-            class="soft-section"
-            id="sinais">
+        <section class="soft-section" id="sinais">
 
             <div class="container">
-
 
                 <div class="section-title">
 
                     <span class="eyebrow">
-                        02 • RECONHEÇA OS SINAIS
+                        RECONHEÇA OS SINAIS
                     </span>
 
                     <h2>
-                        Nem sempre começa com uma agressão.
+                        Nem sempre a violência deixa marcas visíveis.
                     </h2>
 
                     <p>
-
-                        Alguns comportamentos podem ser
-                        confundidos com ciúme, preocupação
-                        ou amor. Observe se existe controle,
-                        medo, ameaça, humilhação ou retirada
-                        da autonomia.
-
+                        Alguns comportamentos podem fazer parte de
+                        padrões de controle e violência.
                     </p>
 
                 </div>
@@ -546,108 +459,82 @@
 
                 <div class="signs">
 
-
-                    <article class="sign">
-
+                    <div class="sign">
                         <div class="sign-title">
                             <span>🔒</span>
                             <h3>Controle</h3>
                         </div>
 
                         <p>
-                            “Me manda sua localização.”
-                            “Com quem você está?”
+                            Controlar amizades, roupas, horários,
+                            localização ou redes sociais.
                         </p>
+                    </div>
 
-                    </article>
 
-
-                    <article class="sign">
-
+                    <div class="sign">
                         <div class="sign-title">
-                            <span>👥</span>
-                            <h3>Isolamento</h3>
+                            <span>📱</span>
+                            <h3>Vigilância</h3>
                         </div>
 
                         <p>
-                            Tentar afastar você de amigas,
-                            familiares ou pessoas de confiança.
+                            Exigir senhas, verificar mensagens ou
+                            monitorar constantemente o celular.
                         </p>
+                    </div>
 
-                    </article>
 
-
-                    <article class="sign">
-
+                    <div class="sign">
                         <div class="sign-title">
-                            <span>💬</span>
+                            <span>😔</span>
                             <h3>Humilhação</h3>
                         </div>
 
                         <p>
-                            Insultos e comentários constantes
-                            para diminuir sua autoestima.
+                            Insultos, comentários que diminuem ou
+                            exposição constrangedora.
                         </p>
+                    </div>
 
-                    </article>
 
-
-                    <article class="sign">
-
+                    <div class="sign">
                         <div class="sign-title">
                             <span>⚠️</span>
                             <h3>Ameaças</h3>
                         </div>
 
                         <p>
-                            Usar medo ou ameaças para conseguir
-                            obediência.
+                            Ameaçar a mulher ou pessoas próximas
+                            para provocar medo.
                         </p>
+                    </div>
 
-                    </article>
 
-
-                    <article class="sign">
-
+                    <div class="sign">
                         <div class="sign-title">
                             <span>💰</span>
                             <h3>Controle financeiro</h3>
                         </div>
 
                         <p>
-                            Controlar dinheiro ou impedir acesso
-                            aos próprios recursos.
+                            Impedir o acesso ao dinheiro ou controlar
+                            completamente os recursos.
                         </p>
+                    </div>
 
-                    </article>
 
-
-                    <article class="sign">
-
+                    <div class="sign">
                         <div class="sign-title">
-                            <span>📱</span>
-                            <h3>Controle digital</h3>
+                            <span>🚫</span>
+                            <h3>Isolamento</h3>
                         </div>
 
                         <p>
-                            Exigir senhas, monitorar contas
-                            ou invadir a privacidade.
+                            Afastar a mulher de amigos, familiares
+                            ou outras pessoas de confiança.
                         </p>
-
-                    </article>
-
-
-                </div>
-
-
-                <div class="highlight warning">
-
-                    <strong>
-                        🚩 Atenção:
-                    </strong>
-
-                    Nenhuma pessoa precisa aceitar controle
-                    ou medo para provar que ama alguém.
+                    </div>
 
                 </div>
 
@@ -656,88 +543,76 @@
         </section>
 
 
-        <!-- ==============================
-             VIOLÊNCIA DIGITAL
-        =============================== -->
+        <!-- VIOLÊNCIA DIGITAL -->
 
         <section>
 
-            <div class="container digital-grid">
+            <div class="container">
 
+                <div class="digital-grid">
 
-                <div class="digital-card">
+                    <div class="digital-card">
 
-                    <span class="eyebrow light">
-                        03 • SEGURANÇA DIGITAL
-                    </span>
+                        <span class="eyebrow">
+                            NO AMBIENTE DIGITAL
+                        </span>
 
-                    <h2>
-                        A violência também pode acontecer pela tela.
-                    </h2>
-
-                    <p>
-
-                        Redes sociais e aplicativos fazem
-                        parte da nossa vida. Por isso,
-                        perseguição, ameaça e exposição
-                        também podem acontecer no ambiente
-                        digital.
-
-                    </p>
-
-                </div>
-
-
-                <div class="digital-list">
-
-
-                    <div>
-                        <strong>
-                            📱 Perseguição virtual
-                        </strong>
+                        <h2>
+                            A violência também pode acontecer pela internet.
+                        </h2>
 
                         <p>
-                            Mensagens insistentes, monitoramento
-                            e perseguição pelas redes.
+                            Redes sociais, aplicativos de mensagens
+                            e outras plataformas podem ser utilizadas
+                            para ameaçar, perseguir, controlar ou
+                            constranger alguém.
                         </p>
+
                     </div>
 
 
-                    <div>
-                        <strong>
-                            🔐 Invasão de contas
-                        </strong>
+                    <div class="digital-list">
 
-                        <p>
-                            Tentativas de acessar contas,
-                            senhas ou informações pessoais.
-                        </p>
+                        <div>
+                            <strong>Monitoramento</strong>
+
+                            <p>
+                                Observar constantemente localização
+                                ou atividade online.
+                            </p>
+                        </div>
+
+
+                        <div>
+                            <strong>Exposição</strong>
+
+                            <p>
+                                Compartilhar informações ou imagens
+                                sem autorização.
+                            </p>
+                        </div>
+
+
+                        <div>
+                            <strong>Ameaças online</strong>
+
+                            <p>
+                                Utilizar mensagens ou redes sociais
+                                para intimidar.
+                            </p>
+                        </div>
+
+
+                        <div>
+                            <strong>Perseguição</strong>
+
+                            <p>
+                                Perseguir ou insistir através de
+                                diferentes canais digitais.
+                            </p>
+                        </div>
+
                     </div>
-
-
-                    <div>
-                        <strong>
-                            📸 Exposição sem consentimento
-                        </strong>
-
-                        <p>
-                            Compartilhar conteúdo privado
-                            sem autorização.
-                        </p>
-                    </div>
-
-
-                    <div>
-                        <strong>
-                            📍 Exposição de dados
-                        </strong>
-
-                        <p>
-                            Divulgar informações pessoais
-                            para intimidar ou perseguir.
-                        </p>
-                    </div>
-
 
                 </div>
 
@@ -746,32 +621,26 @@
         </section>
 
 
-        <!-- ==============================
-             DADOS
-        =============================== -->
+        <!-- DADOS -->
 
-        <section
-            class="stats-section"
-            id="dados">
+        <section class="stats-section" id="dados">
 
             <div class="container">
-
 
                 <div class="section-title">
 
                     <span class="eyebrow">
-                        04 • DADOS E ESTATÍSTICAS
+                        DADOS OFICIAIS
                     </span>
 
                     <h2>
-                        A violência também aparece nos números.
+                        O que os números mostram?
                     </h2>
 
                     <p>
-
-                        Os dados ajudam a mostrar que a violência
-                        contra a mulher não é um problema isolado.
-
+                        Dados oficiais ajudam a compreender a dimensão
+                        do problema e a importância das políticas de
+                        prevenção e proteção.
                     </p>
 
                 </div>
@@ -779,142 +648,157 @@
 
                 <div class="stats-grid">
 
-
-                    <article class="stat">
+                    <div class="stat">
 
                         <div class="stat-number">
-                            155.111
+                            679.058
                         </div>
 
                         <div class="stat-label">
-                            denúncias em 2025
+                            violações reportadas
                         </div>
 
                         <small>
-                            Registros do Ligue 180 no Brasil.
+                            Ao Ligue 180 em 2025.
                         </small>
 
-                    </article>
+                    </div>
 
 
-                    <article class="stat">
+                    <div class="stat">
 
                         <div class="stat-number">
-                            425
+                            49,9%
                         </div>
 
                         <div class="stat-label">
-                            denúncias por dia
+                            violência psicológica
                         </div>
 
                         <small>
-                            Média aproximada registrada
+                            Entre as violações registradas
                             pelo Ligue 180 em 2025.
                         </small>
 
-                    </article>
+                    </div>
 
 
-                    <article class="stat">
+                    <div class="stat">
 
                         <div class="stat-number">
-                            66,3%
+                            104 mil+
                         </div>
 
                         <div class="stat-label">
-                            feitas pela própria vítima
+                            registros físicos
                         </div>
 
                         <small>
-                            Percentual das denúncias de 2025.
+                            Mais de 104 mil registros de violência
+                            física no Ligue 180 em 2025.
                         </small>
 
-                    </article>
+                    </div>
 
 
-                    <article class="stat">
+                    <div class="stat">
 
                         <div class="stat-number">
-                            1,08 mi
+                            188,6%
                         </div>
 
                         <div class="stat-label">
-                            atendimentos em 2025
+                            violência digital
                         </div>
 
                         <small>
-                            Atendimentos registrados pelo
-                            Ligue 180.
+                            Crescimento dos registros digitais nos
+                            primeiros cinco meses de 2026 em relação
+                            ao mesmo período de 2025.
                         </small>
 
-                    </article>
-
+                    </div>
 
                 </div>
 
 
                 <div class="charts">
 
-
                     <div class="chart">
 
                         <h3>
-                            Denúncias registradas pelo Ligue 180
+                            Violações registradas pelo Ligue 180 em 2025
                         </h3>
 
-                        <div class="bar-chart">
 
-                            <div class="bar-item">
+                        <div class="chart-row">
 
-                                <span>
-                                    2024
-                                </span>
-
-                                <div class="bar-track">
-
-                                    <div
-                                        class="bar"
-                                        style="height:85%">
-                                    </div>
-
-                                </div>
-
-                                <strong>
-                                    132.084
-                                </strong>
-
+                            <div class="chart-info">
+                                <span>Psicológica</span>
+                                <strong>49,9%</strong>
                             </div>
 
-
-                            <div class="bar-item">
-
-                                <span>
-                                    2025
-                                </span>
-
-                                <div class="bar-track">
-
-                                    <div
-                                        class="bar"
-                                        style="height:100%">
-                                    </div>
-
+                            <div class="chart-track">
+                                <div class="chart-fill"
+                                    style="width:49.9%">
                                 </div>
-
-                                <strong>
-                                    155.111
-                                </strong>
-
                             </div>
 
                         </div>
 
+
+                        <div class="chart-row">
+
+                            <div class="chart-info">
+                                <span>Física</span>
+                                <strong>15,3%</strong>
+                            </div>
+
+                            <div class="chart-track">
+                                <div class="chart-fill"
+                                    style="width:15.3%">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-row">
+
+                            <div class="chart-info">
+                                <span>Patrimonial</span>
+                                <strong>5,4%</strong>
+                            </div>
+
+                            <div class="chart-track">
+                                <div class="chart-fill"
+                                    style="width:5.4%">
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-row">
+
+                            <div class="chart-info">
+                                <span>Sexual</span>
+                                <strong>3,0%</strong>
+                            </div>
+
+                            <div class="chart-track">
+                                <div class="chart-fill"
+                                    style="width:3%">
+                                </div>
+                            </div>
+
+                        </div>
+
+
                         <p class="chart-note">
-
-                            Em 2025, o Ligue 180 registrou
-                            crescimento de 17,4% nas denúncias
-                            em relação a 2024.
-
+                            Fonte: Ministério das Mulheres,
+                            Painel do Ligue 180. Uma denúncia pode
+                            conter mais de um tipo de violação.
                         </p>
 
                     </div>
@@ -923,116 +807,89 @@
                     <div class="chart">
 
                         <h3>
-                            Quem realizou as denúncias em 2025?
+                            Paraná — indicadores recentes
                         </h3>
 
 
-                        <div class="chart-row">
+                        <div class="data-highlight">
 
-                            <div class="chart-info">
+                            <strong>
+                                64 feminicídios
+                            </strong>
 
-                                <span>
-                                    Própria vítima
-                                </span>
-
-                                <span>
-                                    66,3%
-                                </span>
-
-                            </div>
-
-                            <div class="chart-track">
-
-                                <div
-                                    class="chart-fill"
-                                    style="width:66.3%">
-                                </div>
-
-                            </div>
+                            <span>
+                                registrados entre janeiro e setembro
+                                de 2025.
+                            </span>
 
                         </div>
 
 
-                        <div class="chart-row">
+                        <div class="data-highlight">
 
-                            <div class="chart-info">
+                            <strong>
+                                -10%
+                            </strong>
 
-                                <span>
-                                    Terceiros
-                                </span>
-
-                                <span>
-                                    16,8%
-                                </span>
-
-                            </div>
-
-                            <div class="chart-track">
-
-                                <div
-                                    class="chart-fill"
-                                    style="width:16.8%">
-                                </div>
-
-                            </div>
+                            <span>
+                                redução dos feminicídios no mesmo
+                                período em comparação com 2024.
+                            </span>
 
                         </div>
 
 
-                        <div class="chart-row">
+                        <div class="data-highlight">
 
-                            <div class="chart-info">
+                            <strong>
+                                3.100
+                            </strong>
 
-                                <span>
-                                    Anônimas
-                                </span>
-
-                                <span>
-                                    16,9%
-                                </span>
-
-                            </div>
-
-                            <div class="chart-track">
-
-                                <div
-                                    class="chart-fill"
-                                    style="width:16.9%">
-                                </div>
-
-                            </div>
+                            <span>
+                                ocorrências de estupro registradas
+                                no primeiro semestre de 2025.
+                            </span>
 
                         </div>
 
+
+                        <p class="chart-note">
+                            Fonte: Secretaria da Segurança Pública
+                            do Paraná.
+                        </p>
 
                     </div>
 
                 </div>
 
 
-                <div class="source-box">
-
-                    <strong>
-                        📚 Fonte dos dados:
-                    </strong>
-
-                    Ministério das Mulheres —
-                    Ligue 180, dados de 2025.
-
-                    <br>
-
-                    <a
-                        href="https://www.gov.br/mulheres/pt-br/central-de-conteudos/noticias/2026/abril/canal-ligue-180-registra-crescimento-de-27-nas-denuncias-e-10-nos-atendimentos-no-primeiro-trimestre-de-2026"
-                        target="_blank">
-
-                        Consultar fonte oficial →
-
-                    </a>
-
-                </div>
-
-
                 <div class="parana">
+
+                    <div class="parana-card">
+
+                        <span class="eyebrow">
+                            BRASIL
+                        </span>
+
+                        <h3>
+                            Por que acompanhar os dados?
+                        </h3>
+
+                        <p>
+                            Estatísticas ajudam governos e sociedade
+                            a identificar padrões, planejar políticas
+                            públicas e fortalecer a rede de proteção.
+                        </p>
+
+                        <a class="source-link"
+                            href="https://www.gov.br/mulheres/pt-br/ligue180/painel-de-dados"
+                            target="_blank"
+                            rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            Painel oficial do Ligue 180
+                        </a>
+
+                    </div>
 
 
                     <div class="parana-card">
@@ -1042,51 +899,24 @@
                         </span>
 
                         <h3>
-                            Dados regionais
+                            Informação local importa.
                         </h3>
 
                         <p>
-
-                            O Paraná possui dados públicos
-                            produzidos pelos órgãos estaduais
-                            de segurança e políticas públicas.
-
-                            No projeto final, os números locais
-                            devem sempre indicar ano e fonte.
-
+                            O Paraná possui ações e programas voltados
+                            à prevenção e ao enfrentamento da violência
+                            contra as mulheres nos seus 399 municípios.
                         </p>
+
+                        <a class="source-link"
+                            href="https://www.seguranca.pr.gov.br/"
+                            target="_blank"
+                            rel="noopener">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            Segurança Pública do Paraná
+                        </a>
 
                     </div>
-
-
-                    <div class="parana-card">
-
-                        <span class="eyebrow">
-                            GUARAPUAVA
-                        </span>
-
-                        <h3>
-                            Informação local
-                        </h3>
-
-                        <p>
-
-                            O site prioriza informações de
-                            Guarapuava sempre que houver
-                            dados públicos confiáveis e
-                            atualizados.
-
-                        </p>
-
-                        <p>
-
-                            Não utilizamos números locais
-                            sem fonte verificável.
-
-                        </p>
-
-                    </div>
-
 
                 </div>
 
@@ -1095,31 +925,25 @@
         </section>
 
 
-        <!-- ==============================
-             DIREITOS
-        =============================== -->
+        <!-- DIREITOS -->
 
         <section id="direitos">
 
             <div class="container">
 
-
                 <div class="section-title">
 
                     <span class="eyebrow">
-                        05 • DIREITOS
+                        SEUS DIREITOS
                     </span>
 
                     <h2>
-                        Você tem direitos. Conheça alguns deles.
+                        Você tem direitos e pode buscar proteção.
                     </h2>
 
                     <p>
-
-                        A Lei Maria da Penha criou mecanismos
-                        para prevenir e enfrentar a violência
-                        doméstica e familiar contra a mulher.
-
+                        A legislação brasileira estabelece mecanismos
+                        de prevenção, proteção e assistência.
                     </p>
 
                 </div>
@@ -1127,193 +951,136 @@
 
                 <div class="rights-grid">
 
+                    <div class="right">
+                        <div class="right-number">01</div>
 
-                    <article class="right">
-
-                        <div class="right-number">
-                            01
-                        </div>
-
-                        <h3>
-                            Proteção
-                        </h3>
+                        <h3>Proteção</h3>
 
                         <p>
-                            A mulher pode buscar proteção
-                            e atendimento pela rede de serviços.
+                            A legislação prevê mecanismos de proteção
+                            para mulheres em situação de violência.
                         </p>
+                    </div>
 
-                    </article>
 
+                    <div class="right">
+                        <div class="right-number">02</div>
 
-                    <article class="right">
-
-                        <div class="right-number">
-                            02
-                        </div>
-
-                        <h3>
-                            Medidas protetivas
-                        </h3>
+                        <h3>Informação</h3>
 
                         <p>
-                            A legislação prevê medidas destinadas
-                            à proteção da mulher.
+                            A mulher pode buscar informações sobre
+                            seus direitos e os serviços disponíveis.
                         </p>
+                    </div>
 
-                    </article>
 
+                    <div class="right">
+                        <div class="right-number">03</div>
 
-                    <article class="right">
-
-                        <div class="right-number">
-                            03
-                        </div>
-
-                        <h3>
-                            Acesso à Justiça
-                        </h3>
+                        <h3>Atendimento</h3>
 
                         <p>
-                            A mulher tem direito a orientação
-                            e acesso aos mecanismos previstos em lei.
+                            A rede pública possui serviços destinados
+                            ao atendimento e à orientação.
                         </p>
+                    </div>
 
-                    </article>
 
+                    <div class="right">
+                        <div class="right-number">04</div>
 
-                    <article class="right">
-
-                        <div class="right-number">
-                            04
-                        </div>
-
-                        <h3>
-                            Saúde
-                        </h3>
+                        <h3>Respeito</h3>
 
                         <p>
-                            A rede de saúde pode fazer parte
-                            do atendimento e acolhimento.
+                            Toda mulher possui direito à dignidade,
+                            liberdade e segurança.
                         </p>
+                    </div>
 
-                    </article>
 
+                    <div class="right">
+                        <div class="right-number">05</div>
 
-                    <article class="right">
-
-                        <div class="right-number">
-                            05
-                        </div>
-
-                        <h3>
-                            Assistência social
-                        </h3>
+                        <h3>Denúncia</h3>
 
                         <p>
-                            Serviços podem oferecer orientação
-                            e encaminhamento.
+                            Existem canais oficiais para orientação
+                            e registro de denúncias.
                         </p>
+                    </div>
 
-                    </article>
 
+                    <div class="right">
+                        <div class="right-number">06</div>
 
-                    <article class="right">
-
-                        <div class="right-number">
-                            06
-                        </div>
-
-                        <h3>
-                            Proteção patrimonial
-                        </h3>
+                        <h3>Acolhimento</h3>
 
                         <p>
-                            A legislação também prevê medidas
-                            relacionadas aos bens e recursos.
+                            Buscar apoio de pessoas e serviços
+                            confiáveis pode ser um passo importante.
                         </p>
-
-                    </article>
-
+                    </div>
 
                 </div>
 
 
                 <div class="law-box">
 
+                    <span class="eyebrow">
+                        LEI MARIA DA PENHA
+                    </span>
+
                     <h3>
-                        ⚖️ Lei Maria da Penha
+                        Lei nº 11.340/2006
                     </h3>
 
                     <p>
-
-                        A Lei nº 11.340/2006 é um dos principais
-                        instrumentos brasileiros de enfrentamento
-                        à violência doméstica e familiar contra
-                        a mulher.
-
+                        A Lei Maria da Penha criou mecanismos para
+                        prevenir e combater a violência doméstica e
+                        familiar contra a mulher.
                     </p>
 
 
                     <div class="law-columns">
 
-
                         <div class="law-item">
 
-                            <strong>
-                                Proteção
-                            </strong>
+                            <strong>Medidas protetivas</strong>
 
-                            <br>
-
-                            Estabelece mecanismos de proteção
-                            e assistência.
+                            <p>
+                                A legislação prevê medidas destinadas
+                                à proteção da mulher em situações
+                                previstas pela lei.
+                            </p>
 
                         </div>
 
 
                         <div class="law-item">
 
-                            <strong>
-                                Prevenção
-                            </strong>
+                            <strong>Prevenção</strong>
 
-                            <br>
-
-                            Prevê ações educativas e de prevenção.
-
-                        </div>
-
-
-                        <div class="law-item">
-
-                            <strong>
-                                Atendimento
-                            </strong>
-
-                            <br>
-
-                            Incentiva a atuação integrada
-                            da rede de proteção.
+                            <p>
+                                A lei estabelece diretrizes para ações
+                                articuladas de prevenção e assistência.
+                            </p>
 
                         </div>
-
-
-                        <div class="law-item">
-
-                            <strong>
-                                Responsabilização
-                            </strong>
-
-                            <br>
-
-                            Estabelece mecanismos jurídicos
-                            para enfrentar a violência.
-
-                        </div>
-
 
                     </div>
+
+
+                    <a class="law-link"
+                        href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm"
+                        target="_blank"
+                        rel="noopener">
+
+                        <i class="fa-solid fa-scale-balanced"></i>
+
+                        Ler a Lei Maria da Penha no Planalto
+
+                    </a>
 
                 </div>
 
@@ -1322,27 +1089,27 @@
         </section>
 
 
-        <!-- ==============================
-             HISTÓRIAS
-        =============================== -->
+        <!-- HISTÓRIAS -->
 
-        <section
-            class="soft-section"
-            id="historias">
+        <section class="soft-section" id="historias">
 
             <div class="container">
-
 
                 <div class="section-title">
 
                     <span class="eyebrow">
-                        06 • MULHERES QUE FIZERAM HISTÓRIA
+                        MULHERES QUE FIZERAM HISTÓRIA
                     </span>
 
                     <h2>
-                        Algumas histórias que ajudaram
-                        a transformar essa luta.
+                        Conhecer histórias também é conhecer direitos.
                     </h2>
+
+                    <p>
+                        Mulheres de diferentes épocas contribuíram
+                        para transformar a discussão sobre igualdade,
+                        direitos humanos e participação feminina.
+                    </p>
 
                 </div>
 
@@ -1350,204 +1117,218 @@
                 <div class="history">
 
 
+                    <!-- ELEANOR -->
+
                     <article class="person">
 
-                        <div class="person-year">
-                            1930s
+                        <div class="person-image">
+
+                            <img
+                                src="https://commons.wikimedia.org/wiki/Special:FilePath/Eleanor%20Roosevelt.jpg"
+                                alt="Retrato de Eleanor Roosevelt">
+
                         </div>
+
 
                         <div>
 
                             <span class="person-tag">
-                                DIREITOS POLÍTICOS
+                                DIREITOS HUMANOS
+                            </span>
+
+                            <h3>
+                                Eleanor Roosevelt
+                            </h3>
+
+                            <span class="person-date">
+                                1884 — 1962
+                            </span>
+
+                            <p>
+                                Eleanor Roosevelt foi uma diplomata,
+                                ativista e defensora dos direitos humanos.
+                                Após a Segunda Guerra Mundial, presidiu a
+                                Comissão de Direitos Humanos das Nações
+                                Unidas e teve papel central no processo de
+                                elaboração da Declaração Universal dos
+                                Direitos Humanos, adotada em 1948.
+                            </p>
+
+                            <p>
+                                Sua atuação ajudou a fortalecer a ideia de
+                                que direitos e liberdades devem ser
+                                reconhecidos para todas as pessoas.
+                            </p>
+
+                            <a class="history-link"
+                                href="https://www.un.org/en/about-us/udhr/drafters-of-the-declaration"
+                                target="_blank"
+                                rel="noopener">
+                                Fonte: Organização das Nações Unidas
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- MARIA DA PENHA -->
+
+                    <article class="person">
+
+                        <div class="person-image">
+
+                            <img
+                                src="https://commons.wikimedia.org/wiki/Special:FilePath/MariaDaPenha.jpg"
+                                alt="Maria da Penha">
+
+                        </div>
+
+
+                        <div>
+
+                            <span class="person-tag">
+                                BRASIL
+                            </span>
+
+                            <h3>
+                                Maria da Penha
+                            </h3>
+
+                            <span class="person-date">
+                                Símbolo da luta contra a violência doméstica
+                            </span>
+
+                            <p>
+                                Maria da Penha Maia Fernandes é uma
+                                farmacêutica brasileira que se tornou
+                                símbolo da luta contra a violência doméstica
+                                após sofrer violência em seu próprio
+                                relacionamento e buscar justiça durante
+                                anos.
+                            </p>
+
+                            <p>
+                                Sua trajetória contribuiu para ampliar a
+                                atenção nacional e internacional sobre a
+                                violência doméstica no Brasil. Em 2006,
+                                foi sancionada a Lei nº 11.340, conhecida
+                                como Lei Maria da Penha.
+                            </p>
+
+                            <a class="history-link"
+                                href="https://www.institutomariadapenha.org.br/"
+                                target="_blank"
+                                rel="noopener">
+                                Conheça o Instituto Maria da Penha
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- BERTHA -->
+
+                    <article class="person">
+
+                        <div class="person-image">
+
+                            <img
+                                src="https://commons.wikimedia.org/wiki/Special:FilePath/Bertha%20Lutz%201925.jpg"
+                                alt="Retrato de Bertha Lutz">
+
+                        </div>
+
+
+                        <div>
+
+                            <span class="person-tag">
+                                DIREITOS DAS MULHERES
                             </span>
 
                             <h3>
                                 Bertha Lutz
                             </h3>
 
-                            <p>
-
-                                Bertha Lutz foi uma das principais
-                                figuras do movimento pelos direitos
-                                políticos das mulheres no Brasil.
-
-                                Bióloga, educadora e ativista,
-                                participou da luta pelo direito
-                                ao voto feminino e pela ampliação
-                                da participação das mulheres
-                                na vida pública.
-
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="person">
-
-                        <div class="person-year">
-                            2006
-                        </div>
-
-                        <div>
-
-                            <span class="person-tag">
-                                ENFRENTAMENTO À VIOLÊNCIA
+                            <span class="person-date">
+                                1894 — 1976
                             </span>
 
-                            <h3>
-                                Maria da Penha Maia Fernandes
-                            </h3>
+                            <p>
+                                Bertha Maria Júlia Lutz foi bióloga,
+                                pesquisadora e uma das principais figuras
+                                brasileiras na luta pelos direitos das
+                                mulheres.
+                            </p>
 
                             <p>
-
-                                Maria da Penha tornou-se símbolo
-                                da luta contra a violência doméstica
-                                no Brasil.
-
-                                Sua trajetória de busca por justiça
-                                contribuiu para a mobilização que
-                                levou à criação da Lei nº 11.340/2006,
-                                conhecida como Lei Maria da Penha.
-
+                                Em 1919, participou da criação da Liga para
+                                a Emancipação Intelectual da Mulher. Em
+                                1922, fundou a Federação Brasileira para o
+                                Progresso Feminino. Também atuou na política
+                                e assumiu uma cadeira na Câmara dos
+                                Deputados em 1936.
                             </p>
+
+                            <p>
+                                Sua atuação foi especialmente importante
+                                para a campanha pelo voto feminino no Brasil,
+                                conquistado em 1932.
+                            </p>
+
+                            <a class="history-link"
+                                href="https://www.camara.leg.br/deputados/4855/biografia"
+                                target="_blank"
+                                rel="noopener">
+                                Fonte: Câmara dos Deputados
+                            </a>
 
                         </div>
 
                     </article>
-
-
-                    <article class="person">
-
-                        <div class="person-year">
-                            2018
-                        </div>
-
-                        <div>
-
-                            <span class="person-tag">
-                                GUARAPUAVA • PARANÁ
-                            </span>
-
-                            <h3>
-                                Tatiane Spitzner
-                            </h3>
-
-                            <p>
-
-                                Tatiane Spitzner era uma jovem
-                                advogada de Guarapuava.
-
-                                Sua morte, em 2018, provocou forte
-                                comoção e ampliou o debate sobre
-                                violência contra a mulher e
-                                feminicídio no Paraná.
-
-                                Sua história permanece presente
-                                em ações de conscientização e
-                                enfrentamento à violência.
-
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="person">
-
-                        <div class="person-year">
-                            1822
-                        </div>
-
-                        <div>
-
-                            <span class="person-tag">
-                                HISTÓRIA DO BRASIL
-                            </span>
-
-                            <h3>
-                                Maria Quitéria
-                            </h3>
-
-                            <p>
-
-                                Maria Quitéria participou das lutas
-                                pela Independência do Brasil na Bahia.
-
-                                Sua trajetória tornou-se símbolo
-                                da participação feminina em
-                                acontecimentos importantes da
-                                história brasileira.
-
-                            </p>
-
-                        </div>
-
-                    </article>
-
 
                 </div>
 
 
                 <div class="timeline">
 
-
                     <div class="timeline-item">
-
-                        <strong>
-                            1822
-                        </strong>
+                        <strong>1932</strong>
 
                         <p>
-                            Maria Quitéria participa das lutas
-                            pela Independência.
+                            O voto feminino é estabelecido no Brasil.
                         </p>
-
                     </div>
 
 
                     <div class="timeline-item">
-
-                        <strong>
-                            1932
-                        </strong>
+                        <strong>1948</strong>
 
                         <p>
-                            O voto feminino é reconhecido no Brasil.
+                            A ONU adota a Declaração Universal dos
+                            Direitos Humanos.
                         </p>
-
                     </div>
 
 
                     <div class="timeline-item">
-
-                        <strong>
-                            2006
-                        </strong>
+                        <strong>2006</strong>
 
                         <p>
-                            É criada a Lei Maria da Penha.
+                            É sancionada a Lei Maria da Penha.
                         </p>
-
                     </div>
 
 
                     <div class="timeline-item">
-
-                        <strong>
-                            Hoje
-                        </strong>
+                        <strong>2026</strong>
 
                         <p>
-                            A luta continua pela prevenção,
-                            informação e proteção.
+                            A Lei Maria da Penha passa a incluir
+                            expressamente a violência vicária.
                         </p>
-
                     </div>
-
 
                 </div>
 
@@ -1556,186 +1337,22 @@
         </section>
 
 
-        <!-- ==============================
-             PORTAL DE ESCUTA
-        =============================== -->
+        <!-- QUIZ -->
 
-        <section id="escuta">
+        <section class="quiz-section" id="quiz">
 
             <div class="container">
 
-
                 <div class="section-title">
 
-                    <span class="eyebrow">
-                        07 • PORTAL DE ESCUTA
-                    </span>
+                    <span class="eyebrow">QUIZ</span>
 
                     <h2>
-                        Quer contar o que está acontecendo?
+                        Você consegue reconhecer sinais de violência?
                     </h2>
 
                     <p>
-
-                        Este espaço é uma simulação educativa.
-                        Nenhuma informação digitada aqui será
-                        enviada ou armazenada.
-
-                    </p>
-
-                </div>
-
-
-                <div class="listen-grid">
-
-
-                    <div class="listen-card">
-
-                        <div class="listen-icon">
-                            💬
-                        </div>
-
-                        <h3>
-                            Seu espaço de desabafo
-                        </h3>
-
-                        <p>
-
-                            Escreva o que você gostaria
-                            de contar.
-
-                            Não é necessário colocar nome,
-                            telefone ou qualquer informação
-                            pessoal.
-
-                        </p>
-
-                        <div class="listen-message">
-
-                            🌷
-
-                            <strong>
-                                Você merece ser ouvida
-                                e respeitada.
-                            </strong>
-
-                        </div>
-
-                    </div>
-
-
-                    <form
-                        class="listen-form"
-                        id="listenForm">
-
-                        <label for="desabafo">
-                            Escreva seu desabafo:
-                        </label>
-
-                        <textarea
-                            id="desabafo"
-                            name="desabafo"
-                            placeholder="Escreva aqui... Este formulário é apenas uma simulação."
-                            required>
-                        </textarea>
-
-
-                        <button
-                            type="submit"
-                            class="btn btn-primary">
-
-                            Enviar desabafo
-
-                        </button>
-
-
-                        <div
-                            id="listenResponse"
-                            class="listen-response">
-
-                        </div>
-
-                    </form>
-
-                </div>
-
-
-                <div class="support-cards">
-
-
-                    <div>
-                        👩‍🏫
-                        <strong>
-                            Professor ou professora
-                        </strong>
-
-                        <p>
-                            Converse com um profissional
-                            da escola em quem confie.
-                        </p>
-                    </div>
-
-
-                    <div>
-                        🏫
-                        <strong>
-                            Pedagogia ou direção
-                        </strong>
-
-                        <p>
-                            A escola pode ajudar a orientar
-                            e encaminhar situações.
-                        </p>
-                    </div>
-
-
-                    <div>
-                        👨‍👩‍👧
-                        <strong>
-                            Adulto de confiança
-                        </strong>
-
-                        <p>
-                            Procure alguém que faça você
-                            se sentir segura.
-                        </p>
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==============================
-             QUIZ
-        =============================== -->
-
-        <section
-            class="quiz-section"
-            id="quiz">
-
-            <div class="container">
-
-
-                <div class="section-title">
-
-                    <span class="eyebrow">
-                        08 • QUIZ
-                    </span>
-
-                    <h2>
-                        Será que isso é violência?
-                    </h2>
-
-                    <p>
-
-                        Responda às cinco perguntas.
-                        Ao final, você verá sua pontuação
-                        e uma explicação.
-
+                        Teste seus conhecimentos.
                     </p>
 
                 </div>
@@ -1743,21 +1360,206 @@
 
                 <div class="quiz">
 
-                    <div id="quizQuestions"></div>
+                    <h3>
+                        Vamos começar?
+                    </h3>
+
+                    <p class="quiz-intro">
+                        Escolha uma resposta para cada pergunta.
+                    </p>
 
 
-                    <button
-                        class="btn btn-secondary"
-                        id="finishQuiz">
+                    <div class="question">
 
-                        Ver resultado
+                        <h4>
+                            1. Uma pessoa exige saber sua localização
+                            o tempo todo. Isso pode ser um sinal de controle?
+                        </h4>
+
+                        <button class="answer"
+                            onclick="responder(this, 0, 1)">
+                            Sim
+                        </button>
+
+                        <button class="answer"
+                            onclick="responder(this, 0, 0)">
+                            Não
+                        </button>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <h4>
+                            2. Exigir senhas e verificar mensagens
+                            sem consentimento é uma atitude saudável?
+                        </h4>
+
+                        <button class="answer"
+                            onclick="responder(this, 1, 0)">
+                            Sim
+                        </button>
+
+                        <button class="answer"
+                            onclick="responder(this, 1, 1)">
+                            Não
+                        </button>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <h4>
+                            3. Humilhar alguém constantemente pode
+                            ser uma forma de violência psicológica?
+                        </h4>
+
+                        <button class="answer"
+                            onclick="responder(this, 2, 1)">
+                            Sim
+                        </button>
+
+                        <button class="answer"
+                            onclick="responder(this, 2, 0)">
+                            Não
+                        </button>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <h4>
+                            4. Impedir uma mulher de ter contato com
+                            amigos e familiares pode ser uma forma
+                            de controle?
+                        </h4>
+
+                        <button class="answer"
+                            onclick="responder(this, 3, 1)">
+                            Sim
+                        </button>
+
+                        <button class="answer"
+                            onclick="responder(this, 3, 0)">
+                            Não
+                        </button>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <h4>
+                            5. Procurar uma pessoa de confiança quando
+                            uma situação causa medo pode ser um passo
+                            importante?
+                        </h4>
+
+                        <button class="answer"
+                            onclick="responder(this, 4, 1)">
+                            Sim
+                        </button>
+
+                        <button class="answer"
+                            onclick="responder(this, 4, 0)">
+                            Não
+                        </button>
+
+                    </div>
+
+
+                    <button class="btn btn-primary"
+                        onclick="mostrarResultado()">
+
+                        Ver meu resultado
 
                     </button>
 
 
-                    <div
-                        id="quizResult"
-                        class="quiz-result">
+                    <div id="resultado"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ESCUTA -->
+
+        <section id="escuta">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span class="eyebrow">
+                        PORTAL DE ESCUTA
+                    </span>
+
+                    <h2>
+                        Você pode falar.
+                    </h2>
+
+                    <p>
+                        Este espaço é uma simulação educativa.
+                        Nenhuma informação será armazenada.
+                    </p>
+
+                </div>
+
+
+                <div class="escuta-grid">
+
+                    <div class="escuta-card">
+
+                        <h3>
+                            Quer escrever o que está sentindo?
+                        </h3>
+
+                        <p>
+                            Escreva abaixo. O texto será utilizado
+                            somente para demonstrar o funcionamento
+                            do portal.
+                        </p>
+
+                        <textarea
+                            id="desabafo"
+                            placeholder="Escreva aqui..."></textarea>
+
+                        <button
+                            class="btn btn-primary"
+                            onclick="enviarDesabafo()">
+
+                            Enviar
+
+                        </button>
+
+                        <div id="mensagemEscuta"></div>
+
+                    </div>
+
+
+                    <div class="escuta-card">
+
+                        <h3>
+                            Procure uma pessoa de confiança
+                        </h3>
+
+                        <p>
+                            Se uma situação estiver causando medo,
+                            insegurança ou sofrimento, converse com
+                            um adulto de confiança, professor,
+                            pedagogo, direção da escola ou familiar.
+                        </p>
+
+                        <p>
+                            Você não precisa lidar com uma situação
+                            difícil sem apoio.
+                        </p>
 
                     </div>
 
@@ -1768,34 +1570,24 @@
         </section>
 
 
-        <!-- ==============================
-             GUARAPUAVA
-        =============================== -->
+        <!-- REDE DE APOIO -->
 
-        <section
-            class="local-section"
-            id="rede">
+        <section class="soft-section">
 
             <div class="container">
-
 
                 <div class="section-title">
 
                     <span class="eyebrow">
-                        09 • GUARAPUAVA
+                        REDE DE APOIO
                     </span>
 
                     <h2>
-                        Onde procurar ajuda?
+                        Onde buscar orientação?
                     </h2>
 
                     <p>
-
-                        Informação precisa ser próxima
-                        da realidade de quem está lendo.
-                        Por isso, este projeto dá atenção
-                        especial à região de Guarapuava.
-
+                        Conheça alguns canais oficiais.
                     </p>
 
                 </div>
@@ -1804,7 +1596,7 @@
                 <div class="local-grid">
 
 
-                    <article class="local-card">
+                    <div class="local-card">
 
                         <span class="local-label">
                             EMERGÊNCIA
@@ -1815,24 +1607,19 @@
                         </h3>
 
                         <p>
-
-                            Para situações de emergência
-                            ou risco imediato.
-
+                            Para situações de emergência ou perigo
+                            imediato.
                         </p>
 
-                        <a
-                            href="tel:190"
-                            class="phone">
-
-                            📞 190
-
+                        <a href="tel:190" class="phone">
+                            <i class="fa-solid fa-phone"></i>
+                            190
                         </a>
 
-                    </article>
+                    </div>
 
 
-                    <article class="local-card">
+                    <div class="local-card">
 
                         <span class="local-label">
                             ORIENTAÇÃO
@@ -1843,177 +1630,42 @@
                         </h3>
 
                         <p>
-
-                            Central de Atendimento à Mulher,
-                            gratuita e disponível 24 horas.
-
+                            Canal oficial do Governo Federal para
+                            orientação, acolhimento e denúncias.
                         </p>
 
-                        <a
-                            href="tel:180"
-                            class="phone">
-
-                            📞 180
-
+                        <a href="tel:180" class="phone">
+                            <i class="fa-solid fa-phone"></i>
+                            180
                         </a>
 
-                    </article>
+                    </div>
 
 
-                    <article class="local-card">
+                    <div class="local-card">
 
                         <span class="local-label">
-                            SEGURANÇA PÚBLICA
+                            WHATSAPP
                         </span>
 
                         <h3>
-                            Polícia Civil
+                            Ligue 180 pelo WhatsApp
                         </h3>
 
                         <p>
-
-                            Procure uma unidade policial
-                            quando precisar de atendimento
-                            relacionado à violência.
-
+                            O Ministério das Mulheres também oferece
+                            atendimento pelo WhatsApp.
                         </p>
 
-                        <a
-                            href="tel:197"
+                        <a href="https://wa.me/556196100180"
+                            target="_blank"
+                            rel="noopener"
                             class="phone">
 
-                            📞 197
+                            <i class="fa-brands fa-whatsapp"></i>
+                            Abrir WhatsApp
 
                         </a>
-
-                    </article>
-
-
-                </div>
-
-
-                <div class="highlight">
-
-                    <strong>
-                        📍 Por que Guarapuava?
-                    </strong>
-
-                    <br><br>
-
-                    Porque um portal de apoio ao estudante
-                    fica mais útil quando relaciona o tema
-                    à comunidade onde os estudantes vivem.
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==============================
-             AJUDA
-        =============================== -->
-
-        <section
-            class="help-section"
-            id="ajuda">
-
-            <div class="container help-grid">
-
-
-                <div>
-
-                    <span class="eyebrow light">
-                        10 • ACESSO RÁPIDO
-                    </span>
-
-                    <h2>
-                        Precisa de ajuda agora?
-                    </h2>
-
-                    <p>
-
-                        Se houver perigo imediato,
-                        procure um lugar seguro e
-                        acione o serviço de emergência.
-
-                    </p>
-
-                    <p>
-
-                        Você também pode procurar
-                        um adulto de confiança,
-                        professor, pedagogo,
-                        direção ou familiar.
-
-                    </p>
-
-                </div>
-
-
-                <div class="help-card">
-
-                    <h3>
-                        Contatos importantes
-                    </h3>
-
-
-                    <div class="help-buttons">
-
-
-                        <a
-                            href="tel:190"
-                            class="help-button">
-
-                            <span>
-                                🚔 190
-                            </span>
-
-                            Emergência
-
-                        </a>
-
-
-                        <a
-                            href="tel:180"
-                            class="help-button">
-
-                            <span>
-                                📞 180
-                            </span>
-
-                            Central da Mulher
-
-                        </a>
-
-
-                        <a
-                            href="tel:197"
-                            class="help-button">
-
-                            <span>
-                                👮 197
-                            </span>
-
-                            Polícia Civil
-
-                        </a>
-
-
-                        <a
-                            href="https://www.gov.br/mulheres/pt-br/ligue180"
-                            target="_blank"
-                            class="help-button">
-
-                            <span>
-                                🌐
-                            </span>
-
-                            Site oficial
-
-                        </a>
-
 
                     </div>
 
@@ -2024,146 +1676,63 @@
         </section>
 
 
-        <!-- ==============================
-             REFERÊNCIAS
-        =============================== -->
+        <!-- AJUDA -->
 
-        <section id="referencias">
+        <section class="help-section" id="ajuda">
 
-            <div class="container">
+            <div class="container help-grid">
 
-
-                <div class="section-title">
+                <div>
 
                     <span class="eyebrow">
-                        11 • REFERÊNCIAS
+                        ACESSO RÁPIDO
                     </span>
 
                     <h2>
-                        De onde vêm essas informações?
+                        Precisa de ajuda agora?
                     </h2>
 
                     <p>
-
-                        Esta seção apresenta as fontes
-                        utilizadas para construir o conteúdo
-                        do portal.
-
+                        Em uma emergência, procure um local seguro
+                        e peça ajuda imediatamente.
                     </p>
 
                 </div>
 
 
-                <div class="references">
+                <div class="help-card">
+
+                    <h3>
+                        Canais importantes
+                    </h3>
 
 
-                    <article class="reference-card">
+                    <div class="help-buttons">
 
-                        <span>
-                            GOVERNO FEDERAL
-                        </span>
-
-                        <h3>
-                            Ministério das Mulheres
-                        </h3>
-
-                        <p>
-                            Informações sobre políticas,
-                            prevenção e enfrentamento
-                            à violência contra as mulheres.
-                        </p>
-
-                        <a
-                            href="https://www.gov.br/mulheres/"
-                            target="_blank">
-
-                            Acessar fonte oficial →
-
+                        <a href="tel:190" class="help-button">
+                            <span>🚨 190</span>
+                            Emergência
                         </a>
 
-                    </article>
 
-
-                    <article class="reference-card">
-
-                        <span>
-                            LIGUE 180
-                        </span>
-
-                        <h3>
-                            Central de Atendimento à Mulher
-                        </h3>
-
-                        <p>
-                            Informações sobre o serviço,
-                            orientação, denúncias e rede
-                            de atendimento.
-                        </p>
-
-                        <a
-                            href="https://www.gov.br/mulheres/pt-br/ligue180"
-                            target="_blank">
-
-                            Acessar fonte oficial →
-
+                        <a href="tel:180" class="help-button">
+                            <span>📞 180</span>
+                            Atendimento à mulher
                         </a>
 
-                    </article>
 
-
-                    <article class="reference-card">
-
-                        <span>
-                            LEGISLAÇÃO
-                        </span>
-
-                        <h3>
-                            Lei Maria da Penha
-                        </h3>
-
-                        <p>
-                            Lei nº 11.340/2006, principal
-                            referência legal utilizada
-                            nesta parte do projeto.
-                        </p>
-
-                        <a
-                            href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm"
-                            target="_blank">
-
-                            Consultar legislação →
-
+                        <a href="tel:197" class="help-button">
+                            <span>👮 197</span>
+                            Polícia Civil
                         </a>
 
-                    </article>
 
-
-                    <article class="reference-card">
-
-                        <span>
-                            SEGURANÇA
-                        </span>
-
-                        <h3>
-                            Ministério da Justiça
-                        </h3>
-
-                        <p>
-                            Informações oficiais sobre
-                            violência doméstica e familiar
-                            contra as mulheres.
-                        </p>
-
-                        <a
-                            href="https://www.gov.br/mj/"
-                            target="_blank">
-
-                            Acessar fonte oficial →
-
+                        <a href="#escuta" class="help-button">
+                            <span>💗 Portal de Escuta</span>
+                            Quero conversar
                         </a>
 
-                    </article>
-
+                    </div>
 
                 </div>
 
@@ -2172,24 +1741,129 @@
         </section>
 
 
+        <!-- REFERÊNCIAS -->
+
+        <section id="referencias">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span class="eyebrow">
+                        REFERÊNCIAS
+                    </span>
+
+                    <h2>
+                        Fontes utilizadas
+                    </h2>
+
+                    <p>
+                        As informações deste projeto foram baseadas
+                        principalmente em fontes oficiais.
+                    </p>
+
+                </div>
+
+
+                <div class="references">
+
+                    <a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm"
+                        target="_blank"
+                        rel="noopener">
+
+                        <i class="fa-solid fa-scale-balanced"></i>
+
+                        Lei Maria da Penha — Planalto
+
+                    </a>
+
+
+                    <a href="https://www.gov.br/mulheres/pt-br/ligue180"
+                        target="_blank"
+                        rel="noopener">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        Ligue 180 — Ministério das Mulheres
+
+                    </a>
+
+
+                    <a href="https://www.gov.br/mulheres/pt-br/ligue180/painel-de-dados"
+                        target="_blank"
+                        rel="noopener">
+
+                        <i class="fa-solid fa-chart-column"></i>
+
+                        Painel de Dados do Ligue 180
+
+                    </a>
+
+
+                    <a href="https://www.seguranca.pr.gov.br/"
+                        target="_blank"
+                        rel="noopener">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        Secretaria da Segurança Pública do Paraná
+
+                    </a>
+
+
+                    <a href="https://www.camara.leg.br/deputados/4855/biografia"
+                        target="_blank"
+                        rel="noopener">
+
+                        <i class="fa-solid fa-landmark"></i>
+
+                        Câmara dos Deputados — Bertha Lutz
+
+                    </a>
+
+
+                    <a href="https://www.un.org/en/about-us/udhr/drafters-of-the-declaration"
+                        target="_blank"
+                        rel="noopener">
+
+                        <i class="fa-solid fa-earth-americas"></i>
+
+                        ONU — Declaração Universal dos Direitos Humanos
+
+                    </a>
+
+
+                    <a href="https://www.institutomariadapenha.org.br/"
+                        target="_blank"
+                        rel="noopener">
+
+                        <i class="fa-solid fa-book"></i>
+
+                        Instituto Maria da Penha
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
 
 
-    <!-- ==============================
-         FOOTER
-    =============================== -->
+    <!-- FOOTER -->
 
     <footer>
 
-        <div class="container footer-grid">
-
+        <div class="container footer-content">
 
             <div>
 
-                <div class="logo">
+                <a href="#inicio" class="logo">
 
                     <div class="logo-symbol">
-                        ✦
+                        <i class="fa-solid fa-heart"></i>
                     </div>
 
                     <div class="logo-text">
@@ -2204,86 +1878,64 @@
 
                     </div>
 
-                </div>
+                </a>
 
                 <p>
-
-                    Projeto individual desenvolvido
-                    como Portal de Apoio ao Estudante,
-                    utilizando HTML, CSS e JavaScript.
-
+                    Informação, prevenção e acolhimento.
                 </p>
 
             </div>
 
 
-            <div>
+            <div class="footer-links">
 
-                <h3>
-                    Navegação
-                </h3>
+                <h3>Navegação</h3>
 
-                <div class="footer-links">
-
-                    <a href="#entenda">
-                        Entenda
-                    </a>
-
-                    <a href="#dados">
-                        Dados
-                    </a>
-
-                    <a href="#direitos">
-                        Direitos
-                    </a>
-
-                    <a href="#escuta">
-                        Escuta
-                    </a>
-
-                    <a href="#quiz">
-                        Quiz
-                    </a>
-
-                    <a href="#referencias">
-                        Referências
-                    </a>
-
-                </div>
+                <a href="#entenda">Entenda</a>
+                <a href="#dados">Dados</a>
+                <a href="#direitos">Direitos</a>
+                <a href="#historias">Histórias</a>
+                <a href="#quiz">Quiz</a>
+                <a href="#referencias">Referências</a>
 
             </div>
 
+
+            <div class="footer-contact">
+
+                <h3>Importante</h3>
+
+                <p>
+                    Este site é um projeto educativo.
+                    As informações não substituem orientação
+                    profissional ou atendimento de emergência.
+                </p>
+
+            </div>
 
         </div>
 
 
         <div class="container footer-bottom">
 
-            <p>
-                Conteúdo educativo. Em situações de
-                emergência, procure os serviços oficiais.
-            </p>
+            © 2026 Elas em Segurança • Projeto educativo
 
         </div>
 
     </footer>
 
 
-    <!-- ==============================
-         VOLTAR AO TOPO
-    =============================== -->
+    <!-- VOLTAR AO TOPO -->
 
     <button
-        id="topButton"
-        class="back-top"
+        class="back-to-top"
+        id="backToTop"
         aria-label="Voltar ao topo">
 
-        ↑
+        <i class="fa-solid fa-arrow-up"></i>
 
     </button>
 
-
-    <!-- JAVASCRIPT EXTERNO -->
 
     <script src="script.js"></script>
 

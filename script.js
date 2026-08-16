@@ -1,416 +1,432 @@
-```javascript
-/* =========================================================
-   PORTAL DE APOIO AO ESTUDANTE
-   JavaScript - Página Inicial
-========================================================= */
+/* =====================================================
+   ELAS EM SEGURANÇA
+   JAVASCRIPT
+===================================================== */
 
 
-/* =========================================================
-   1. MENU MOBILE
-========================================================= */
+/* =====================================================
+   MENU MOBILE
+===================================================== */
 
-const menuBtn = document.querySelector(".menu-btn");
-const nav = document.querySelector(".nav");
+function abrirMenu() {
 
-if (menuBtn && nav) {
+    const menu = document.getElementById("menu");
 
-    menuBtn.addEventListener("click", () => {
+    menu.classList.toggle("open");
 
-        nav.classList.toggle("active");
-
-        const icon = menuBtn.querySelector("i");
-
-        if (nav.classList.contains("active")) {
-
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-xmark");
-
-            menuBtn.setAttribute("aria-label", "Fechar menu");
-
-        } else {
-
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
-
-            menuBtn.setAttribute("aria-label", "Abrir menu");
-        }
-    });
-
-
-    /* Fecha o menu quando o usuário
-       clica em algum link */
-
-    const navLinks = nav.querySelectorAll("a");
-
-    navLinks.forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            nav.classList.remove("active");
-
-            const icon = menuBtn.querySelector("i");
-
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
-
-            menuBtn.setAttribute("aria-label", "Abrir menu");
-        });
-    });
 }
 
 
-/* =========================================================
-   2. BOTÃO VOLTAR AO TOPO
-========================================================= */
+/* Fecha o menu quando um link é clicado */
 
-const backToTop = document.getElementById("backToTop");
+document.querySelectorAll("#menu a").forEach(function(link) {
 
-if (backToTop) {
+    link.addEventListener("click", function() {
 
-    window.addEventListener("scroll", () => {
-
-        if (window.scrollY > 400) {
-
-            backToTop.classList.add("show");
-
-        } else {
-
-            backToTop.classList.remove("show");
-        }
-    });
-
-
-    backToTop.addEventListener("click", () => {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+        document.getElementById("menu").classList.remove("open");
 
     });
+
+});
+
+
+/* =====================================================
+   BOTÃO VOLTAR AO TOPO
+===================================================== */
+
+const backToTop =
+    document.getElementById("backToTop");
+
+
+window.addEventListener("scroll", function() {
+
+    if (window.scrollY > 500) {
+
+        backToTop.classList.add("show");
+
+    } else {
+
+        backToTop.classList.remove("show");
+
+    }
+
+});
+
+
+backToTop.addEventListener("click", function() {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+});
+
+
+/* =====================================================
+   ACESSIBILIDADE — FONTE
+===================================================== */
+
+function aumentarFonte() {
+
+    document.body.classList.remove("font-xl");
+
+    document.body.classList.toggle("font-large");
+
 }
 
 
-/* =========================================================
-   3. ANIMAÇÃO DAS SEÇÕES AO ENTRAREM NA TELA
-========================================================= */
+function aumentarFonteMais() {
 
-const animatedElements = document.querySelectorAll(
-    ".info-card, .help-item, .welcome-box, .section-title"
-);
+    document.body.classList.remove("font-large");
 
-if (animatedElements.length > 0) {
+    document.body.classList.add("font-xl");
 
-    const observer = new IntersectionObserver(
-        (entries, observer) => {
+}
 
-            entries.forEach(entry => {
+
+function fonteNormal() {
+
+    document.body.classList.remove("font-large");
+
+    document.body.classList.remove("font-xl");
+
+}
+
+
+/* =====================================================
+   ALTO CONTRASTE
+===================================================== */
+
+function alternarContraste() {
+
+    document.body.classList.toggle("contrast");
+
+}
+
+
+/* =====================================================
+   MODO ESCURO
+===================================================== */
+
+function alternarModoEscuro() {
+
+    document.body.classList.toggle("dark");
+
+}
+
+
+/* =====================================================
+   QUIZ
+===================================================== */
+
+
+/*
+    Cada posição representa uma pergunta.
+
+    null = ainda não respondida
+    1    = resposta correta
+    0    = resposta errada
+*/
+
+const respostasUsuario = [
+
+    null,
+    null,
+    null,
+    null,
+    null
+
+];
+
+
+function responder(botao, pergunta, valor) {
+
+    const questao =
+        botao.parentElement;
+
+    const botoes =
+        questao.querySelectorAll(".answer");
+
+
+    /* Remove seleção anterior */
+
+    botoes.forEach(function(item) {
+
+        item.classList.remove("selected");
+
+    });
+
+
+    /* Marca a resposta escolhida */
+
+    botao.classList.add("selected");
+
+
+    /* Guarda resposta */
+
+    respostasUsuario[pergunta] = valor;
+
+}
+
+
+/* =====================================================
+   RESULTADO DO QUIZ
+===================================================== */
+
+function mostrarResultado() {
+
+    const resultado =
+        document.getElementById("resultado");
+
+
+    let respondidas = 0;
+
+    let pontos = 0;
+
+
+    respostasUsuario.forEach(function(resposta) {
+
+        if (resposta !== null) {
+
+            respondidas++;
+
+            if (resposta === 1) {
+
+                pontos++;
+
+            }
+
+        }
+
+    });
+
+
+    if (respondidas < 5) {
+
+        resultado.innerHTML = `
+            <strong>Quase lá!</strong>
+            <p>
+                Você respondeu ${respondidas} de 5 perguntas.
+                Responda todas para descobrir seu resultado.
+            </p>
+        `;
+
+        resultado.classList.add("show");
+
+        return;
+
+    }
+
+
+    let mensagem = "";
+
+
+    if (pontos === 5) {
+
+        mensagem =
+            "Excelente! Você reconheceu corretamente todos os sinais apresentados.";
+
+    } else if (pontos >= 3) {
+
+        mensagem =
+            "Muito bem! Você demonstrou um bom conhecimento sobre o tema.";
+
+    } else {
+
+        mensagem =
+            "Continue aprendendo! Informação é uma ferramenta importante para reconhecer situações de violência e buscar apoio.";
+
+    }
+
+
+    resultado.innerHTML = `
+
+        <strong>
+            Você acertou ${pontos} de 5 perguntas.
+        </strong>
+
+        <p>
+            ${mensagem}
+        </p>
+
+    `;
+
+
+    resultado.classList.add("show");
+
+
+    /* Mostra visualmente quais eram as respostas corretas */
+
+    const questoes =
+        document.querySelectorAll(".question");
+
+
+    questoes.forEach(function(questao, indice) {
+
+        const botoes =
+            questao.querySelectorAll(".answer");
+
+
+        botoes.forEach(function(botao) {
+
+            const valor =
+                botao.getAttribute("onclick");
+
+
+            if (
+                valor &&
+                valor.includes(
+                    `responder(this, ${indice}, 1)`
+                )
+            ) {
+
+                botao.classList.add("correct");
+
+            }
+
+        });
+
+    });
+
+}
+
+
+/* =====================================================
+   PORTAL DE ESCUTA
+===================================================== */
+
+function enviarDesabafo() {
+
+    const campo =
+        document.getElementById("desabafo");
+
+    const mensagem =
+        document.getElementById("mensagemEscuta");
+
+
+    if (campo.value.trim() === "") {
+
+        mensagem.innerHTML = `
+
+            <strong>Você pode escrever primeiro.</strong>
+
+            <p>
+                Este espaço é apenas uma simulação educativa
+                e não armazena seu texto.
+            </p>
+
+        `;
+
+        mensagem.style.display = "block";
+
+        return;
+
+    }
+
+
+    mensagem.innerHTML = `
+
+        <strong>
+            Obrigada por compartilhar.
+        </strong>
+
+        <p>
+            Seu texto não foi armazenado nem enviado.
+            Em uma situação real, procure uma pessoa adulta
+            de confiança ou um serviço de apoio.
+        </p>
+
+        <p>
+            Você merece ser ouvida e respeitada.
+        </p>
+
+    `;
+
+
+    mensagem.style.display = "block";
+
+
+    /*
+        Limpa o campo porque o formulário é somente
+        uma simulação e nenhum texto deve permanecer.
+    */
+
+    campo.value = "";
+
+}
+
+
+/* =====================================================
+   ANIMAÇÃO AO ENTRAR NA TELA
+===================================================== */
+
+const elementos =
+    document.querySelectorAll(
+        ".card, .sign, .stat, .right, .person, .timeline-item"
+    );
+
+
+const observador =
+    new IntersectionObserver(
+
+        function(entries) {
+
+            entries.forEach(function(entry) {
 
                 if (entry.isIntersecting) {
 
                     entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
 
-                    observer.unobserve(entry.target);
+                    entry.target.style.transform =
+                        "translateY(0)";
+
                 }
+
             });
 
         },
+
         {
-            threshold: 0.15
+            threshold: 0.1
         }
+
     );
 
 
-    animatedElements.forEach(element => {
+elementos.forEach(function(elemento) {
 
-        element.style.opacity = "0";
-        element.style.transform = "translateY(25px)";
-        element.style.transition =
-            "opacity 0.7s ease, transform 0.7s ease";
+    elemento.style.opacity = "0";
 
-        observer.observe(element);
-    });
+    elemento.style.transform =
+        "translateY(20px)";
+
+    elemento.style.transition =
+        "opacity .6s ease, transform .6s ease";
+
+    observador.observe(elemento);
+
+});
+
+
+/* =====================================================
+   ANO AUTOMÁTICO DO FOOTER
+===================================================== */
+
+const anoAtual =
+    new Date().getFullYear();
+
+
+const footerBottom =
+    document.querySelector(".footer-bottom");
+
+
+if (footerBottom) {
+
+    footerBottom.innerHTML =
+        `© ${anoAtual} Elas em Segurança • Projeto educativo`;
+
 }
-
-
-/* =========================================================
-   4. MODO ESCURO
-========================================================= */
-
-const darkModeButton = document.createElement("button");
-
-darkModeButton.className = "accessibility-button";
-darkModeButton.id = "darkModeButton";
-
-darkModeButton.setAttribute(
-    "aria-label",
-    "Ativar ou desativar modo escuro"
-);
-
-darkModeButton.innerHTML = `
-    <i class="fa-solid fa-moon"></i>
-`;
-
-document.body.appendChild(darkModeButton);
-
-
-/* Verifica preferência salva */
-
-const darkMode = localStorage.getItem("darkMode");
-
-if (darkMode === "enabled") {
-
-    document.body.classList.add("dark-mode");
-
-    darkModeButton.innerHTML = `
-        <i class="fa-solid fa-sun"></i>
-    `;
-}
-
-
-/* Ativa/desativa */
-
-darkModeButton.addEventListener("click", () => {
-
-    document.body.classList.toggle("dark-mode");
-
-    const isDark =
-        document.body.classList.contains("dark-mode");
-
-
-    if (isDark) {
-
-        localStorage.setItem("darkMode", "enabled");
-
-        darkModeButton.innerHTML = `
-            <i class="fa-solid fa-sun"></i>
-        `;
-
-    } else {
-
-        localStorage.setItem("darkMode", "disabled");
-
-        darkModeButton.innerHTML = `
-            <i class="fa-solid fa-moon"></i>
-        `;
-    }
-});
-
-
-/* =========================================================
-   5. AUMENTAR / DIMINUIR FONTE
-========================================================= */
-
-let fontSize = Number(
-    localStorage.getItem("fontSize")
-) || 100;
-
-
-/* Cria os botões */
-
-const increaseFontButton = document.createElement("button");
-
-increaseFontButton.className = "accessibility-button";
-increaseFontButton.id = "increaseFont";
-
-increaseFontButton.setAttribute(
-    "aria-label",
-    "Aumentar tamanho da fonte"
-);
-
-increaseFontButton.innerHTML = `
-    <i class="fa-solid fa-plus"></i>
-    <span>A</span>
-`;
-
-
-const decreaseFontButton = document.createElement("button");
-
-decreaseFontButton.className = "accessibility-button";
-decreaseFontButton.id = "decreaseFont";
-
-decreaseFontButton.setAttribute(
-    "aria-label",
-    "Diminuir tamanho da fonte"
-);
-
-decreaseFontButton.innerHTML = `
-    <i class="fa-solid fa-minus"></i>
-    <span>A</span>
-`;
-
-
-/* Adiciona os botões */
-
-document.body.appendChild(increaseFontButton);
-document.body.appendChild(decreaseFontButton);
-
-
-/* Aplica tamanho salvo */
-
-document.documentElement.style.fontSize =
-    `${fontSize}%`;
-
-
-/* Aumentar */
-
-increaseFontButton.addEventListener("click", () => {
-
-    if (fontSize < 125) {
-
-        fontSize += 5;
-
-        document.documentElement.style.fontSize =
-            `${fontSize}%`;
-
-        localStorage.setItem(
-            "fontSize",
-            fontSize
-        );
-    }
-});
-
-
-/* Diminuir */
-
-decreaseFontButton.addEventListener("click", () => {
-
-    if (fontSize > 90) {
-
-        fontSize -= 5;
-
-        document.documentElement.style.fontSize =
-            `${fontSize}%`;
-
-        localStorage.setItem(
-            "fontSize",
-            fontSize
-        );
-    }
-});
-
-
-/* =========================================================
-   6. ALTO CONTRASTE
-========================================================= */
-
-const contrastButton = document.createElement("button");
-
-contrastButton.className = "accessibility-button";
-contrastButton.id = "contrastButton";
-
-contrastButton.setAttribute(
-    "aria-label",
-    "Ativar ou desativar alto contraste"
-);
-
-contrastButton.innerHTML = `
-    <i class="fa-solid fa-circle-half-stroke"></i>
-`;
-
-
-document.body.appendChild(contrastButton);
-
-
-/* Verifica preferência */
-
-const highContrast =
-    localStorage.getItem("highContrast");
-
-
-if (highContrast === "enabled") {
-
-    document.body.classList.add(
-        "high-contrast"
-    );
-}
-
-
-/* Ativar/desativar */
-
-contrastButton.addEventListener("click", () => {
-
-    document.body.classList.toggle(
-        "high-contrast"
-    );
-
-    const isContrast =
-        document.body.classList.contains(
-            "high-contrast"
-        );
-
-
-    if (isContrast) {
-
-        localStorage.setItem(
-            "highContrast",
-            "enabled"
-        );
-
-    } else {
-
-        localStorage.setItem(
-            "highContrast",
-            "disabled"
-        );
-    }
-});
-
-
-/* =========================================================
-   7. ANO AUTOMÁTICO NO RODAPÉ
-========================================================= */
-
-const footerText =
-    document.querySelector(".footer-bottom p");
-
-if (footerText) {
-
-    const currentYear =
-        new Date().getFullYear();
-
-    footerText.innerHTML = `
-        &copy; ${currentYear} Portal de Apoio ao Estudante.
-        Projeto educativo escolar.
-    `;
-}
-
-
-/* =========================================================
-   8. FECHAR MENU COM A TECLA ESC
-========================================================= */
-
-document.addEventListener("keydown", (event) => {
-
-    if (event.key === "Escape") {
-
-        if (nav && nav.classList.contains("active")) {
-
-            nav.classList.remove("active");
-
-            const icon =
-                menuBtn.querySelector("i");
-
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
-
-            menuBtn.setAttribute(
-                "aria-label",
-                "Abrir menu"
-            );
-        }
-    }
-});
-
-
-/* =========================================================
-   9. INDICADOR DE CARREGAMENTO
-========================================================= */
-
-window.addEventListener("load", () => {
-
-    document.body.classList.add("page-loaded");
-
-});
-```
