@@ -8,61 +8,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Portal de Apoio ao Estudante - Cyberbullying e Segurança Digital">
+        content="Portal de Apoio ao Estudante - informações, orientações e acolhimento sobre cyberbullying e segurança digital.">
 
     <title>Portal de Apoio ao Estudante</title>
 
-    <!-- FONTE -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <!-- FONT AWESOME -->
 
-    <!-- ÍCONES -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
 <style>
 
-/* =========================================================
+/* ==========================================================
    CONFIGURAÇÕES GERAIS
-========================================================= */
+========================================================== */
 
 :root {
 
-    --primary: #5577d9;
-    --primary-dark: #405eb5;
+    --azul: #5875D9;
+    --azul-escuro: #4059B5;
 
-    --secondary: #8b78d8;
+    --lilas: #8C78D7;
 
-    --green: #61b593;
+    --verde: #63B894;
 
-    --text: #26344d;
+    --azul-claro: #EEF2FF;
 
-    --muted: #68758b;
+    --fundo: #F7F9FC;
 
-    --background: #f7f9fd;
+    --branco: #FFFFFF;
 
-    --white: #ffffff;
+    --texto: #27344D;
 
-    --line: #e5eaf3;
+    --texto-claro: #68758A;
 
-    --shadow:
-        0 18px 45px rgba(53, 76, 125, 0.10);
+    --borda: #E4E9F2;
 
-    --radius: 22px;
+    --sombra:
+        0 15px 40px rgba(62, 80, 125, 0.10);
+
 }
 
 
 * {
 
-    box-sizing: border-box;
-
     margin: 0;
 
     padding: 0;
+
+    box-sizing: border-box;
 
 }
 
@@ -78,11 +87,20 @@ body {
 
     font-family: "Poppins", sans-serif;
 
-    background: var(--background);
+    background: var(--fundo);
 
-    color: var(--text);
+    color: var(--texto);
 
     line-height: 1.7;
+
+}
+
+
+body,
+button,
+a {
+
+    -webkit-tap-highlight-color: transparent;
 
 }
 
@@ -110,30 +128,28 @@ select {
 
     width: min(1120px, 92%);
 
-    margin: auto;
+    margin: 0 auto;
 
 }
 
 
-/* =========================================================
+/* ==========================================================
    HEADER
-========================================================= */
+========================================================== */
 
-header {
+.header {
 
     position: sticky;
 
     top: 0;
 
-    z-index: 999;
+    z-index: 1000;
 
-    background:
-        rgba(255,255,255,0.94);
+    background: rgba(255,255,255,0.94);
 
     backdrop-filter: blur(15px);
 
-    border-bottom:
-        1px solid rgba(225,230,240,0.9);
+    border-bottom: 1px solid rgba(228,233,242,0.9);
 
 }
 
@@ -148,8 +164,6 @@ header {
 
     justify-content: space-between;
 
-    gap: 25px;
-
 }
 
 
@@ -161,30 +175,30 @@ header {
 
     gap: 10px;
 
-    color: var(--primary-dark);
+    color: var(--azul-escuro);
+
+    font-size: 1rem;
 
     font-weight: 700;
-
-    font-size: 1.05rem;
 
 }
 
 
 .logo i {
 
-    width: 41px;
+    width: 42px;
 
-    height: 41px;
+    height: 42px;
 
     border-radius: 13px;
 
-    background: #eaf0ff;
+    background: var(--azul-claro);
+
+    color: var(--azul);
 
     display: grid;
 
     place-items: center;
-
-    color: var(--primary);
 
 }
 
@@ -202,17 +216,23 @@ header {
 
 .nav a {
 
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
     padding: 9px 13px;
 
     border-radius: 12px;
 
-    color: #637087;
+    color: #647087;
 
-    font-size: .88rem;
+    font-size: 0.84rem;
 
     font-weight: 500;
 
-    transition: .25s;
+    transition: 0.25s;
 
 }
 
@@ -220,16 +240,9 @@ header {
 .nav a:hover,
 .nav a.active {
 
-    background: #eef2ff;
+    background: var(--azul-claro);
 
-    color: var(--primary-dark);
-
-}
-
-
-.nav i {
-
-    margin-right: 5px;
+    color: var(--azul-escuro);
 
 }
 
@@ -238,17 +251,17 @@ header {
 
     display: none;
 
-    width: 42px;
+    border: none;
 
-    height: 42px;
+    width: 43px;
 
-    border: 0;
+    height: 43px;
 
-    border-radius: 12px;
+    border-radius: 13px;
 
-    background: #eef2ff;
+    background: var(--azul-claro);
 
-    color: var(--primary);
+    color: var(--azul);
 
     cursor: pointer;
 
@@ -257,103 +270,30 @@ header {
 }
 
 
-/* =========================================================
-   BOTÕES
-========================================================= */
-
-.btn {
-
-    border: 0;
-
-    border-radius: 14px;
-
-    padding: 13px 19px;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 9px;
-
-    cursor: pointer;
-
-    font-size: .9rem;
-
-    font-weight: 600;
-
-    transition: .25s;
-
-}
-
-
-.btn-primary {
-
-    background: var(--primary);
-
-    color: white;
-
-    box-shadow:
-        0 10px 25px rgba(85,119,217,.22);
-
-}
-
-
-.btn-primary:hover {
-
-    background: var(--primary-dark);
-
-    transform: translateY(-2px);
-
-}
-
-
-.btn-secondary {
-
-    background: white;
-
-    border: 1px solid var(--line);
-
-    color: var(--text);
-
-}
-
-
-.btn-secondary:hover {
-
-    transform: translateY(-2px);
-
-    box-shadow: var(--shadow);
-
-}
-
-
-.btn-light {
-
-    background: white;
-
-    color: var(--primary-dark);
-
-    margin-top: 20px;
-
-}
-
-
-/* =========================================================
+/* ==========================================================
    HERO
-========================================================= */
+========================================================== */
 
 .hero {
 
-    padding: 90px 0 100px;
+    padding: 85px 0 100px;
 
     background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(140,120,215,0.13),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(99,184,148,0.12),
+            transparent 28%
+        ),
         linear-gradient(
             135deg,
-            #f4f7ff,
-            #f8f5ff 55%,
-            #eefaf5
+            #F3F6FF,
+            #FAF8FF 55%,
+            #F1FAF6
         );
 
     overflow: hidden;
@@ -365,8 +305,7 @@ header {
 
     display: grid;
 
-    grid-template-columns:
-        1.08fr .92fr;
+    grid-template-columns: 1fr 0.95fr;
 
     align-items: center;
 
@@ -383,15 +322,15 @@ header {
 
     gap: 8px;
 
-    padding: 7px 13px;
+    padding: 7px 14px;
 
     border-radius: 30px;
 
-    background: #eaf0ff;
+    background: #EAF0FF;
 
-    color: var(--primary-dark);
+    color: var(--azul-escuro);
 
-    font-size: .83rem;
+    font-size: 0.78rem;
 
     font-weight: 600;
 
@@ -400,21 +339,20 @@ header {
 
 .hero h1 {
 
-    font-size:
-        clamp(2.35rem, 5vw, 4.3rem);
+    margin: 20px 0 17px;
+
+    font-size: clamp(2.3rem, 5vw, 4rem);
 
     line-height: 1.12;
 
-    letter-spacing: -2px;
-
-    margin: 20px 0;
+    letter-spacing: -1.8px;
 
 }
 
 
 .hero h1 span {
 
-    color: var(--primary);
+    color: var(--azul);
 
     display: block;
 
@@ -423,11 +361,11 @@ header {
 
 .hero p {
 
-    max-width: 650px;
+    max-width: 630px;
 
-    color: var(--muted);
+    color: var(--texto-claro);
 
-    font-size: 1rem;
+    font-size: 0.96rem;
 
 }
 
@@ -438,235 +376,140 @@ header {
 
     flex-wrap: wrap;
 
-    gap: 13px;
+    gap: 12px;
 
-    margin-top: 30px;
-
-}
-
-
-/* =========================================================
-   ILUSTRAÇÃO DO HERO
-========================================================= */
-
-.hero-visual {
-
-    position: relative;
-
-    min-height: 410px;
+    margin-top: 28px;
 
 }
 
 
-.hero-illustration {
+/* ==========================================================
+   BOTÕES
+========================================================== */
 
-    height: 390px;
+.btn {
 
-    border-radius: 35px;
+    border: none;
 
-    background:
-        linear-gradient(
-            145deg,
-            #dfe8ff,
-            #eee8ff 55%,
-            #ddf4ea
-        );
+    border-radius: 14px;
 
-    position: relative;
+    padding: 12px 18px;
 
-    overflow: hidden;
+    display: inline-flex;
 
-    box-shadow: var(--shadow);
-
-}
-
-
-.shield {
-
-    position: absolute;
-
-    width: 190px;
-
-    height: 190px;
-
-    border-radius: 50%;
-
-    background: white;
-
-    left: 50%;
-
-    top: 45%;
-
-    transform: translate(-50%,-50%);
-
-    display: grid;
-
-    place-items: center;
-
-    color: var(--primary);
-
-    font-size: 5rem;
-
-    box-shadow:
-        0 20px 45px rgba(68,83,140,.12);
-
-}
-
-
-.person {
-
-    position: absolute;
-
-    bottom: 55px;
-
-    width: 85px;
-
-    height: 120px;
-
-    border-radius:
-        45px 45px 22px 22px;
-
-    background: white;
-
-    display: grid;
-
-    place-items: center;
-
-    color: var(--secondary);
-
-    font-size: 2.4rem;
-
-    box-shadow: var(--shadow);
-
-}
-
-
-.person.one {
-
-    left: 15%;
-
-}
-
-
-.person.two {
-
-    right: 15%;
-
-    color: var(--green);
-
-}
-
-
-.chat {
-
-    position: absolute;
-
-    background: white;
-
-    padding: 14px;
-
-    border-radius: 17px;
-
-    box-shadow: var(--shadow);
-
-    color: var(--primary);
-
-}
-
-
-.chat.one {
-
-    top: 70px;
-
-    left: 15%;
-
-}
-
-
-.chat.two {
-
-    top: 115px;
-
-    right: 17%;
-
-    color: var(--green);
-
-}
-
-
-.phone {
-
-    position: absolute;
-
-    left: 50%;
-
-    bottom: 24px;
-
-    transform: translateX(-50%);
-
-    background: white;
-
-    border-radius: 18px;
-
-    padding: 10px 17px;
-
-    display: grid;
-
-    grid-template-columns: auto 1fr;
-
-    column-gap: 10px;
+    justify-content: center;
 
     align-items: center;
 
-    min-width: 245px;
+    gap: 9px;
 
-    box-shadow: var(--shadow);
+    font-size: 0.84rem;
 
-}
+    font-weight: 600;
 
+    cursor: pointer;
 
-.phone i {
-
-    grid-row: span 2;
-
-    color: var(--primary);
-
-    font-size: 1.7rem;
+    transition: 0.25s;
 
 }
 
 
-.phone strong {
+.btn-primary {
 
-    font-size: .78rem;
+    background: var(--azul);
 
-}
+    color: white;
 
-
-.phone small {
-
-    font-size: .65rem;
-
-    color: var(--muted);
+    box-shadow:
+        0 10px 25px rgba(88,117,217,0.23);
 
 }
 
 
-.floating {
+.btn-primary:hover {
+
+    background: var(--azul-escuro);
+
+    transform: translateY(-2px);
+
+}
+
+
+.btn-secondary {
+
+    background: white;
+
+    border: 1px solid var(--borda);
+
+    color: var(--texto);
+
+}
+
+
+.btn-secondary:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--sombra);
+
+}
+
+
+.btn-light {
+
+    background: white;
+
+    color: var(--azul-escuro);
+
+    margin-top: 20px;
+
+}
+
+
+/* ==========================================================
+   IMAGEM DO HERO
+========================================================== */
+
+.hero-image {
+
+    position: relative;
+
+}
+
+
+.hero-image img {
+
+    width: 100%;
+
+    max-height: 420px;
+
+    object-fit: contain;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 20px 30px rgba(62,80,125,0.12)
+        );
+
+}
+
+
+.floating-card {
 
     position: absolute;
 
-    bottom: -18px;
+    bottom: 15px;
 
-    left: -20px;
+    left: 0;
 
     background: white;
 
     padding: 12px 16px;
 
-    border-radius: 18px;
+    border-radius: 17px;
 
-    box-shadow: var(--shadow);
+    box-shadow: var(--sombra);
 
     display: flex;
 
@@ -677,11 +520,11 @@ header {
 }
 
 
-.floating-icon {
+.floating-card > i {
 
-    width: 38px;
+    width: 39px;
 
-    height: 38px;
+    height: 39px;
 
     border-radius: 12px;
 
@@ -689,48 +532,68 @@ header {
 
     place-items: center;
 
-    background: #eaf8f2;
+    background: #E7F7F0;
 
-    color: var(--green);
+    color: var(--verde);
 
 }
 
 
-/* =========================================================
+.floating-card strong {
+
+    display: block;
+
+    font-size: 0.8rem;
+
+}
+
+
+.floating-card small {
+
+    display: block;
+
+    color: var(--texto-claro);
+
+    font-size: 0.67rem;
+
+}
+
+
+/* ==========================================================
    SEÇÕES
-========================================================= */
+========================================================== */
 
 section {
 
-    padding: 90px 0;
+    padding: 85px 0;
 
 }
 
 
 .section-title {
 
-    max-width: 680px;
+    max-width: 700px;
 
     text-align: center;
 
-    margin: auto auto 45px;
+    margin: 0 auto 43px;
 
 }
 
 
-.section-title span {
+.section-title > span {
 
     display: inline-block;
 
-    background: #eaf0ff;
-
-    color: var(--primary-dark);
-
-    padding: 7px 13px;
+    padding: 6px 13px;
 
     border-radius: 30px;
 
-    font-size: .82rem;
+    background: var(--azul-claro);
+
+    color: var(--azul-escuro);
+
+    font-size: 0.77rem;
 
     font-weight: 600;
 
@@ -739,71 +602,71 @@ section {
 
 .section-title h2 {
 
-    font-size:
-        clamp(1.8rem,3vw,2.7rem);
+    margin: 13px 0 10px;
+
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
 
     line-height: 1.25;
-
-    margin: 13px 0;
 
 }
 
 
 .section-title p {
 
-    color: var(--muted);
+    color: var(--texto-claro);
+
+    font-size: 0.88rem;
 
 }
 
 
-/* =========================================================
+/* ==========================================================
    CARDS
-========================================================= */
+========================================================== */
 
 .cards {
 
     display: grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 22px;
 
 }
 
 
-.card {
+.info-card {
 
     background: white;
 
-    border: 1px solid var(--line);
+    border: 1px solid var(--borda);
 
-    border-radius: var(--radius);
+    border-radius: 22px;
 
-    padding: 30px;
+    padding: 28px;
 
     box-shadow:
-        0 8px 25px rgba(45,65,110,.05);
+        0 7px 22px rgba(45,65,110,0.045);
 
-    transition: .25s;
+    transition: 0.3s;
 
 }
 
 
-.card:hover {
+.info-card:hover {
 
-    transform: translateY(-5px);
+    transform: translateY(-7px);
 
-    box-shadow: var(--shadow);
+    box-shadow: var(--sombra);
 
 }
 
 
 .card-icon {
 
-    width: 52px;
+    width: 53px;
 
-    height: 52px;
+    height: 53px;
 
     border-radius: 16px;
 
@@ -811,137 +674,90 @@ section {
 
     place-items: center;
 
-    margin-bottom: 20px;
+    margin-bottom: 19px;
+
+    font-size: 1.15rem;
 
 }
 
 
-.blue {
+.card-icon.blue {
 
-    background: #eaf0ff;
+    background: #EAF0FF;
 
-    color: var(--primary);
-
-}
-
-
-.purple {
-
-    background: #f0ebff;
-
-    color: var(--secondary);
+    color: var(--azul);
 
 }
 
 
-.green {
+.card-icon.purple {
 
-    background: #e7f7f0;
+    background: #F0EBFF;
 
-    color: var(--green);
+    color: var(--lilas);
 
 }
 
 
-.card h3 {
+.card-icon.green {
+
+    background: #E7F7F0;
+
+    color: var(--verde);
+
+}
+
+
+.info-card h3 {
+
+    font-size: 1.05rem;
 
     margin-bottom: 8px;
 
 }
 
 
-.card p {
+.info-card p {
 
-    color: var(--muted);
+    color: var(--texto-claro);
 
-    font-size: .88rem;
+    font-size: 0.84rem;
 
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 
 }
 
 
-.text-link {
+.info-card a {
 
-    color: var(--primary-dark);
+    color: var(--azul-escuro);
+
+    font-size: 0.8rem;
 
     font-weight: 600;
 
-    font-size: .85rem;
+}
+
+
+.info-card a i {
+
+    margin-left: 4px;
+
+    transition: 0.2s;
 
 }
 
 
-/* =========================================================
-   SEÇÃO REGIONAL
-========================================================= */
+.info-card a:hover i {
 
-.local {
-
-    padding-top: 0;
+    transform: translateX(4px);
 
 }
 
 
-.local-box {
-
-    background: white;
-
-    border: 1px solid var(--line);
-
-    border-radius: 28px;
-
-    padding: 38px;
-
-    display: flex;
-
-    gap: 24px;
-
-    box-shadow: var(--shadow);
-
-}
-
-
-.local-icon {
-
-    flex: 0 0 auto;
-
-    width: 58px;
-
-    height: 58px;
-
-    border-radius: 17px;
-
-    background: #eaf8f2;
-
-    color: var(--green);
-
-    display: grid;
-
-    place-items: center;
-
-}
-
-
-.local-box h2 {
-
-    margin: 6px 0;
-
-    font-size: 1.7rem;
-
-}
-
-
-.local-box p {
-
-    color: var(--muted);
-
-}
-
-
-/* =========================================================
-   ACOLHIMENTO
-========================================================= */
+/* ==========================================================
+   MENSAGEM DE ACOLHIMENTO
+========================================================== */
 
 .welcome {
 
@@ -952,42 +768,42 @@ section {
 
 .welcome-box {
 
-    border-radius: 30px;
+    border-radius: 28px;
 
-    padding: 45px;
+    padding: 42px;
 
     background:
         linear-gradient(
             135deg,
-            #526fca,
-            #7e70ca
+            #536FC8,
+            #8072C9
         );
 
     color: white;
 
     display: flex;
 
-    gap: 28px;
-
     align-items: flex-start;
 
+    gap: 25px;
+
     box-shadow:
-        0 22px 45px rgba(75,90,160,.2);
+        0 20px 45px rgba(74,87,155,0.18);
 
 }
 
 
 .welcome-icon {
 
-    width: 60px;
+    width: 58px;
 
-    height: 60px;
+    height: 58px;
 
-    flex: 0 0 auto;
+    flex-shrink: 0;
 
     border-radius: 18px;
 
-    background: rgba(255,255,255,.15);
+    background: rgba(255,255,255,0.15);
 
     display: grid;
 
@@ -996,29 +812,47 @@ section {
 }
 
 
-.welcome h2 {
+.welcome-content > span {
 
-    font-size: 2rem;
+    font-size: 0.78rem;
 
-    line-height: 1.25;
-
-    margin: 5px 0 10px;
+    opacity: 0.85;
 
 }
 
 
-.welcome p {
+.welcome-content h2 {
 
-    opacity: .9;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+
+    line-height: 1.3;
+
+    margin: 6px 0 10px;
+
+}
+
+
+.welcome-content p {
+
+    opacity: 0.9;
 
     max-width: 780px;
 
+    font-size: 0.88rem;
+
 }
 
 
-/* =========================================================
-   COMO AJUDAR
-========================================================= */
+/* ==========================================================
+   COMO PODEMOS AJUDAR
+========================================================== */
+
+.help {
+
+    background: #F7F9FC;
+
+}
+
 
 .help-grid {
 
@@ -1035,7 +869,7 @@ section {
 
     background: white;
 
-    border: 1px solid var(--line);
+    border: 1px solid var(--borda);
 
     border-radius: 20px;
 
@@ -1045,57 +879,75 @@ section {
 
     gap: 18px;
 
+    transition: 0.25s;
+
 }
 
 
-.number {
+.help-item:hover {
 
-    color: #bdc7d9;
+    transform: translateY(-4px);
+
+    box-shadow: var(--sombra);
+
+}
+
+
+.help-item .number {
+
+    color: #C3CCDB;
 
     font-weight: 700;
+
+    font-size: 0.88rem;
 
 }
 
 
 .help-item i {
 
-    color: var(--primary);
+    color: var(--azul);
 
 }
 
 
 .help-item h3 {
 
-    margin: 5px 0;
+    font-size: 0.98rem;
 
-    font-size: 1rem;
+    margin: 4px 0;
 
 }
 
 
 .help-item p {
 
-    color: var(--muted);
+    color: var(--texto-claro);
 
-    font-size: .84rem;
+    font-size: 0.81rem;
 
 }
 
 
-/* =========================================================
-   BANNER DO QUIZ
-========================================================= */
+/* ==========================================================
+   BANNER QUIZ
+========================================================== */
 
 .quiz-banner {
 
-    padding: 55px 0;
+    padding: 60px 0;
 
 }
 
 
-.quiz-banner-box {
+.quiz-content {
 
-    background: #eaf0ff;
+    background:
+        linear-gradient(
+            135deg,
+            #EAF0FF,
+            #F2EDFF
+        );
 
     border-radius: 28px;
 
@@ -1107,136 +959,163 @@ section {
 
     justify-content: space-between;
 
-    gap: 25px;
+    gap: 30px;
+
+    border: 1px solid #DFE5F5;
 
 }
 
 
-.quiz-banner-box h2 {
+.quiz-content > div > span {
 
-    margin: 5px 0;
+    display: inline-flex;
 
-    font-size: 1.7rem;
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--azul-escuro);
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
 
 }
 
 
-.quiz-banner-box p {
+.quiz-content h2 {
 
-    color: var(--muted);
+    font-size: 1.65rem;
+
+    margin: 7px 0;
 
 }
 
 
-/* =========================================================
-   PÁGINAS INTERNAS / VIEWS
-========================================================= */
+.quiz-content p {
 
-.view {
+    color: var(--texto-claro);
+
+    font-size: 0.85rem;
+
+    max-width: 650px;
+
+}
+
+
+/* ==========================================================
+   PÁGINA DO QUIZ
+========================================================== */
+
+.quiz-page {
 
     display: none;
 
+    min-height: 80vh;
+
+    padding: 70px 0;
+
 }
 
 
-.view.active {
+.quiz-page.active {
 
     display: block;
 
 }
 
 
-.page-hero {
+.quiz-header {
 
-    padding: 70px 0;
+    text-align: center;
 
-    background:
-        linear-gradient(
-            135deg,
-            #f2f6ff,
-            #f7f2ff
-        );
+    max-width: 700px;
+
+    margin: 0 auto 35px;
 
 }
 
 
-.page-hero h1 {
+.quiz-header span {
 
-    font-size:
-        clamp(2rem,4vw,3.3rem);
+    display: inline-block;
 
-    line-height: 1.2;
+    background: var(--azul-claro);
 
-    margin: 18px 0 10px;
+    color: var(--azul-escuro);
 
-}
+    padding: 6px 14px;
 
+    border-radius: 30px;
 
-.page-hero p {
+    font-size: 0.78rem;
 
-    max-width: 720px;
-
-    color: var(--muted);
+    font-weight: 600;
 
 }
 
 
-/* =========================================================
-   QUIZ
-========================================================= */
+.quiz-header h1 {
 
-.quiz-area {
+    margin: 14px 0 8px;
 
-    padding: 65px 0;
+    font-size: 2.3rem;
 
 }
 
 
-.quiz-shell {
+.quiz-header p {
 
-    max-width: 800px;
+    color: var(--texto-claro);
+
+}
+
+
+.quiz-box {
+
+    max-width: 780px;
 
     margin: auto;
 
+    padding: 32px;
+
     background: white;
 
-    border: 1px solid var(--line);
+    border: 1px solid var(--borda);
 
-    border-radius: 26px;
+    border-radius: 25px;
 
-    padding: 30px;
-
-    box-shadow: var(--shadow);
+    box-shadow: var(--sombra);
 
 }
 
 
-.quiz-top {
+.quiz-info {
 
-    display: grid;
-
-    grid-template-columns: auto 1fr auto;
+    display: flex;
 
     align-items: center;
 
-    gap: 16px;
+    gap: 15px;
 
     margin-bottom: 25px;
 
-    color: var(--muted);
+    font-size: 0.78rem;
 
-    font-size: .8rem;
+    color: var(--texto-claro);
 
 }
 
 
 .progress {
 
+    flex: 1;
+
     height: 8px;
 
-    background: #edf1f7;
+    background: #EDEFF5;
 
-    border-radius: 10px;
+    border-radius: 20px;
 
     overflow: hidden;
 
@@ -1245,33 +1124,33 @@ section {
 
 .progress-bar {
 
-    width: 0%;
-
     height: 100%;
 
-    background: var(--primary);
+    width: 0;
 
-    transition: .3s;
+    background: var(--azul);
+
+    transition: 0.3s;
 
 }
 
 
 .question-number {
 
-    color: var(--primary);
+    color: var(--azul);
+
+    font-size: 0.76rem;
 
     font-weight: 700;
-
-    font-size: .8rem;
 
 }
 
 
 .question {
 
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 
-    line-height: 1.4;
+    line-height: 1.45;
 
     margin: 8px 0 22px;
 
@@ -1282,7 +1161,7 @@ section {
 
     display: grid;
 
-    gap: 12px;
+    gap: 11px;
 
 }
 
@@ -1291,225 +1170,272 @@ section {
 
     width: 100%;
 
+    border: 2px solid #E7EBF3;
+
+    background: #FAFBFD;
+
+    border-radius: 14px;
+
+    padding: 14px 16px;
+
     text-align: left;
 
-    border: 2px solid #e7ecf6;
-
-    background: #f8faff;
-
-    border-radius: 15px;
-
-    padding: 15px 17px;
+    color: var(--texto);
 
     cursor: pointer;
 
-    color: var(--text);
+    transition: 0.2s;
 
-    font-size: .88rem;
-
-    transition: .2s;
+    font-size: 0.85rem;
 
 }
 
 
 .answer:hover {
 
-    border-color: #b8c7ef;
+    border-color: #B8C6ED;
 
-    background: #f1f5ff;
+    background: #F3F6FF;
 
 }
 
 
 .answer.correct {
 
-    border-color: #64b797;
+    background: #E9F8F1;
 
-    background: #eaf8f2;
+    border-color: #6ABD99;
 
 }
 
 
 .answer.wrong {
 
-    border-color: #df8d99;
+    background: #FFF0F2;
 
-    background: #fff0f2;
+    border-color: #DE8D99;
 
 }
 
 
 .feedback {
 
-    margin-top: 18px;
+    margin-top: 17px;
 
-    padding: 14px 16px;
+    padding: 14px;
 
-    border-radius: 14px;
+    border-radius: 13px;
 
-    font-size: .85rem;
+    font-size: 0.82rem;
 
 }
 
 
 .feedback.correct {
 
-    background: #eaf8f2;
+    background: #E9F8F1;
 
-    color: #367d64;
+    color: #367D64;
 
 }
 
 
 .feedback.wrong {
 
-    background: #fff0f2;
+    background: #FFF0F2;
 
-    color: #a44857;
+    color: #A44857;
 
 }
 
 
-.next {
+.next-btn {
 
     margin-top: 18px;
 
 }
 
 
-.result {
+/* RESULTADO */
+
+.quiz-result {
 
     text-align: center;
-
-    padding: 35px 10px;
 
 }
 
 
-.result-icon {
+.quiz-result i {
 
     width: 70px;
 
     height: 70px;
 
-    margin: auto auto 18px;
+    margin: 0 auto 15px;
 
     border-radius: 22px;
-
-    background: #eaf0ff;
-
-    color: var(--primary);
 
     display: grid;
 
     place-items: center;
+
+    background: var(--azul-claro);
+
+    color: var(--azul);
 
     font-size: 1.7rem;
 
 }
 
 
-.result h2 {
+.quiz-result h2 {
 
     font-size: 1.8rem;
 
 }
 
 
-.result p {
+.quiz-result p {
 
-    color: var(--muted);
+    color: var(--texto-claro);
 
-    max-width: 600px;
+    margin: 7px auto 22px;
 
-    margin: 8px auto 22px;
-
-}
-
-
-.hidden {
-
-    display: none !important;
+    max-width: 580px;
 
 }
 
 
-/* =========================================================
+/* ==========================================================
    PORTAL DE ESCUTA
-========================================================= */
+========================================================== */
 
-.form-section {
+.escuta-page {
 
-    padding: 65px 0;
+    display: none;
+
+    min-height: 80vh;
+
+    padding: 70px 0;
 
 }
 
 
-.form-layout {
+.escuta-page.active {
+
+    display: block;
+
+}
+
+
+.page-intro {
+
+    max-width: 800px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.page-intro span {
+
+    display: inline-block;
+
+    padding: 6px 13px;
+
+    border-radius: 30px;
+
+    background: var(--azul-claro);
+
+    color: var(--azul-escuro);
+
+    font-size: 0.77rem;
+
+    font-weight: 600;
+
+}
+
+
+.page-intro h1 {
+
+    margin: 14px 0 9px;
+
+    font-size: 2.3rem;
+
+}
+
+
+.page-intro p {
+
+    color: var(--texto-claro);
+
+}
+
+
+.escuta-grid {
 
     display: grid;
 
-    grid-template-columns: .85fr 1.15fr;
+    grid-template-columns: 0.8fr 1.2fr;
 
     gap: 25px;
 
 }
 
 
-.support-note,
-.support-form,
-.reference-card {
+.escuta-info,
+.escuta-form {
 
     background: white;
 
-    border: 1px solid var(--line);
+    border: 1px solid var(--borda);
 
     border-radius: 24px;
 
     padding: 30px;
 
     box-shadow:
-        0 8px 25px rgba(45,65,110,.05);
+        0 7px 22px rgba(45,65,110,0.05);
 
 }
 
 
-.support-note > i {
+.escuta-info > i {
 
     font-size: 2rem;
 
-    color: var(--primary);
+    color: var(--azul);
 
 }
 
 
-.support-note h2 {
+.escuta-info h2 {
 
     margin: 10px 0;
 
 }
 
 
-.support-note p,
-.support-note li {
+.escuta-info p,
+.escuta-info li {
 
-    color: var(--muted);
+    color: var(--texto-claro);
 
-    font-size: .88rem;
+    font-size: 0.85rem;
 
 }
 
 
-.support-note ul {
-
-    padding-left: 18px;
+.escuta-info ul {
 
     margin-top: 15px;
 
+    padding-left: 20px;
+
 }
 
 
-.support-form {
+.escuta-form {
 
     display: flex;
 
@@ -1520,9 +1446,9 @@ section {
 }
 
 
-.support-form label {
+.escuta-form label {
 
-    font-size: .85rem;
+    font-size: 0.82rem;
 
     font-weight: 600;
 
@@ -1531,10 +1457,10 @@ section {
 }
 
 
-.support-form select,
-.support-form textarea {
+.escuta-form select,
+.escuta-form textarea {
 
-    border: 1px solid #dfe5ef;
+    border: 1px solid #DDE3EE;
 
     border-radius: 13px;
 
@@ -1542,46 +1468,61 @@ section {
 
     outline: none;
 
-    font-size: .87rem;
+    color: var(--texto);
 
-    color: var(--text);
+    resize: vertical;
+
+    font-size: 0.84rem;
 
 }
 
 
-.support-form select:focus,
-.support-form textarea:focus {
+.escuta-form select:focus,
+.escuta-form textarea:focus {
 
-    border-color: #9fb2e7;
+    border-color: #9EAFE1;
 
     box-shadow:
-        0 0 0 3px #edf2ff;
+        0 0 0 3px #EDF2FF;
 
 }
 
 
-.response {
+.escuta-response {
 
-    background: #eaf8f2;
+    display: none;
 
-    border-radius: 15px;
+    background: #E9F8F1;
 
-    padding: 16px;
+    color: #367D64;
 
-    color: #367d64;
+    border-radius: 14px;
 
-    font-size: .88rem;
+    padding: 15px;
+
+    font-size: 0.83rem;
 
 }
 
 
-/* =========================================================
+/* ==========================================================
    REFERÊNCIAS
-========================================================= */
+========================================================== */
 
-.reference-section {
+.referencias-page {
 
-    padding: 65px 0;
+    display: none;
+
+    min-height: 80vh;
+
+    padding: 70px 0;
+
+}
+
+
+.referencias-page.active {
+
+    display: block;
 
 }
 
@@ -1590,19 +1531,34 @@ section {
 
     display: grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 20px;
 
 }
 
 
-.reference-card > i {
+.reference-card {
+
+    background: white;
+
+    border: 1px solid var(--borda);
+
+    border-radius: 22px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 7px 22px rgba(45,65,110,0.05);
+
+}
+
+
+.reference-card i {
 
     font-size: 1.7rem;
 
-    color: var(--primary);
+    color: var(--azul);
 
     margin-bottom: 13px;
 
@@ -1611,55 +1567,57 @@ section {
 
 .reference-card h2 {
 
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+
+    margin-bottom: 7px;
 
 }
 
 
 .reference-card p {
 
-    color: var(--muted);
+    color: var(--texto-claro);
 
-    font-size: .86rem;
+    font-size: 0.83rem;
 
 }
 
 
 .local-note {
 
-    margin-top: 25px;
+    margin-top: 22px;
 
-    background: #eef2ff;
+    background: #EEF2FF;
 
     border-radius: 20px;
 
-    padding: 25px;
+    padding: 24px;
 
     display: flex;
 
-    gap: 18px;
+    gap: 15px;
 
 }
 
 
 .local-note i {
 
-    color: var(--primary);
+    color: var(--azul);
 
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 
 }
 
 
-/* =========================================================
-   RODAPÉ
-========================================================= */
+/* ==========================================================
+   FOOTER
+========================================================== */
 
-footer {
+.footer {
 
-    background: #202b40;
+    background: #202B40;
 
-    color: #cbd3e1;
+    color: #C9D2E1;
 
     padding-top: 55px;
 
@@ -1670,48 +1628,56 @@ footer {
 
     display: grid;
 
-    grid-template-columns:
-        1.5fr 1fr 1.4fr;
+    grid-template-columns: 1.4fr 1fr 1.4fr;
 
-    gap: 50px;
+    gap: 45px;
 
     padding-bottom: 40px;
 
 }
 
 
-footer .logo {
+.footer .logo {
 
     color: white;
 
 }
 
 
-footer .logo i {
+.footer .logo i {
 
-    background: #33415c;
+    background: #33415B;
 
     color: white;
 
 }
 
 
-footer p {
+.footer p {
 
-    color: #9faabd;
+    color: #9DA9BC;
 
-    font-size: .82rem;
+    font-size: 0.8rem;
 
 }
 
 
-footer h3 {
+.footer-brand p {
+
+    margin-top: 15px;
+
+    max-width: 340px;
+
+}
+
+
+.footer h3 {
 
     color: white;
 
-    font-size: .9rem;
+    font-size: 0.88rem;
 
-    margin-bottom: 13px;
+    margin-bottom: 12px;
 
 }
 
@@ -1722,16 +1688,18 @@ footer h3 {
 
     flex-direction: column;
 
-    gap: 6px;
+    gap: 5px;
 
 }
 
 
 .footer-links a {
 
-    color: #aeb9cb;
+    color: #AEB8C9;
 
-    font-size: .82rem;
+    font-size: 0.8rem;
+
+    transition: 0.2s;
 
 }
 
@@ -1745,20 +1713,20 @@ footer h3 {
 
 .footer-bottom {
 
-    border-top: 1px solid #354157;
-
-    text-align: center;
+    border-top: 1px solid #354158;
 
     padding: 17px;
+
+    text-align: center;
 
 }
 
 
-/* =========================================================
+/* ==========================================================
    VOLTAR AO TOPO
-========================================================= */
+========================================================== */
 
-.back-top {
+.back-to-top {
 
     position: fixed;
 
@@ -1770,11 +1738,11 @@ footer h3 {
 
     height: 44px;
 
-    border: 0;
+    border: none;
 
     border-radius: 14px;
 
-    background: var(--primary);
+    background: var(--azul);
 
     color: white;
 
@@ -1784,14 +1752,14 @@ footer h3 {
 
     pointer-events: none;
 
-    transition: .25s;
+    transition: 0.25s;
 
-    box-shadow: var(--shadow);
+    box-shadow: var(--sombra);
 
 }
 
 
-.back-top.show {
+.back-to-top.show {
 
     opacity: 1;
 
@@ -1800,11 +1768,22 @@ footer h3 {
 }
 
 
-/* =========================================================
-   RESPONSIVIDADE
-========================================================= */
+/* ==========================================================
+   ESCONDER PÁGINA PRINCIPAL
+========================================================== */
 
-@media(max-width:850px) {
+.main-home.hidden {
+
+    display: none;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVIDADE
+========================================================== */
+
+@media (max-width: 850px) {
 
     .menu-btn {
 
@@ -1827,13 +1806,13 @@ footer h3 {
 
         background: white;
 
-        border: 1px solid var(--line);
+        border: 1px solid var(--borda);
 
         border-radius: 18px;
 
-        padding: 10px;
+        padding: 9px;
 
-        box-shadow: var(--shadow);
+        box-shadow: var(--sombra);
 
         flex-direction: column;
 
@@ -1849,9 +1828,27 @@ footer h3 {
     }
 
 
+    .nav a {
+
+        width: 100%;
+
+    }
+
+
     .hero-content {
 
         grid-template-columns: 1fr;
+
+        gap: 35px;
+
+    }
+
+
+    .hero-image {
+
+        max-width: 600px;
+
+        margin: auto;
 
     }
 
@@ -1870,7 +1867,7 @@ footer h3 {
     }
 
 
-    .form-layout {
+    .escuta-grid {
 
         grid-template-columns: 1fr;
 
@@ -1884,7 +1881,7 @@ footer h3 {
     }
 
 
-    .quiz-banner-box {
+    .quiz-content {
 
         flex-direction: column;
 
@@ -1895,7 +1892,7 @@ footer h3 {
 }
 
 
-@media(max-width:600px) {
+@media (max-width: 600px) {
 
     section {
 
@@ -1913,90 +1910,39 @@ footer h3 {
 
     .hero h1 {
 
+        font-size: 2.35rem;
+
         letter-spacing: -1px;
 
     }
 
 
-    .hero-visual {
-
-        min-height: 320px;
-
-    }
-
-
-    .hero-illustration {
-
-        height: 310px;
-
-    }
-
-
-    .shield {
-
-        width: 140px;
-
-        height: 140px;
-
-        font-size: 3.6rem;
-
-    }
-
-
-    .person {
-
-        width: 65px;
-
-        height: 95px;
-
-        bottom: 35px;
-
-        font-size: 1.8rem;
-
-    }
-
-
-    .person.one {
-
-        left: 7%;
-
-    }
-
-
-    .person.two {
-
-        right: 7%;
-
-    }
-
-
-    .phone {
-
-        min-width: 220px;
-
-    }
-
-
-    .floating {
-
-        left: 0;
-
-    }
-
-
-    .local-box,
-    .welcome-box {
-
-        padding: 28px;
+    .hero-buttons {
 
         flex-direction: column;
 
     }
 
 
-    .welcome h2 {
+    .hero-buttons .btn {
 
-        font-size: 1.6rem;
+        width: 100%;
+
+    }
+
+
+    .floating-card {
+
+        left: 0;
+
+    }
+
+
+    .welcome-box {
+
+        padding: 28px;
+
+        flex-direction: column;
 
     }
 
@@ -2008,6 +1954,36 @@ footer h3 {
     }
 
 
+    .quiz-content {
+
+        padding: 28px;
+
+    }
+
+
+    .quiz-box {
+
+        padding: 20px;
+
+    }
+
+
+    .quiz-info {
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .progress {
+
+        flex-basis: 100%;
+
+        order: 3;
+
+    }
+
+
     .footer-content {
 
         grid-template-columns: 1fr;
@@ -2015,32 +1991,9 @@ footer h3 {
     }
 
 
-    .quiz-shell {
+    .page-intro h1 {
 
-        padding: 20px;
-
-    }
-
-
-    .quiz-top {
-
-        grid-template-columns: 1fr auto;
-
-    }
-
-
-    .progress {
-
-        grid-column: 1 / -1;
-
-        grid-row: 2;
-
-    }
-
-
-    .local-note {
-
-        flex-direction: column;
+        font-size: 2rem;
 
     }
 
@@ -2054,36 +2007,35 @@ footer h3 {
 <body>
 
 
-<!-- =====================================================
+<!-- ==========================================================
      HEADER
-===================================================== -->
+========================================================== -->
 
-<header>
+<header class="header">
 
     <div class="container nav-container">
 
 
         <a href="#inicio"
            class="logo"
-           onclick="showView('inicio')">
+           onclick="showHome()">
 
             <i class="fa-solid fa-hand-holding-heart"></i>
 
-            <span>
-                Portal de Apoio
-            </span>
+            <span>Portal de Apoio</span>
 
         </a>
 
 
         <nav class="nav"
-             id="nav">
+             id="nav"
+             aria-label="Navegação principal">
 
 
             <a href="#inicio"
                class="active"
-               data-view="inicio"
-               onclick="showView('inicio')">
+               id="navInicio"
+               onclick="showHome()">
 
                 <i class="fa-solid fa-house"></i>
 
@@ -2093,8 +2045,8 @@ footer h3 {
 
 
             <a href="#escuta"
-               data-view="escuta"
-               onclick="showView('escuta')">
+               id="navEscuta"
+               onclick="showPage('escuta')">
 
                 <i class="fa-solid fa-comments"></i>
 
@@ -2104,8 +2056,8 @@ footer h3 {
 
 
             <a href="#quiz"
-               data-view="quiz"
-               onclick="showView('quiz')">
+               id="navQuiz"
+               onclick="showPage('quiz')">
 
                 <i class="fa-solid fa-circle-question"></i>
 
@@ -2115,8 +2067,8 @@ footer h3 {
 
 
             <a href="#referencias"
-               data-view="referencias"
-               onclick="showView('referencias')">
+               id="navReferencias"
+               onclick="showPage('referencias')">
 
                 <i class="fa-solid fa-book"></i>
 
@@ -2129,7 +2081,8 @@ footer h3 {
 
 
         <button class="menu-btn"
-                id="menuBtn">
+                id="menuBtn"
+                aria-label="Abrir menu">
 
             <i class="fa-solid fa-bars"></i>
 
@@ -2141,15 +2094,15 @@ footer h3 {
 
 
 
-<!-- =====================================================
-     INÍCIO
-===================================================== -->
+<!-- ==========================================================
+     PÁGINA PRINCIPAL
+========================================================== -->
+
+<div id="home"
+     class="main-home">
+
 
 <main>
-
-
-<div id="inicio"
-     class="view active">
 
 
 <!-- HERO -->
@@ -2159,14 +2112,14 @@ footer h3 {
     <div class="container hero-content">
 
 
-        <div>
+        <div class="hero-text">
 
 
             <span class="hero-tag">
 
                 <i class="fa-solid fa-shield-heart"></i>
 
-                Informação, segurança e acolhimento
+                Um espaço de informação e acolhimento
 
             </span>
 
@@ -2184,10 +2137,9 @@ footer h3 {
 
             <p>
 
-                Um espaço educativo criado para estudantes
-                da nossa região aprenderem a reconhecer
-                o cyberbullying, cuidar da própria segurança
-                digital e descobrir onde procurar apoio.
+                O Portal de Apoio ao Estudante foi criado para oferecer
+                informação, orientação e acolhimento diante de situações
+                como o cyberbullying e os desafios da vida digital.
 
             </p>
 
@@ -2197,7 +2149,7 @@ footer h3 {
 
                 <button
                     class="btn btn-primary"
-                    onclick="showView('escuta')">
+                    onclick="showPage('escuta')">
 
                     <i class="fa-solid fa-heart"></i>
 
@@ -2206,15 +2158,14 @@ footer h3 {
                 </button>
 
 
-                <button
-                    class="btn btn-secondary"
-                    onclick="document.getElementById('sobre').scrollIntoView({behavior:'smooth'})">
+                <a href="#sobre"
+                   class="btn btn-secondary">
 
-                    Conhecer o projeto
+                    Saiba mais
 
                     <i class="fa-solid fa-arrow-down"></i>
 
-                </button>
+                </a>
 
 
             </div>
@@ -2223,74 +2174,22 @@ footer h3 {
 
 
 
-        <!-- ILUSTRAÇÃO -->
-
-        <div class="hero-visual">
+        <div class="hero-image">
 
 
-            <div class="hero-illustration">
+            <!--
+                MANTIDA A IMAGEM DO SEU CÓDIGO ORIGINAL.
+                Deixe estudantes.png dentro da pasta img.
+            -->
+
+            <img src="img/estudantes.png"
+                 alt="Estudantes conversando e apoiando uns aos outros">
 
 
-                <div class="shield">
-
-                    <i class="fa-solid fa-shield-heart"></i>
-
-                </div>
+            <div class="floating-card">
 
 
-                <div class="person one">
-
-                    <i class="fa-solid fa-user"></i>
-
-                </div>
-
-
-                <div class="person two">
-
-                    <i class="fa-solid fa-user"></i>
-
-                </div>
-
-
-                <div class="chat one">
-
-                    <i class="fa-solid fa-heart"></i>
-
-                </div>
-
-
-                <div class="chat two">
-
-                    <i class="fa-solid fa-lock"></i>
-
-                </div>
-
-
-                <div class="phone">
-
-                    <i class="fa-solid fa-mobile-screen-button"></i>
-
-                    <strong>
-                        Internet com respeito
-                    </strong>
-
-                    <small>
-                        Proteja-se. Converse. Peça ajuda.
-                    </small>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="floating">
-
-                <div class="floating-icon">
-
-                    <i class="fa-solid fa-heart"></i>
-
-                </div>
+                <i class="fa-solid fa-heart"></i>
 
 
                 <div>
@@ -2305,10 +2204,11 @@ footer h3 {
 
                 </div>
 
+
             </div>
 
-
         </div>
+
 
     </div>
 
@@ -2316,9 +2216,12 @@ footer h3 {
 
 
 
-<!-- SOBRE -->
+<!-- ==========================================================
+     SOBRE O PROJETO
+========================================================== -->
 
-<section id="sobre">
+<section class="about"
+         id="sobre">
 
 
     <div class="container">
@@ -2339,11 +2242,12 @@ footer h3 {
 
             <p>
 
-                Conhecer seus direitos, identificar situações
-                de violência e saber onde procurar ajuda
-                pode fazer toda a diferença.
+                Conhecer seus direitos, saber identificar situações
+                de violência e entender onde procurar ajuda pode fazer
+                toda a diferença.
 
             </p>
+
 
         </div>
 
@@ -2352,7 +2256,7 @@ footer h3 {
         <div class="cards">
 
 
-            <article class="card">
+            <article class="info-card">
 
 
                 <div class="card-icon blue">
@@ -2369,15 +2273,14 @@ footer h3 {
 
                 <p>
 
-                    Aprenda atitudes simples para proteger
-                    contas, senhas, dados pessoais e redes sociais.
+                    Aprenda maneiras de proteger suas informações,
+                    contas e redes sociais no ambiente digital.
 
                 </p>
 
 
-                <a class="text-link"
-                   href="#quiz"
-                   onclick="showView('quiz')">
+                <a href="#quiz"
+                   onclick="showPage('quiz')">
 
                     Aprender mais
 
@@ -2390,7 +2293,7 @@ footer h3 {
 
 
 
-            <article class="card">
+            <article class="info-card">
 
 
                 <div class="card-icon purple">
@@ -2407,16 +2310,14 @@ footer h3 {
 
                 <p>
 
-                    Entenda como reconhecer agressões virtuais
-                    e o que fazer quando você ou alguém próximo
-                    passa por isso.
+                    Entenda o que é cyberbullying, como identificá-lo
+                    e quais atitudes podem ajudar nessa situação.
 
                 </p>
 
 
-                <a class="text-link"
-                   href="#referencias"
-                   onclick="showView('referencias')">
+                <a href="#referencias"
+                   onclick="showPage('referencias')">
 
                     Saiba mais
 
@@ -2429,7 +2330,7 @@ footer h3 {
 
 
 
-            <article class="card">
+            <article class="info-card">
 
 
                 <div class="card-icon green">
@@ -2446,16 +2347,14 @@ footer h3 {
 
                 <p>
 
-                    Pequenas atitudes podem ajudar a tornar
-                    a escola, os grupos e a internet espaços
-                    mais seguros.
+                    Pequenas atitudes de respeito podem contribuir
+                    para tornar a escola e a internet lugares melhores.
 
                 </p>
 
 
-                <a class="text-link"
-                   href="#escuta"
-                   onclick="showView('escuta')">
+                <a href="#escuta"
+                   onclick="showPage('escuta')">
 
                     Quero ajudar
 
@@ -2469,64 +2368,15 @@ footer h3 {
 
         </div>
 
-
     </div>
 
 </section>
 
 
 
-<!-- REGIONAL -->
-
-<section class="local">
-
-
-    <div class="container local-box">
-
-
-        <div class="local-icon">
-
-            <i class="fa-solid fa-location-dot"></i>
-
-        </div>
-
-
-        <div>
-
-
-            <span class="hero-tag">
-                Pensado para a nossa realidade
-            </span>
-
-
-            <h2>
-
-                Informação que conversa com
-                quem está perto de você.
-
-            </h2>
-
-
-            <p>
-
-                Este projeto foi pensado para estudantes
-                da nossa região. Por isso, além de informações
-                gerais, a proposta é indicar caminhos de apoio
-                que façam sentido no ambiente escolar
-                e na comunidade local.
-
-            </p>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ACOLHIMENTO -->
+<!-- ==========================================================
+     MENSAGEM DE ACOLHIMENTO
+========================================================== -->
 
 <section class="welcome">
 
@@ -2544,7 +2394,7 @@ footer h3 {
             </div>
 
 
-            <div>
+            <div class="welcome-content">
 
 
                 <span>
@@ -2559,18 +2409,18 @@ footer h3 {
 
                 <p>
 
-                    Se uma situação estiver fazendo você
-                    se sentir triste, com medo ou desconfortável,
-                    procure alguém de confiança. Pode ser um
-                    professor, pedagogo, direção da escola,
-                    familiar ou outro adulto em quem você confie.
+                    Se alguma situação estiver fazendo você se sentir
+                    triste, com medo ou desconfortável, procure alguém
+                    de confiança. Converse com um professor, pedagogo,
+                    direção da escola, familiar ou outro adulto em quem
+                    você confie.
 
                 </p>
 
 
                 <button
                     class="btn btn-light"
-                    onclick="showView('escuta')">
+                    onclick="showPage('escuta')">
 
                     Acessar Portal de Escuta
 
@@ -2581,6 +2431,7 @@ footer h3 {
 
             </div>
 
+
         </div>
 
     </div>
@@ -2589,9 +2440,11 @@ footer h3 {
 
 
 
-<!-- COMO AJUDAR -->
+<!-- ==========================================================
+     COMO PODEMOS AJUDAR
+========================================================== -->
 
-<section>
+<section class="help">
 
 
     <div class="container">
@@ -2599,20 +2452,24 @@ footer h3 {
 
         <div class="section-title">
 
+
             <span>
                 Encontre apoio
             </span>
+
 
             <h2>
                 Por onde começar?
             </h2>
 
+
             <p>
 
-                Use o portal para aprender, refletir
+                Você pode utilizar o portal para aprender, refletir
                 e encontrar caminhos para buscar ajuda.
 
             </p>
+
 
         </div>
 
@@ -2623,9 +2480,11 @@ footer h3 {
 
             <div class="help-item">
 
+
                 <span class="number">
                     01
                 </span>
+
 
                 <div>
 
@@ -2637,12 +2496,13 @@ footer h3 {
 
                     <p>
 
-                        Aprenda a reconhecer cyberbullying
+                        Aprenda a reconhecer situações de cyberbullying
                         e outros riscos do ambiente digital.
 
                     </p>
 
                 </div>
+
 
             </div>
 
@@ -2650,9 +2510,11 @@ footer h3 {
 
             <div class="help-item">
 
+
                 <span class="number">
                     02
                 </span>
+
 
                 <div>
 
@@ -2664,13 +2526,13 @@ footer h3 {
 
                     <p>
 
-                        Escreva um desabafo de forma simulada
-                        e receba uma mensagem automática
-                        de acolhimento.
+                        Escreva um desabafo de forma simulada e receba
+                        uma mensagem automática de acolhimento.
 
                     </p>
 
                 </div>
+
 
             </div>
 
@@ -2678,9 +2540,11 @@ footer h3 {
 
             <div class="help-item">
 
+
                 <span class="number">
                     03
                 </span>
+
 
                 <div>
 
@@ -2692,13 +2556,13 @@ footer h3 {
 
                     <p>
 
-                        Teste seus conhecimentos com perguntas
-                        rápidas sobre segurança e respeito
-                        na internet.
+                        Teste seus conhecimentos respondendo a
+                        cinco perguntas interativas.
 
                     </p>
 
                 </div>
+
 
             </div>
 
@@ -2706,9 +2570,11 @@ footer h3 {
 
             <div class="help-item">
 
+
                 <span class="number">
                     04
                 </span>
+
 
                 <div>
 
@@ -2720,13 +2586,14 @@ footer h3 {
 
                     <p>
 
-                        Converse com um adulto de confiança
-                        sempre que precisar de apoio.
+                        Converse com um adulto de confiança sempre
+                        que precisar de apoio.
 
                     </p>
 
                 </div>
 
+
             </div>
 
 
@@ -2738,327 +2605,127 @@ footer h3 {
 
 
 
-<!-- BANNER QUIZ -->
+<!-- ==========================================================
+     CHAMADA PARA O QUIZ
+========================================================== -->
 
 <section class="quiz-banner">
 
 
-    <div class="container">
+    <div class="container quiz-content">
 
 
-        <div class="quiz-banner-box">
+        <div>
 
 
-            <div>
+            <span>
 
+                <i class="fa-solid fa-circle-question"></i>
 
-                <span class="hero-tag">
+                Teste seus conhecimentos
 
-                    <i class="fa-solid fa-circle-question"></i>
-
-                    Teste seus conhecimentos
-
-                </span>
-
-
-                <h2>
-                    Você sabe como agir na internet?
-                </h2>
-
-
-                <p>
-
-                    Responda ao quiz e descubra quanto você
-                    sabe sobre segurança digital e cyberbullying.
-
-                </p>
-
-
-            </div>
-
-
-            <button
-                class="btn btn-primary"
-                onclick="showView('quiz')">
-
-                Fazer o Quiz
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </button>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-</div>
-
-
-
-<!-- =====================================================
-     PORTAL DE ESCUTA
-===================================================== -->
-
-<div id="escuta"
-     class="view">
-
-
-<section class="page-hero">
-
-
-    <div class="container">
-
-
-        <span class="hero-tag">
-
-            <i class="fa-solid fa-heart"></i>
-
-            Um espaço acolhedor
-
-        </span>
-
-
-        <h1>
-            Quer colocar o que está sentindo para fora?
-        </h1>
-
-
-        <p>
-
-            Este espaço é uma simulação educativa.
-            Você pode escrever e receber uma mensagem
-            de acolhimento, mas o texto não é enviado
-            nem armazenado.
-
-        </p>
-
-
-    </div>
-
-</section>
-
-
-
-<section class="form-section">
-
-
-    <div class="container form-layout">
-
-
-        <div class="support-note">
-
-
-            <i class="fa-solid fa-shield-heart"></i>
+            </span>
 
 
             <h2>
-                Você merece ser ouvido.
+                Você sabe como agir na internet?
             </h2>
 
 
             <p>
 
-                Se estiver passando por uma situação
-                de cyberbullying, não precisa enfrentar
-                isso sozinho.
+                Responda ao nosso quiz e descubra quanto você sabe
+                sobre segurança digital e cyberbullying.
 
             </p>
 
 
-            <ul>
+        </div>
 
-                <li>
-                    Guarde provas de mensagens ou
-                    publicações, se for seguro fazer isso.
-                </li>
 
-                <li>
-                    Evite responder às agressões no impulso.
-                </li>
+        <button
+            class="btn btn-primary"
+            onclick="showPage('quiz')">
 
-                <li>
-                    Conte para um adulto de confiança
-                    ou para alguém da escola.
-                </li>
+            Fazer o Quiz
 
-            </ul>
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+</div>
+
+
+
+<!-- ==========================================================
+     PÁGINA DO QUIZ
+========================================================== -->
+
+<section id="quizPage"
+         class="quiz-page">
+
+
+    <div class="container">
+
+
+        <div class="quiz-header">
+
+
+            <span>
+
+                <i class="fa-solid fa-circle-question"></i>
+
+                Quiz educativo
+
+            </span>
+
+
+            <h1>
+                Você sabe como agir na internet?
+            </h1>
+
+
+            <p>
+
+                Responda às cinco perguntas e veja quanto você
+                aprendeu sobre cyberbullying e segurança digital.
+
+            </p>
 
 
         </div>
 
 
 
-        <form class="support-form"
-              id="listenForm">
+        <div class="quiz-box">
 
 
-            <label for="feeling">
+            <div class="quiz-info">
 
-                Como você está se sentindo?
 
-            </label>
-
-
-            <select id="feeling"
-                    required>
-
-
-                <option value="">
-                    Escolha uma opção
-                </option>
-
-
-                <option>
-                    Triste
-                </option>
-
-
-                <option>
-                    Preocupado(a)
-                </option>
-
-
-                <option>
-                    Com raiva
-                </option>
-
-
-                <option>
-                    Confuso(a)
-                </option>
-
-
-                <option>
-                    Com medo
-                </option>
-
-
-                <option>
-                    Não sei explicar
-                </option>
-
-
-            </select>
-
-
-
-            <label for="message">
-
-                Escreva aqui
-
-            </label>
-
-
-            <textarea
-                id="message"
-                rows="7"
-                placeholder="Você pode escrever o que quiser sobre a situação..."
-                required>
-            </textarea>
-
-
-            <button
-                type="submit"
-                class="btn btn-primary">
-
-                Receber uma mensagem de acolhimento
-
-                <i class="fa-solid fa-heart"></i>
-
-            </button>
-
-
-            <div id="response"
-                 class="response hidden">
-
-            </div>
-
-
-        </form>
-
-
-    </div>
-
-</section>
-
-</div>
-
-
-
-<!-- =====================================================
-     QUIZ
-===================================================== -->
-
-<div id="quiz"
-     class="view">
-
-
-<section class="page-hero">
-
-
-    <div class="container">
-
-
-        <span class="hero-tag">
-
-            <i class="fa-solid fa-gamepad"></i>
-
-            Quiz educativo
-
-        </span>
-
-
-        <h1>
-            Vamos testar seus conhecimentos?
-        </h1>
-
-
-        <p>
-
-            Responda com calma. O objetivo não é tirar uma nota,
-            mas aprender atitudes que podem deixar sua experiência
-            online mais segura.
-
-        </p>
-
-
-    </div>
-
-</section>
-
-
-
-<section class="quiz-area">
-
-
-    <div class="container">
-
-
-        <div class="quiz-shell">
-
-
-            <div class="quiz-top">
-
-
-                <span id="counter">
-                    Pergunta 1 de 8
+                <span id="quizCounter">
+                    Pergunta 1 de 5
                 </span>
 
 
                 <div class="progress">
 
-                    <div id="progress"
-                         class="progress-bar">
+                    <div class="progress-bar"
+                         id="progressBar">
                     </div>
 
                 </div>
 
 
-                <span id="score">
+                <span id="quizScore">
                     0 pontos
                 </span>
 
@@ -3068,13 +2735,194 @@ footer h3 {
 
             <div id="quizContent">
 
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     PORTAL DE ESCUTA
+========================================================== -->
+
+<section id="escutaPage"
+         class="escuta-page">
+
+
+    <div class="container">
+
+
+        <div class="page-intro">
+
+
+            <span>
+
+                <i class="fa-solid fa-heart"></i>
+
+                Um espaço acolhedor
+
+            </span>
+
+
+            <h1>
+                Quer colocar o que está sentindo para fora?
+            </h1>
+
+
+            <p>
+
+                Este espaço é uma simulação educativa.
+                Você pode escrever e receber uma mensagem de
+                acolhimento. Nenhuma informação é enviada ou armazenada.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="escuta-grid">
+
+
+            <div class="escuta-info">
+
+
+                <i class="fa-solid fa-shield-heart"></i>
+
+
+                <h2>
+                    Você merece ser ouvido.
+                </h2>
+
+
+                <p>
+
+                    Se estiver passando por uma situação de
+                    cyberbullying, não precisa enfrentar isso sozinho.
+
+                </p>
+
+
+                <ul>
+
+                    <li>
+                        Guarde provas das mensagens ou publicações,
+                        quando for seguro fazer isso.
+                    </li>
+
+                    <li>
+                        Evite responder às agressões no impulso.
+                    </li>
+
+                    <li>
+                        Converse com um adulto de confiança.
+                    </li>
+
+                    <li>
+                        Procure alguém da escola que possa ajudar.
+                    </li>
+
+                </ul>
+
+
             </div>
 
 
-            <div id="result"
-                 class="result hidden">
 
-            </div>
+            <form class="escuta-form"
+                  id="escutaForm">
+
+
+                <label for="sentimento">
+
+                    Como você está se sentindo?
+
+                </label>
+
+
+                <select id="sentimento"
+                        required>
+
+
+                    <option value="">
+                        Escolha uma opção
+                    </option>
+
+
+                    <option value="triste">
+                        Triste
+                    </option>
+
+
+                    <option value="preocupado(a)">
+                        Preocupado(a)
+                    </option>
+
+
+                    <option value="com raiva">
+                        Com raiva
+                    </option>
+
+
+                    <option value="confuso(a)">
+                        Confuso(a)
+                    </option>
+
+
+                    <option value="com medo">
+                        Com medo
+                    </option>
+
+
+                    <option value="sem saber o que fazer">
+                        Sem saber o que fazer
+                    </option>
+
+
+                </select>
+
+
+                <label for="desabafo">
+
+                    Escreva aqui
+
+                </label>
+
+
+                <textarea
+                    id="desabafo"
+                    rows="7"
+                    placeholder="Escreva o que você gostaria de colocar para fora..."
+                    required>
+                </textarea>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+
+                    Receber uma mensagem de acolhimento
+
+                    <i class="fa-solid fa-heart"></i>
+
+                </button>
+
+
+                <div id="escutaResponse"
+                     class="escuta-response">
+
+                </div>
+
+
+            </form>
 
 
         </div>
@@ -3084,57 +2932,46 @@ footer h3 {
 </section>
 
 
-</div>
 
-
-
-<!-- =====================================================
+<!-- ==========================================================
      REFERÊNCIAS
-===================================================== -->
+========================================================== -->
 
-<div id="referencias"
-     class="view">
-
-
-<section class="page-hero">
+<section id="referenciasPage"
+         class="referencias-page">
 
 
     <div class="container">
 
 
-        <span class="hero-tag">
-
-            <i class="fa-solid fa-book"></i>
-
-            Informação confiável
-
-        </span>
+        <div class="page-intro">
 
 
-        <h1>
-            Referências e caminhos de apoio
-        </h1>
+            <span>
+
+                <i class="fa-solid fa-book"></i>
+
+                Informação e apoio
+
+            </span>
 
 
-        <p>
-
-            Esta página reúne orientações gerais e pode
-            ser personalizada com os contatos oficiais
-            da sua escola, município ou região.
-
-        </p>
+            <h1>
+                Referências e caminhos de apoio
+            </h1>
 
 
-    </div>
+            <p>
 
-</section>
+                Esta página pode ser personalizada com os contatos
+                e serviços disponíveis para os estudantes da sua
+                região.
+
+            </p>
 
 
+        </div>
 
-<section class="reference-section">
-
-
-    <div class="container">
 
 
         <div class="reference-grid">
@@ -3177,9 +3014,9 @@ footer h3 {
 
                 <p>
 
-                    Converse com um familiar ou adulto
-                    de confiança. Ter alguém ao seu lado
-                    pode ajudar a pensar nos próximos passos.
+                    Converse com um familiar ou adulto de confiança.
+                    Ter alguém ao seu lado pode ajudar a pensar
+                    nos próximos passos.
 
                 </p>
 
@@ -3201,9 +3038,9 @@ footer h3 {
 
                 <p>
 
-                    Use ferramentas de bloqueio e denúncia
+                    Utilize as ferramentas de bloqueio e denúncia
                     das próprias plataformas e evite compartilhar
-                    informações pessoais com desconhecidos.
+                    informações pessoais.
 
                 </p>
 
@@ -3231,10 +3068,10 @@ footer h3 {
 
                 <p>
 
-                    Para a versão final do trabalho, você pode
-                    substituir este espaço pelos contatos e
-                    serviços oficiais disponíveis para os alunos
-                    do seu município ou região.
+                    Na versão final do projeto, você pode colocar
+                    aqui os contatos oficiais da sua escola,
+                    município ou serviços de apoio disponíveis
+                    para os alunos da sua região.
 
                 </p>
 
@@ -3250,29 +3087,23 @@ footer h3 {
 </section>
 
 
-</div>
 
-
-</main>
-
-
-
-<!-- =====================================================
+<!-- ==========================================================
      FOOTER
-===================================================== -->
+========================================================== -->
 
-<footer>
+<footer class="footer">
 
 
     <div class="container footer-content">
 
 
-        <div>
+        <div class="footer-brand">
 
 
             <a href="#inicio"
                class="logo"
-               onclick="showView('inicio')">
+               onclick="showHome()">
 
                 <i class="fa-solid fa-hand-holding-heart"></i>
 
@@ -3283,10 +3114,10 @@ footer h3 {
             </a>
 
 
-            <p style="margin-top:15px;max-width:320px;">
+            <p>
 
                 Informação, respeito, empatia e acolhimento
-                para estudantes.
+                para todos os estudantes.
 
             </p>
 
@@ -3304,25 +3135,25 @@ footer h3 {
 
 
             <a href="#inicio"
-               onclick="showView('inicio')">
+               onclick="showHome()">
                 Início
             </a>
 
 
             <a href="#escuta"
-               onclick="showView('escuta')">
+               onclick="showPage('escuta')">
                 Portal de Escuta
             </a>
 
 
             <a href="#quiz"
-               onclick="showView('quiz')">
+               onclick="showPage('quiz')">
                 Quiz
             </a>
 
 
             <a href="#referencias"
-               onclick="showView('referencias')">
+               onclick="showPage('referencias')">
                 Referências
             </a>
 
@@ -3331,7 +3162,7 @@ footer h3 {
 
 
 
-        <div>
+        <div class="footer-contact">
 
 
             <h3>
@@ -3342,8 +3173,8 @@ footer h3 {
             <p>
 
                 Este site é um projeto educativo.
-                O Portal de Escuta é uma simulação e
-                não armazena informações.
+                O formulário do Portal de Escuta é apenas uma
+                simulação e não armazena nenhuma informação.
 
             </p>
 
@@ -3360,7 +3191,7 @@ footer h3 {
 
         <p>
 
-            © 2026 Portal de Apoio ao Estudante.
+            &copy; 2026 Portal de Apoio ao Estudante.
             Projeto educativo escolar.
 
         </p>
@@ -3375,8 +3206,9 @@ footer h3 {
 
 <!-- BOTÃO VOLTAR AO TOPO -->
 
-<button id="backTop"
-        class="back-top">
+<button id="backToTop"
+        class="back-to-top"
+        aria-label="Voltar ao topo">
 
     <i class="fa-solid fa-arrow-up"></i>
 
@@ -3386,39 +3218,55 @@ footer h3 {
 
 <script>
 
-/* =========================================================
-   NAVEGAÇÃO ENTRE AS "PÁGINAS"
-========================================================= */
+/* ==========================================================
+   MENU MOBILE
+========================================================== */
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const nav =
+    document.getElementById("nav");
 
 
-function showView(viewId) {
+menuBtn.addEventListener("click", function () {
+
+    nav.classList.toggle("open");
+
+    const icon =
+        menuBtn.querySelector("i");
+
+    icon.classList.toggle("fa-bars");
+
+    icon.classList.toggle("fa-xmark");
+
+});
 
 
-    /* Esconde todas as views */
 
-    document
-        .querySelectorAll(".view")
-        .forEach(view => {
+/* ==========================================================
+   ELEMENTOS DAS PÁGINAS
+========================================================== */
 
-            view.classList.remove("active");
+const home =
+    document.getElementById("home");
 
-        });
+const quizPage =
+    document.getElementById("quizPage");
 
+const escutaPage =
+    document.getElementById("escutaPage");
 
-    /* Mostra a escolhida */
-
-    const view =
-        document.getElementById(viewId);
-
-
-    if (view) {
-
-        view.classList.add("active");
-
-    }
+const referenciasPage =
+    document.getElementById("referenciasPage");
 
 
-    /* Atualiza menu */
+
+/* ==========================================================
+   MENU ATIVO
+========================================================== */
+
+function setActive(id) {
 
     document
         .querySelectorAll(".nav a")
@@ -3426,178 +3274,206 @@ function showView(viewId) {
 
             link.classList.remove("active");
 
-
-            if (
-                link.dataset.view === viewId
-            ) {
-
-                link.classList.add("active");
-
-            }
-
         });
 
 
-    /* Fecha menu mobile */
-
     document
-        .getElementById("nav")
-        .classList.remove("open");
-
-
-    /* Volta para o topo */
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-
-    /* Atualiza hash */
-
-    history.replaceState(
-        null,
-        "",
-        "#" + viewId
-    );
+        .getElementById(id)
+        .classList.add("active");
 
 }
 
 
 
-/* =========================================================
-   MENU MOBILE
-========================================================= */
+/* ==========================================================
+   MOSTRAR PÁGINA
+========================================================== */
+
+function showPage(page) {
 
 
-const menuBtn =
-    document.getElementById("menuBtn");
+    home.classList.add("hidden");
+
+    quizPage.classList.remove("active");
+
+    escutaPage.classList.remove("active");
+
+    referenciasPage.classList.remove("active");
 
 
-const nav =
-    document.getElementById("nav");
+    if (page === "quiz") {
 
+        quizPage.classList.add("active");
 
-menuBtn.addEventListener(
-    "click",
-    () => {
+        setActive("navQuiz");
 
-        nav.classList.toggle("open");
-
-
-        const icon =
-            menuBtn.querySelector("i");
-
-
-        icon.classList.toggle("fa-bars");
-
-        icon.classList.toggle("fa-xmark");
+        restartQuiz();
 
     }
-);
+
+
+    if (page === "escuta") {
+
+        escutaPage.classList.add("active");
+
+        setActive("navEscuta");
+
+    }
+
+
+    if (page === "referencias") {
+
+        referenciasPage.classList.add("active");
+
+        setActive("navReferencias");
+
+    }
+
+
+    nav.classList.remove("open");
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+}
 
 
 
-/* =========================================================
+/* ==========================================================
+   VOLTAR PARA INÍCIO
+========================================================== */
+
+function showHome() {
+
+
+    home.classList.remove("hidden");
+
+    quizPage.classList.remove("active");
+
+    escutaPage.classList.remove("active");
+
+    referenciasPage.classList.remove("active");
+
+
+    setActive("navInicio");
+
+
+    nav.classList.remove("open");
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+
+/* ==========================================================
    BOTÃO VOLTAR AO TOPO
-========================================================= */
+========================================================== */
+
+const backToTop =
+    document.getElementById("backToTop");
 
 
-const backTop =
-    document.getElementById("backTop");
+window.addEventListener("scroll", function () {
 
+    if (window.scrollY > 450) {
 
-window.addEventListener(
-    "scroll",
-    () => {
+        backToTop.classList.add("show");
 
-        if (window.scrollY > 450) {
+    } else {
 
-            backTop.classList.add("show");
-
-        }
-
-        else {
-
-            backTop.classList.remove("show");
-
-        }
+        backToTop.classList.remove("show");
 
     }
-);
+
+});
 
 
-backTop.addEventListener(
-    "click",
-    () => {
+backToTop.addEventListener("click", function () {
 
-        window.scrollTo({
+    window.scrollTo({
 
-            top: 0,
+        top: 0,
 
-            behavior: "smooth"
+        behavior: "smooth"
 
-        });
+    });
 
-    }
-);
+});
 
 
 
-/* =========================================================
+/* ==========================================================
    PORTAL DE ESCUTA
-========================================================= */
+========================================================== */
+
+const escutaForm =
+    document.getElementById("escutaForm");
 
 
-const listenForm =
-    document.getElementById("listenForm");
+escutaForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
 
 
-listenForm.addEventListener(
-    "submit",
-    event => {
-
-        event.preventDefault();
+    const sentimento =
+        document.getElementById("sentimento").value;
 
 
-        const feeling =
-            document.getElementById("feeling").value;
+    const response =
+        document.getElementById("escutaResponse");
 
 
-        const response =
-            document.getElementById("response");
+    response.style.display = "block";
 
 
-        response.classList.remove("hidden");
+    response.innerHTML = `
+
+        <strong>
+            Obrigado por confiar neste espaço. 💙
+        </strong>
+
+        <br><br>
+
+        Sentir-se ${sentimento} diante de uma situação difícil
+        pode ser muito pesado.
+
+        Você não precisa resolver tudo sozinho.
+
+        Se puder, converse com um adulto de confiança,
+        professor, pedagogo ou outro profissional da escola.
+
+    `;
 
 
-        response.innerHTML = `
+    response.scrollIntoView({
 
-            <strong>
-                Obrigado por confiar neste espaço. 💙
-            </strong>
+        behavior: "smooth",
 
-            <br><br>
+        block: "nearest"
 
-            Sentir-se ${feeling.toLowerCase()}
-            em uma situação difícil pode ser pesado.
+    });
 
-            Você não precisa resolver tudo sozinho.
-
-            Se puder, converse com um adulto de confiança
-            ou alguém da sua escola que possa acolher você.
-
-        `;
-
-    }
-);
+});
 
 
 
-/* =========================================================
+/* ==========================================================
    QUIZ
-========================================================= */
-
+========================================================== */
 
 const questions = [
 
@@ -3605,24 +3481,24 @@ const questions = [
     {
 
         question:
-            "Alguém cria uma conta falsa para humilhar um colega e publica mensagens ofensivas. Isso pode ser cyberbullying?",
+            "O que melhor define o cyberbullying?",
 
         answers: [
 
-            "Sim, porque usa o ambiente digital para atacar outra pessoa.",
+            "Uma brincadeira feita entre amigos.",
 
-            "Não, porque uma conta falsa não conta.",
+            "A utilização de meios digitais para intimidar, humilhar ou agredir outra pessoa.",
 
-            "Só conta se acontecer dentro da escola.",
+            "Qualquer discussão que aconteça na internet.",
 
-            "Não, porque comentários online não machucam."
+            "Uma opinião diferente publicada nas redes sociais."
 
         ],
 
-        correct: 0,
+        correct: 1,
 
         explanation:
-            "A agressão digital também pode causar impactos reais e merece atenção."
+            "Cyberbullying envolve agressões, humilhações ou intimidações realizadas por meios digitais."
 
     },
 
@@ -3630,24 +3506,24 @@ const questions = [
     {
 
         question:
-            "Você recebe uma mensagem agressiva de um colega. Qual atitude é mais segura?",
+            "Você recebe mensagens ofensivas repetidamente. O que é uma atitude adequada?",
 
         answers: [
 
             "Responder com outra ofensa.",
 
-            "Compartilhar a mensagem com todos os colegas.",
+            "Compartilhar as mensagens para que todos vejam.",
 
-            "Guardar a evidência e procurar um adulto de confiança.",
+            "Guardar evidências e procurar um adulto de confiança.",
 
-            "Apagar tudo imediatamente e fingir que nada aconteceu."
+            "Criar uma conta falsa para se vingar."
 
         ],
 
         correct: 2,
 
         explanation:
-            "Guardar evidências pode ajudar um adulto ou a escola a entender o que aconteceu."
+            "Guardar evidências e procurar ajuda pode facilitar a compreensão e o encaminhamento da situação."
 
     },
 
@@ -3655,24 +3531,24 @@ const questions = [
     {
 
         question:
-            "Qual informação é melhor evitar publicar abertamente na internet?",
+            "Qual destas atitudes ajuda a proteger sua segurança digital?",
 
         answers: [
 
-            "Seu filme favorito.",
+            "Compartilhar sua senha com amigos próximos.",
 
-            "Seu nome de usuário de um jogo.",
+            "Usar a mesma senha em todas as contas.",
 
-            "Seu endereço residencial e dados pessoais.",
+            "Manter senhas seguras e não compartilhá-las.",
 
-            "Uma foto de um desenho que você fez."
+            "Publicar informações pessoais para facilitar contatos."
 
         ],
 
         correct: 2,
 
         explanation:
-            "Dados pessoais podem facilitar situações de exposição ou contato indesejado."
+            "Senhas devem ser protegidas e não compartilhadas com outras pessoas."
 
     },
 
@@ -3680,24 +3556,24 @@ const questions = [
     {
 
         question:
-            "Uma senha segura deve, de preferência:",
+            "Se você perceber que um colega está sendo vítima de cyberbullying, o que pode fazer?",
 
         answers: [
 
-            "Ser igual em todas as contas.",
+            "Participar da situação para não ficar de fora.",
 
-            "Usar informações fáceis, como data de nascimento.",
+            "Ignorar completamente.",
 
-            "Ser difícil de adivinhar e não ser compartilhada.",
+            "Apoiar o colega e procurar um adulto de confiança.",
 
-            "Ser o nome do seu animal de estimação."
+            "Compartilhar as mensagens para conseguir ajuda."
 
         ],
 
         correct: 2,
 
         explanation:
-            "Evite compartilhar senhas e prefira combinações difíceis de adivinhar."
+            "Apoiar a pessoa e procurar um adulto responsável é uma atitude mais segura."
 
     },
 
@@ -3705,99 +3581,24 @@ const questions = [
     {
 
         question:
-            "Você percebe que um amigo está sendo alvo de humilhações em um grupo. O que pode fazer?",
+            "Antes de publicar uma foto de outra pessoa, qual atitude demonstra respeito?",
 
         answers: [
 
-            "Entrar na brincadeira para não ficar de fora.",
+            "Publicar sem perguntar.",
 
-            "Apoiar o amigo e contar a um adulto de confiança.",
+            "Perguntar se a pessoa concorda com a publicação.",
 
-            "Salvar e espalhar as mensagens.",
+            "Enviar primeiro para um grupo de amigos.",
 
-            "Dizer que ele precisa resolver sozinho."
+            "Publicar e apagar depois se ela reclamar."
 
         ],
 
         correct: 1,
 
         explanation:
-            "Apoio e busca de ajuda podem fazer diferença."
-
-    },
-
-
-    {
-
-        question:
-            "Bloquear alguém que está enviando mensagens ofensivas pode ser uma atitude adequada?",
-
-        answers: [
-
-            "Sim, quando isso ajuda a interromper o contato indesejado.",
-
-            "Não, nunca.",
-
-            "Só se a pessoa pedir desculpas primeiro.",
-
-            "Somente se todos os colegas concordarem."
-
-        ],
-
-        correct: 0,
-
-        explanation:
-            "Bloquear e usar ferramentas de denúncia pode ajudar a interromper o contato."
-
-    },
-
-
-    {
-
-        question:
-            "Antes de compartilhar uma foto de outra pessoa, o mais respeitoso é:",
-
-        answers: [
-
-            "Publicar logo, se a foto for engraçada.",
-
-            "Perguntar se ela concorda com o compartilhamento.",
-
-            "Enviar para um grupo pequeno sem avisar.",
-
-            "Editar a foto para ficar mais engraçada."
-
-        ],
-
-        correct: 1,
-
-        explanation:
-            "Respeitar a privacidade e pedir consentimento é uma atitude importante."
-
-    },
-
-
-    {
-
-        question:
-            "Qual é o principal objetivo deste quiz?",
-
-        answers: [
-
-            "Descobrir quem sabe mais sobre internet.",
-
-            "Dar uma nota para cada estudante.",
-
-            "Ajudar a refletir sobre segurança, respeito e busca de apoio.",
-
-            "Ensinar a ganhar discussões nas redes sociais."
-
-        ],
-
-        correct: 2,
-
-        explanation:
-            "O objetivo é aprender e refletir sobre atitudes mais seguras e respeitosas."
+            "Respeitar a privacidade e pedir autorização demonstra respeito pela outra pessoa."
 
     }
 
@@ -3807,52 +3608,52 @@ const questions = [
 
 let currentQuestion = 0;
 
-let points = 0;
+let score = 0;
 
-let answered = false;
+let alreadyAnswered = false;
 
 
 const quizContent =
     document.getElementById("quizContent");
 
 
-const result =
-    document.getElementById("result");
+const quizCounter =
+    document.getElementById("quizCounter");
 
 
-const counter =
-    document.getElementById("counter");
+const quizScore =
+    document.getElementById("quizScore");
 
 
-const progress =
-    document.getElementById("progress");
+const progressBar =
+    document.getElementById("progressBar");
 
 
-const scoreElement =
-    document.getElementById("score");
 
-
+/* ==========================================================
+   CARREGAR PERGUNTA
+========================================================== */
 
 function loadQuestion() {
 
 
-    answered = false;
+    alreadyAnswered = false;
 
 
     const question =
         questions[currentQuestion];
 
 
-    counter.textContent =
+    quizCounter.textContent =
         `Pergunta ${currentQuestion + 1} de ${questions.length}`;
 
 
-    progress.style.width =
-        `${(currentQuestion / questions.length) * 100}%`;
+    quizScore.textContent =
+        `${score} ponto${score === 1 ? "" : "s"}`;
 
 
-    scoreElement.textContent =
-        `${points} ponto${points === 1 ? "" : "s"}`;
+    progressBar.style.width =
+        `${((currentQuestion) / questions.length) * 100}%`;
 
 
     quizContent.innerHTML = `
@@ -3860,7 +3661,7 @@ function loadQuestion() {
         <div class="question-number">
 
             QUESTÃO
-            ${String(currentQuestion + 1).padStart(2,"0")}
+            ${String(currentQuestion + 1).padStart(2, "0")}
 
         </div>
 
@@ -3875,18 +3676,22 @@ function loadQuestion() {
         <div class="answers">
 
             ${question.answers.map(
-                (answer,index) => `
+                (answer, index) => `
 
                 <button
                     class="answer"
                     data-index="${index}">
 
-                    ${String.fromCharCode(65 + index)})
+                    <strong>
+                        ${String.fromCharCode(65 + index)})
+                    </strong>
+
                     ${answer}
 
                 </button>
 
-            `).join("")}
+            `
+            ).join("")}
 
         </div>
 
@@ -3902,10 +3707,10 @@ function loadQuestion() {
 
             button.addEventListener(
                 "click",
-                () => {
+                function () {
 
                     selectAnswer(
-                        Number(button.dataset.index)
+                        Number(this.dataset.index)
                     );
 
                 }
@@ -3917,17 +3722,21 @@ function loadQuestion() {
 
 
 
+/* ==========================================================
+   SELECIONAR RESPOSTA
+========================================================== */
+
 function selectAnswer(index) {
 
 
-    if (answered) {
+    if (alreadyAnswered) {
 
         return;
 
     }
 
 
-    answered = true;
+    alreadyAnswered = true;
 
 
     const question =
@@ -3974,7 +3783,7 @@ function selectAnswer(index) {
         index === question.correct
     ) {
 
-        points++;
+        score++;
 
 
         feedback.className =
@@ -3984,16 +3793,14 @@ function selectAnswer(index) {
         feedback.innerHTML = `
 
             <strong>
-                Resposta correta! 💙
+                Muito bem! 💙
             </strong>
 
             ${question.explanation}
 
         `;
 
-    }
-
-    else {
+    } else {
 
         feedback.className =
             "feedback wrong";
@@ -4002,11 +3809,8 @@ function selectAnswer(index) {
         feedback.innerHTML = `
 
             <strong>
-                Quase!
+                Não foi dessa vez.
             </strong>
-
-            A alternativa correta era
-            ${String.fromCharCode(65 + question.correct)}.
 
             ${question.explanation}
 
@@ -4015,23 +3819,23 @@ function selectAnswer(index) {
     }
 
 
-    progress.style.width =
+    quizScore.textContent =
+        `${score} ponto${score === 1 ? "" : "s"}`;
+
+
+    progressBar.style.width =
         `${((currentQuestion + 1) / questions.length) * 100}%`;
 
 
-    scoreElement.textContent =
-        `${points} ponto${points === 1 ? "" : "s"}`;
-
-
-    const nextButton =
+    const next =
         document.createElement("button");
 
 
-    nextButton.className =
-        "btn btn-primary next";
+    next.className =
+        "btn btn-primary next-btn";
 
 
-    nextButton.innerHTML =
+    next.innerHTML =
         currentQuestion === questions.length - 1
 
             ? "Ver resultado"
@@ -4039,23 +3843,20 @@ function selectAnswer(index) {
             : "Próxima pergunta";
 
 
-    nextButton.addEventListener(
+    next.addEventListener(
         "click",
-        () => {
-
-            currentQuestion++;
-
+        function () {
 
             if (
                 currentQuestion <
-                questions.length
+                questions.length - 1
             ) {
+
+                currentQuestion++;
 
                 loadQuestion();
 
-            }
-
-            else {
+            } else {
 
                 showResult();
 
@@ -4065,23 +3866,17 @@ function selectAnswer(index) {
     );
 
 
-    quizContent.appendChild(nextButton);
+    quizContent.appendChild(next);
 
 }
 
 
 
+/* ==========================================================
+   RESULTADO
+========================================================== */
+
 function showResult() {
-
-
-    quizContent.classList.add("hidden");
-
-
-    result.classList.remove("hidden");
-
-
-    const percentage =
-        points / questions.length;
 
 
     let title;
@@ -4089,145 +3884,126 @@ function showResult() {
     let message;
 
 
-    if (percentage === 1) {
+    if (
+        score === 5
+    ) {
 
         title =
-            "Mandou muito bem! 🌟";
+            "Parabéns! 🌟";
 
         message =
-            "Você demonstrou bastante conhecimento sobre segurança digital e cyberbullying.";
+            "Você demonstrou um ótimo conhecimento sobre segurança digital e cyberbullying.";
 
     }
 
-    else if (percentage >= .7) {
+    else if (
+        score >= 3
+    ) {
 
         title =
-            "Muito bom! 💙";
+            "Muito bem! 💙";
 
         message =
-            "Você já conhece atitudes importantes para navegar com mais segurança e respeito.";
-
-    }
-
-    else if (percentage >= .5) {
-
-        title =
-            "Bom começo! 🌱";
-
-        message =
-            "Você já sabe algumas coisas importantes. Aproveite o portal para aprender ainda mais.";
+            "Você já conhece atitudes importantes para ter uma experiência mais segura e respeitosa na internet.";
 
     }
 
     else {
 
         title =
-            "Que tal aprender mais? 💜";
+            "Vamos aprender juntos! 🌱";
 
         message =
-            "Não tem problema errar. O objetivo do quiz é justamente ajudar você a aprender.";
+            "Não tem problema errar. O objetivo deste quiz é justamente ajudar você a aprender.";
 
     }
 
 
-    result.innerHTML = `
+    quizContent.innerHTML = `
 
-        <div class="result-icon">
+        <div class="quiz-result">
+
 
             <i class="fa-solid fa-trophy"></i>
 
+
+            <h2>
+                ${title}
+            </h2>
+
+
+            <p>
+
+                Você acertou
+
+                <strong>
+                    ${score} de ${questions.length}
+                </strong>
+
+                perguntas.
+
+                <br><br>
+
+                ${message}
+
+            </p>
+
+
+            <button
+                class="btn btn-primary"
+                onclick="restartQuiz()">
+
+                Fazer o quiz novamente
+
+                <i class="fa-solid fa-rotate-right"></i>
+
+            </button>
+
+
+            <button
+                class="btn btn-secondary"
+                onclick="showHome()"
+                style="margin-left:8px;">
+
+                Voltar ao início
+
+            </button>
+
+
         </div>
 
-
-        <h2>
-            ${title}
-        </h2>
-
-
-        <p>
-
-            Você acertou
-            <strong>
-                ${points} de ${questions.length}
-            </strong>
-            perguntas.
-
-            ${message}
-
-        </p>
-
-
-        <button
-            class="btn btn-primary"
-            onclick="restartQuiz()">
-
-            Fazer novamente
-
-            <i class="fa-solid fa-rotate-right"></i>
-
-        </button>
-
-
-        <button
-            class="btn btn-secondary"
-            onclick="showView('inicio')">
-
-            Voltar ao início
-
-        </button>
-
     `;
+
+
+    progressBar.style.width =
+        "100%";
 
 }
 
 
 
-function restartQuiz() {
+/* ==========================================================
+   REINICIAR QUIZ
+========================================================== */
 
+function restartQuiz() {
 
     currentQuestion = 0;
 
-    points = 0;
-
-
-    result.classList.add("hidden");
-
-
-    quizContent.classList.remove("hidden");
-
+    score = 0;
 
     loadQuestion();
 
 }
 
 
-/* Inicializa */
+
+/* ==========================================================
+   INICIALIZAÇÃO
+========================================================== */
 
 loadQuestion();
 
-
-
-/* =========================================================
-   VERIFICA QUAL VIEW ABRIR AO CARREGAR
-========================================================= */
-
-
-const initialView =
-    location.hash.replace("#","");
-
-
-if (
-    [
-        "inicio",
-        "escuta",
-        "quiz",
-        "referencias"
-    ].includes(initialView)
-) {
-
-    showView(initialView);
-
-}
 
 </script>
 
